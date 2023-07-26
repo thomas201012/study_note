@@ -1,5 +1,56 @@
-# WIFI状态码
-# wifi断开原因状态码
+# 网络状态码
+## 网络事件状态ID码
+    SYSTEM_EVENT_WIFI_READY = 0,           /*!< ESP32 WiFi ready *//*!< ESP32 WiFi 就绪 */
+    SYSTEM_EVENT_SCAN_DONE,                /*!< ESP32 finish scanning AP *//*!< ESP32 完成扫描 AP */
+    SYSTEM_EVENT_STA_START,                /*!< ESP32 station start *//*!< ESP32 站启动 */
+    SYSTEM_EVENT_STA_STOP,                 /*!< ESP32 station stop *//*!< ESP32 站停止 */
+    SYSTEM_EVENT_STA_CONNECTED,            /*!< ESP32 station connected to AP *//*!< ESP32 站点已连接到 AP */
+    SYSTEM_EVENT_STA_DISCONNECTED,         /*!< ESP32 station disconnected from AP *//*!< ESP32 站点与 AP 断开连接 */
+    SYSTEM_EVENT_STA_AUTHMODE_CHANGE,      /*!< the auth mode of AP connected by ESP32 station changed *//*!< ESP32 station 连接的 AP 认证模式改变 */
+    SYSTEM_EVENT_STA_GOT_IP,               /*!< ESP32 station got IP from connected AP *//*!< ESP32 站点从连接的 AP 获取 IP */
+    SYSTEM_EVENT_STA_LOST_IP,              /*!< ESP32 station lost IP and the IP is reset to 0 *//*!< ESP32 站点丢失 IP，IP 重置为 0 */
+    SYSTEM_EVENT_STA_BSS_RSSI_LOW,         /*!< ESP32 station connected BSS rssi goes below threshold *//*!< ESP32 站连接的 BSS rssi 低于阈值 */
+    SYSTEM_EVENT_STA_WPS_ER_SUCCESS,       /*!< ESP32 station wps succeeds in enrollee mode *//*!< ESP32 站 wps 在登记者模式下成功 */
+    SYSTEM_EVENT_STA_WPS_ER_FAILED,        /*!< ESP32 station wps fails in enrollee mode *//*!< ESP32 station wps 在登记者模式下失败 */
+    SYSTEM_EVENT_STA_WPS_ER_TIMEOUT,       /*!< ESP32 station wps timeout in enrollee mode *//*!< ESP32 站员模式下 wps 超时 */
+    SYSTEM_EVENT_STA_WPS_ER_PIN,           /*!< ESP32 station wps pin code in enrollee mode *//*!< ESP32 站员模式下的 WPS PIN 码 */
+    SYSTEM_EVENT_STA_WPS_ER_PBC_OVERLAP,   /*!< ESP32 station wps overlap in enrollee mode *//*!< ESP32 站 wps 在参与者模式下重叠 */
+    SYSTEM_EVENT_AP_START,                 /*!< ESP32 soft-AP start *//*!< ESP32 软 AP 启动 */
+    SYSTEM_EVENT_AP_STOP,                  /*!< ESP32 soft-AP stop *//*!< ESP32 软 AP 停止 */
+    SYSTEM_EVENT_AP_STACONNECTED,          /*!< a station connected to ESP32 soft-AP *//*!< 连接到 ESP32 软 AP 的站点 */
+    SYSTEM_EVENT_AP_STADISCONNECTED,       /*!< a station disconnected from ESP32 soft-AP *//*!< 某个站点与 ESP32 软 AP 断开连接 */
+    SYSTEM_EVENT_AP_STAIPASSIGNED,         /*!< ESP32 soft-AP assign an IP to a connected station *//*!< ESP32 soft-AP 为连接的站点分配 IP */
+    SYSTEM_EVENT_AP_PROBEREQRECVED,        /*!< Receive probe request packet in soft-AP interface *//*!< 在软 AP 接口接收探测请求数据包 */
+    SYSTEM_EVENT_ACTION_TX_STATUS,         /*!< Receive status of Action frame transmitted *//*!< 接收发送的 Action 帧的状态 */
+    SYSTEM_EVENT_ROC_DONE,                 /*!< Indicates the completion of Remain-on-Channel operation status *//*!< 表示Remain-on-Channel操作完成状态*/
+    SYSTEM_EVENT_STA_BEACON_TIMEOUT,       /*!< ESP32 station beacon timeout *//*!< ESP32 基站信标超时 */
+    SYSTEM_EVENT_FTM_REPORT,               /*!< Receive report of FTM procedure *//*!< 接收FTM过程报告*/
+    SYSTEM_EVENT_GOT_IP6,                  /*!< ESP32 station or ap or ethernet interface v6IP addr is preferred *//*!< 首选 ESP32 站或 ap 或以太网接口 v6IP 地址 */
+    SYSTEM_EVENT_ETH_START,                /*!< ESP32 ethernet start *//*!< ESP32 以太网启动 */
+    SYSTEM_EVENT_ETH_STOP,                 /*!< ESP32 ethernet stop *//*!< ESP32 以太网停止 */
+    SYSTEM_EVENT_ETH_CONNECTED,            /*!< ESP32 ethernet phy link up *//*!< ESP32 以太网 phy 连接 */
+    SYSTEM_EVENT_ETH_DISCONNECTED,         /*!< ESP32 ethernet phy link down *//*!< ESP32 以太网物理链路断开 */
+    SYSTEM_EVENT_ETH_GOT_IP,               /*!< ESP32 ethernet got IP from connected AP *//*!< ESP32 以太网从连接的 AP 获取 IP */
+    SYSTEM_EVENT_ETH_LOST_IP,              /*!< ESP32 ethernet lost IP and the IP is reset to 0 *//*!< ESP32 以太网丢失 IP 并且 IP 重置为 0 */
+    SYSTEM_EVENT_MAX                       /*!< Number of members in this enum *//*!< 此枚举中的成员数 */
+
+## 网络事件信息
+
+    system_event_sta_connected_t               connected;          /*!< ESP32 station connected to AP *//*!< ESP32 站连接到 AP */
+    system_event_sta_disconnected_t            disconnected;       /*!< ESP32 station disconnected to AP *//*!< ESP32 站点与 AP 断开连接 */
+    system_event_sta_scan_done_t               scan_done;          /*!< ESP32 station scan (APs) done *//*!< ESP32 站扫描（AP）完成 */
+    system_event_sta_authmode_change_t         auth_change;        /*!< the auth mode of AP ESP32 station connected to changed *//*!< 所连接的 AP ESP32 站点的认证模式已更改 */
+    system_event_sta_got_ip_t                  got_ip;             /*!< ESP32 station got IP, first time got IP or when IP is changed *//*!< ESP32 站点获取 IP、第一次获取 IP 或 IP 更改时*/
+    system_event_sta_wps_er_pin_t              sta_er_pin;         /*!< ESP32 station WPS enrollee mode PIN code received *//*!< ESP32 站 WPS 注册者模式 PIN 码收到 */
+    system_event_sta_wps_fail_reason_t         sta_er_fail_reason; /*!< ESP32 station WPS enrollee mode failed reason code received *//*!< 收到 ESP32 站 WPS 登记者模式失败原因代码 */
+    system_event_sta_wps_er_success_t          sta_er_success;     /*!< ESP32 station WPS enrollee success *//*!< ESP32站WPS注册成功*/
+    system_event_ap_staconnected_t             sta_connected;      /*!< a station connected to ESP32 soft-AP *//*!< 连接到 ESP32 soft-AP 的站点 */
+    system_event_ap_stadisconnected_t          sta_disconnected;   /*!< a station disconnected to ESP32 soft-AP *//*!< 某个站点与 ESP32 soft-AP 断开连接 */
+    system_event_ap_probe_req_rx_t             ap_probereqrecved;  /*!< ESP32 soft-AP receive probe request packet *//*!< ESP32 soft-AP 接收探测请求数据包 */
+    system_event_ftm_report_t                  ftm_report;         /*!< Report of FTM procedure *//*!< FTM程序报告*/
+    system_event_ap_staipassigned_t            ap_staipassigned;   /**< ESP32 soft-AP assign an IP to the station*//**< ESP32 soft-AP 为站点分配 IP*/
+    system_event_got_ip6_t                     got_ip6;            /*!< ESP32 station　or ap or ethernet ipv6 addr state change to preferred *//*!< ESP32 station或 ap 或 ethernet ipv6 addr 状态更改为首选 */
+## wifi断开原因状态码（disconnected->reason）
     WIFI_REASON_UNSPECIFIED                        = 1,"未指定的原因，或原因未知"
     WIFI_REASON_AUTH_EXPIRE                        = 2,"身份验证过期"
     WIFI_REASON_AUTH_LEAVE                         = 3,"身份验证离开"
@@ -58,3 +109,15 @@
     WIFI_REASON_ROAMING                            = 207,"漫游"
     WIFI_REASON_ASSOC_COMEBACK_TIME_TOO_LONG       = 208,"关联回来时间过长"
     WIFI_REASON_SA_QUERY_TIMEOUT                   = 209," SA（Security Association）查询超时"
+
+## 认证模式状态码(auth_change->old_mode)(auth_change->new_mode)
+    WIFI_AUTH_OPEN = 0,         /**< authenticate mode : open */
+    WIFI_AUTH_WEP,              /**< authenticate mode : WEP */
+    WIFI_AUTH_WPA_PSK,          /**< authenticate mode : WPA_PSK */
+    WIFI_AUTH_WPA2_PSK,         /**< authenticate mode : WPA2_PSK */
+    WIFI_AUTH_WPA_WPA2_PSK,     /**< authenticate mode : WPA_WPA2_PSK */
+    WIFI_AUTH_WPA2_ENTERPRISE,  /**< authenticate mode : WPA2_ENTERPRISE */
+    WIFI_AUTH_WPA3_PSK,         /**< authenticate mode : WPA3_PSK */
+    WIFI_AUTH_WPA2_WPA3_PSK,    /**< authenticate mode : WPA2_WPA3_PSK */
+    WIFI_AUTH_WAPI_PSK,         /**< authenticate mode : WAPI_PSK */
+    WIFI_AUTH_MAX

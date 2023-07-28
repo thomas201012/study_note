@@ -123,6 +123,30 @@
     + 在`export.variant.sh`中修改相对应项目的名称
     + 在`manifest.py`中调用项目所需模块
 
+### 以GREEDBIRD为例
+#### setup运行流程
++ buttonInit()中运行bts.Buttons(c.HAL_DEFINES.get("PINS").get('SYSTEM').get('SETUP'), btn_holded_callback = setupHoldedClb, btn_pressed_callback = setupPressClb)当按键按下后回调至setupHoldedClb中运行net.doSetup()
++ net.doSetup() 
+    + blinkMgr.setBlinkMode("SETUP_WIFI")：设置LED灯
+    + 依次等待await self.setup.start()和await self.setup.wait()运行完成
+    + 
++ setup.start()：断开已连接的网络
++ setup.wait()：
+    + await self.startBlufi()：使用nimble协议，开始运行blufi：blufi.start(0)。
+        + blufi.start(0)：开启蓝牙广播，注册蓝牙接收回调：on_rx，运行_handleSingleFrame(blePeripheral, v)
+        + _handleSingleFrame(blePeripheral, v)，分包接收数据，并将数据存储至rcvSession结构体中，并跳转至_blufiJsonProv中转入rcvSession结构体，
+        + _blufiJsonProv(p, data)：通过json.loads(data)解析json文件，之后运行onJsonReceivedCb跳转至prov.onJsonReceived中。
+        + onJsonReceived(data)：在检查数据对象类型后跳转至_parseProvisioningData(data)中。_parseProvisioningData(data)完成了对json数据的分析并根据其内容配置相关数据后返回，继续执行pktSend向APP发送"\x00"。
+    + 进入循环开始配置wifi或espNow或保存配置并退出，在退出10s后关闭Blufi和退出setup模式。
+
+    + json数据文件格式:
+        ```
+        {'account': {'token': ''},
+        'server': {'source': 'SYNCSIGN_CLOUD'}, 
+        'activate': {'mqtt': False, 'http': False}, 
+        'network': {'SyncFi': {'primaryChannel': 9, 'secondaryChannel': 13}, 
+        'tryEspNow': False, 'prefer': 'SyncFi'}}
+        ```
 ### 运行指令
 + 运行环境配置：
     + 在`mp`目录下。 

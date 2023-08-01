@@ -66,4 +66,21 @@
     + 通过bleCentral.write(msg, response=True)函数发送指令
 + 等待数据接收完毕bleMgr.waitRxDone()
 
-
+## 低功耗蓝牙的一些概念
+### 简介
++ 低功耗蓝牙（Bluetooth Low Energy，BLE）软件架构由应用层（Application/Profile）、软件开发工具包（SDK）、低功耗蓝牙协议栈（BLE Protocol Stack）组成
++ 应用层通过SDK提供的接口实现与BLE协议栈的交互。开发者可调用BLE协议栈的GAP、GATT、SM、L2CAP的API。
+### 通用访问规范（GAP）
++ 通用访问规范GAP（Generic Access Profile）定义了蓝牙设备之间如何发现以及建立安全/非安全连接。
++ GAP定义了四种设备角色：广播者（Broadcaster）、观察者（Observer）、中央设备（Central）、以及外围设备（Peripheral），前两个可以在单独存在的情况下工作，而后两个必须是在接收机和发射机同时存在的情况下工作，一个设备可以同时支持多个GAP角色：外围设备可以作为广播者，中央设备可以作为观察者。
++ GAP提供多种访问模式和设备流程，包括：设备发现，连接建立，连接终止，设备参数配置等。
++ 连接事件，指主设备和从设备之间相互发送数据包的过程。在连接事件之外，主从设备之间不发送任何数据包。
+### 通用属性规范（GATT）
++ 通用属性规范GATT（Generic Attribute Profile）用于两个连接设备之间的数据通信。在低功耗蓝牙GATT层中，数据以特征（Characteristic）的形式进行传输和存储。
++ 从GATT的角度来看，当两个设备处于连接状态时，一个设备作为GATT服务端，另一个设备作为GATT客户端。
+    + GATT客户端：设备发起命令、请求并接收响应、通知和指示。
+    + GATT服务端：设备接收命令、请求并发出响应、通知和指示。
++ 一个设备既可以充当GATT客户端，也可以充当GATT服务端。
++ GATT规定了交换profile文件数据的层级结构，一个profile中可包含一个或多个服务；一个服务可包含一个或者多个特征；一个特征至少包含两个属性，包括特征声明和特征值。
+### 安全管理（SM）
+### 逻辑链路控制和适配协议（L2CAP）

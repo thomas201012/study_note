@@ -1,0 +1,91 @@
+H1+D75C-LE测试出现的问题
++ hub esp32崩溃
++ APP向云端发送唤醒指令后,hub没有收到指令
++ D75C在连接网络失败后无法重新联网，只有在重新收到唤醒指令后才会重新联网
++ hub与D75C蓝牙连接未成功建立就断开的情况，这个问题较为常见，并且阻塞了其他D75C设备的唤醒。
+    D (282075) BLECNTL: _IRQ_PERIPHERAL_DISCONNECT handle=65535 addrtype=255 addr=b'\x00\x00\x00\x00\x00\x00'
+    E (282090) BLEMGR: BLE disconnected while connecting to 000000000000
+    E (286109) BLEMGR: Connect/send failed
+    Traceback (most recent call last):
+    File "core/blemgr/__init__.py", line 463, in connectAndSend
+    RuntimeError: ('Unable to connect to %s', 'D4D4DA22D5A8')
++ D75C连接云端获取数据失败,日志显示无可用数据
++ 当一个D75C设备掉线后,hub会一直在与这个D75C设备建立连接,导致了其他设备无法刷新。
++ 在一个D75C设备掉线后,如果是在建立连接的过程中掉线，会一直在异步任务wakeupRender中循环运行，无法释放蓝牙连接标志位，导致了其他屏幕无法获取标志位进而无法刷新
+
+
+崩溃日志：
+I (449092) NimBLE: duration=2000ms
+I (449093) NimBLE: 
+
+~D (450357) BLECNTL: _IRQ_SCAN_DONE
+I (450667) DSS: Node#: 0034945400082400(SyncSign) [b'\x00\x08$']: {'renderTaskId': 19, 'feature': ['SAVE_BIN_TEMPLATE', 'RENDER_WITH_TEXT'], 'frameCounter': 0, 'renderResult': 0, 'battery': 76, 'model': 2, 'version': 1}
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x400f4d65  PS      : 0x00060a30  A0      : 0x80085f68  A1      : 0x3fff0270  
+0x400f4d65: mp_obj_is_true at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/py/obj.c:173
+
+A2      : 0x3f9cc940  A3      : 0x0000000a  A4      : 0x00000006  A5      : 0x3f9e7f24  
+A6      : 0x0000000e  A7      : 0x00000001  A8      : 0x00000000  A9      : 0x001fb608  
+A10     : 0x3fff0670  A11     : 0x3ffb6214  A12     : 0x3f9ff910  A13     : 0x000001d1  
+A14     : 0x3f826374  A15     : 0x0000003b  SAR     : 0x0000001a  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x001fb613  LBEG    : 0x4000c2e0  LEND    : 0x4000c2f6  LCOUNT  : 0x00000000  
+
+
+Backtrace: 0x400f4d62:0x3fff0270 0x40085f65:0x3fff0290 0x400f7466:0x3fff0330 0x400fddc6:0x3fff0360 0x400fdef5:0x3fff0380 0x40086781:0x3fff03a0 0x400f7466:0x3fff0440 0x400fddc6:0x3fff0470 0x40129275:0x3fff0490 0x401292c5:0x3fff04d0 0x400fddc6:0x3fff04f0 0x400fdeca:0x3fff0510 0x40100417:0x3fff0540 0x40100480:0x3fff05c0 0x4010051b:0x3fff0660 0x401008ed:0x3fff06c0 0x40108780:0x3fff06f0 0x401380d1:0x3fff0720 0x40138152:0x3fff0740 0x401387e2:0x3fff07b0 0x401343c3:0x3fff07e0 0x4013d702:0x3fff0800 0x4011523b:0x3fff0820
+0x400f4d62: mp_obj_get_type at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/py/obj.c:60
+ (inlined by) mp_obj_is_true at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/py/obj.c:172
+
+0x40085f65: mp_execute_bytecode at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/py/vm.c:572 (discriminator 4)
+
+0x400f7466: fun_bc_call at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/py/objfun.c:278
+
+0x400fddc6: mp_call_function_n_kw at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/py/runtime.c:695
+
+0x400fdef5: mp_call_method_n_kw at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/py/runtime.c:711
+
+0x40086781: mp_execute_bytecode at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/py/vm.c:1042
+
+0x400f7466: fun_bc_call at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/py/objfun.c:278
+
+0x400fddc6: mp_call_function_n_kw at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/py/runtime.c:695
+
+0x40129275: mp_call_method_self_n_kw at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/py/objboundmeth.c:70
+
+0x401292c5: bound_meth_call at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/py/objboundmeth.c:83
+
+0x400fddc6: mp_call_function_n_kw at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/py/runtime.c:695
+
+0x400fdeca: mp_call_function_2 at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/py/runtime.c:680
+
+0x40100417: invoke_irq_handler_run at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/extmod/modbluetooth.c:1281
+
+0x40100480: invoke_irq_handler_run_protected at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/extmod/modbluetooth.c:1308
+
+0x4010051b: invoke_irq_handler at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/extmod/modbluetooth.c:1355
+
+0x401008ed: mp_bluetooth_gap_on_scan_complete at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/extmod/modbluetooth.c:1487
+
+0x40108780: gap_scan_cb at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/extmod/nimble/modbluetooth_nimble.c:1141
+
+0x401380d1: ble_gap_call_event_cb at /home/oz13/Work/esp/esp-idf-v4.4.5/components/bt/host/nimble/nimble/nimble/host/src/ble_gap.c:716
+
+0x40138152: ble_gap_disc_complete at /home/oz13/Work/esp/esp-idf-v4.4.5/components/bt/host/nimble/nimble/nimble/host/src/ble_gap.c:1027
+
+0x401387e2: ble_gap_master_timer at /home/oz13/Work/esp/esp-idf-v4.4.5/components/bt/host/nimble/nimble/nimble/host/src/ble_gap.c:2068
+ (inlined by) ble_gap_timer at /home/oz13/Work/esp/esp-idf-v4.4.5/components/bt/host/nimble/nimble/nimble/host/src/ble_gap.c:2176
+
+0x401343c3: ble_hs_timer_exp at /home/oz13/Work/esp/esp-idf-v4.4.5/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:418
+ (inlined by) ble_hs_timer_exp at /home/oz13/Work/esp/esp-idf-v4.4.5/components/bt/host/nimble/nimble/nimble/host/src/ble_hs.c:409
+
+0x4013d702: ble_npl_event_run at /home/oz13/Work/esp/esp-idf-v4.4.5/components/bt/host/nimble/nimble/porting/npl/freertos/include/nimble/nimble_npl_os.h:125
+ (inlined by) nimble_port_run at /home/oz13/Work/esp/esp-idf-v4.4.5/components/bt/host/nimble/nimble/porting/nimble/src/nimble_port.c:78
+
+0x4011523b: ble_host_task at /home/oz13/Work/project_code/meetingroomdisplay/coordinator/ss_mp/ports/esp32/mpnimbleport.c:43
+
+
+
+
+
+ELF file SHA256: b8b4ac24404913b9

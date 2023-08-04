@@ -1,0 +1,84 @@
+D75C连接云端获取数据失败日志：
+␛[0;32mI (990) RUN: SN:MCD4D4DA7932A8 KEY:rq51kx
+␛[0m␛[0;32mI (999) RUN: wdt running...(90s)
+␛[0m␛[0;33mW (1075) RUN: esp32 power on
+␛[0m␛[0;32mI (1078) RNDMGR: 800x480
+␛[0m␛[1;35mC (1900) RUN: Ver 1.73.0V
+␛[0m␛[0;32mI (2480) PAN_TR: pan transmit init
+␛[0m␛[0;32mI (2494) PAN_NWK: pan network init
+␛[0m␛[0;32mI (2736) OPSW: SOPSWorker start
+␛[0m␛[0;33mW (2747) DEVSVR: SERVER_TYPE CLOUD
+␛[0m␛[0;33mW (2839) HTTP: use CLOUD API: https://api.sync-sign.com/v2
+␛[0m␛[0;32mI (2842) RUN: init completed, infinite async loop starts
+␛[0m␛[0;32mI (2877) PAN_NWK: UART RX task running
+␛[0m␛[0;34mD (2893) PAN_TR: feed watchdog by SYNC 60
+␛[0m␛[0;34mD (2897) PAN_TR: say hello to ZNP
+␛[0m␛[0;32mI (2900) EXTIF: EXT-UART RX task running
+␛[0m_.␛[0;34mD (2996) PAN_TR: <<< set_watchdog sent confirmed
+␛[0m␛[0;34mD (3012) PAN_TR: syncCmd setWatchDogPeriod done
+␛[0m.␛[0;32mI (3051) PAN_TR: {'linkIsUp': 0, 'lastLqi': 0, 'currentPollrate': 10000, 'batteryLevel': 159, 'SN': 0, 'time': 1691043519, 'panChannel': 0, 'panType': 4, 'version': 43707, 'type': 22, 'btnStatus': 0, 'txPower': 0, 'panId': 48879}
+␛[0m␛[0;34mD (3061) PAN_TR: batteryLevel = 51
+␛[0m␛[0;34mD (3064) PAN_TR: <<< hello response
+␛[0m␛[0;34mD (3079) PAN_TR: syncCmd sendHello done
+␛[0m␛[0;34mD (3836) PAN_TR: why brought me up?
+␛[0m.␛[0;34mD (3860) PAN_TR: <<< data received
+␛[0m␛[0;34mD (3862) PAN_TR: packet op=20 len=2
+␛[0m␛[0;32mI (3865) PAN_TR: LOCAL (CMD=0 SEQ=0)
+␛[0m␛[0;33mW (3868) RUN: trigger button pressed #0 cnt=1
+␛[0m␛[0;32mI (4085) RUN: trigger mode
+␛[0m␛[0;34mD (4117) PAN_TR: requestData with result
+␛[0m␛[0;32mI (4119) RUN: PAN started
+␛[0m_␛[0;32mI (4317) NWKPRE: start wifi...
+␛[0m␛[0;32mI (4324) NWKS: do wifi None
+␛[0m␛[0;32mI (4338) NWKS: essid = OZ_Office, password = driveChange
+␛[0m␛[0;32mI (4471) NWK_WIFI: connecting [OZ_Office] [driveChange]...
+␛[0m__␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀prepare paths
+␛[0;32mI (990) RUN: SN:MCD4D4DA7932A8 KEY:rq51kx
+␛[0m␛[0;32mI (999) RUN: wdt running...(90s)
+␛[0m␛[0;33mW (1075) RUN: esp32 power on
+␛[0m␛[0;32mI (1078) RNDMGR: 800x480
+␛[0m␛[1;35mC (1900) RUN: Ver 1.73.0V
+␛[0m␛[0;32mI (2480) PAN_TR: pan transmit init
+␛[0m␛[0;32mI (2494) PAN_NWK: pan network init
+␛[0m␛[0;32mI (2736) OPSW: SOPSWorker start
+␛[0m␛[0;33mW (2747) DEVSVR: SERVER_TYPE CLOUD
+␛[0m␛[0;33mW (2839) HTTP: use CLOUD API: https://api.sync-sign.com/v2
+␛[0m␛[0;32mI (2842) RUN: init completed, infinite async loop starts
+␛[0m␛[0;32mI (2877) PAN_NWK: UART RX task running
+␛[0m␛[0;34mD (2893) PAN_TR: feed watchdog by SYNC 60
+␛[0m␛[0;34mD (2897) PAN_TR: say hello to ZNP
+␛[0m␛[0;32mI (2900) EXTIF: EXT-UART RX task running
+␛[0m_.␛[0;34mD (2996) PAN_TR: <<< set_watchdog sent confirmed
+␛[0m␛[0;34mD (3012) PAN_TR: syncCmd setWatchDogPeriod done
+␛[0m.␛[0;32mI (3050) PAN_TR: {'linkIsUp': 0, 'lastLqi': 0, 'currentPollrate': 10000, 'batteryLevel': 159, 'SN': 0, 'time': 1691043526, 'panChannel': 0, 'panType': 4, 'version': 43707, 'type': 22, 'btnStatus': 0, 'txPower': 0, 'panId': 48879}
+␛[0m␛[0;34mD (3060) PAN_TR: batteryLevel = 51
+␛[0m␛[0;34mD (3063) PAN_TR: <<< hello response
+␛[0m␛[0;34mD (3078) PAN_TR: syncCmd sendHello done
+␛[0m␛[0;34mD (3836) PAN_TR: why brought me up?
+␛[0m.␛[0;34mD (3859) PAN_TR: no data available
+␛[0m␛[0;34mD (3906) PAN_TR: requestData no result
+␛[0m_.␛[0;34mD (3977) PAN_TR: no data available
+␛[0m␛[0;34mD (4023) PAN_TR: requestData no result
+␛[0m.␛[0;34mD (4094) PAN_TR: no data available
+␛[0m␛[0;34mD (4140) PAN_TR: requestData no result
+␛[0m.␛[0;34mD (4211) PAN_TR: no data available
+␛[0m␛[0;34mD (4257) PAN_TR: requestData no result
+␛[0m.␛[0;34mD (4328) PAN_TR: no data available
+␛[0m␛[0;34mD (4374) PAN_TR: requestData no result
+␛[0m.␛[0;34mD (4446) PAN_TR: no data available
+␛[0m␛[0;34mD (4492) PAN_TR: requestData no result
+␛[0m.␛[0;34mD (4563) PAN_TR: no data available
+␛[0m␛[0;34mD (4609) PAN_TR: requestData no result
+␛[0m.␛[0;34mD (4680) PAN_TR: no data available
+␛[0m␛[0;34mD (4726) PAN_TR: requestData no result
+␛[0m.␛[0;34mD (4797) PAN_TR: no data available
+␛[0m␛[0;34mD (4843) PAN_TR: requestData no result
+␛[0m.␛[0;34mD (4914) PAN_TR: no data available
+␛[0m_␛[0;34mD (4960) PAN_TR: requestData no result
+␛[0m__␛[0;34mD (7897) PAN_TR: feed watchdog by SYNC 59
+␛[0m_0 {'beginMinute': 0, 'weekdays': [0, 1, 2, 3, 4, 5, 6], 'endMinute': 1440}
+␛[0;33mW (8174) BOOTMGR: DPRES: power down in 50ms, no auto wake up
+␛[0m.␛[0;34mD (8210) PAN_TR: <<< sync response
+␛[0m␛[0;34mD (8225) PAN_TR: syncCmd sendSync done
+␛[0m.␛[0;34mD (8450) PAN_TR: <<< bye response
+␛[0m␛[0;34mD (8465) PAN_TR: syncCmd sendByebye done

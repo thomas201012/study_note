@@ -123,7 +123,18 @@
     + 在`export.variant.sh`中修改相对应项目的名称
     + 在`manifest.py`中调用项目所需模块
 
-### 以GREEDBIRD为例
+### 以h1为例
+#### http发送流程
++ 在完成ble广播的扫描后进入回调函数analysisDeepAll中完成本次扫描的数据采集并跳转至sensorble.dataScanning(msg)中。
++ dataScanning函数主要完成的是每一个设备的故障扫描和数据解析，之后依次判断是否含有历史数据、实时数据、状态数据，并依次进入对应的函数完成数据的上传。
++ 在实时数据的上传中，调用了uploadDataTask函数，该函数完成了实时数据的获取、对网络状态的判断并完成数据的上报，当包含有历史数据或者实时数据上传失败时，会调用uploadHistoryData函数循环上报数据直至数据成功上报。
++ 在数据的上报中，起到主要作用的函数是doUploadData(httpDataUpload,bodyInfo,retry_time=HTTP_RETRY_TIMES)，该函数规定了每次上报的次数并回调httpDataUpload函数。httpDataUpload函数中主要完成对服务器地址和数据的整理并传入do_request函数中。
++ do_request函数判断了本次和服务器通信的目的，并调用对应的函数完成数据上报。
++ 每条数据的格式如："temperature,nodeId=00124B002345D263 tm=9999 1627465818000\n"
++ 使用http主要是向InfluxDB中上传数据，方便后续的调用
++ InfluxDB是一个开源的时间序列数据库，专门用于处理大规模的时间序列数据。它被设计用于高性能、高可用性和可扩展性，适用于存储和查询时间相关的数据，如监控数据、传感器数据、日志数据等。
+
+### 以GREEDBIRD_mini_hub为例
 #### setup运行流程
 + buttonInit()中运行bts.Buttons(c.HAL_DEFINES.get("PINS").get('SYSTEM').get('SETUP'), btn_holded_callback = setupHoldedClb, btn_pressed_callback = setupPressClb)当按键按下后回调至setupHoldedClb中运行net.doSetup()
 + net.doSetup() 

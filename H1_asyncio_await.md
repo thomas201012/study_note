@@ -20,3 +20,12 @@
 + `online_mgr.py`--139(判断): 报告周围节点前确保已经获取到access key；
 --195(循环): 等待获取到access key后输出距上次报告的时间。在`await self.startBleApp()`中调用。
 + `http_upload.py`--93(循环): 等待获取到access key后查询传感器状态，在`await self.startBleApp()`中调用。
+
+
+
++ 熟悉SyncSign的屏幕唤醒和刷新切换程序流程
++ h1+D75C在最新ss_mp环境下的连接bug测试及原因查找
++ 学习ble的基本概念
++ H1异步任务整理
++ D1编译报错问题排查
++ 与greenbird用户沟通解决mini_hub的setup流程中ble发送的demo

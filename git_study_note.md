@@ -22,6 +22,13 @@
 + `git diff *`最后在确定一次修改的文件格式和提交的格式是否正确
 + `git push`将本地仓库更新至云端
 
+
+
+    + `git branch`:查询IDF当前分支
+    + `git checkout XXX`:切换分支，XXX为分支名
+    + `git si`:初始化主仓库中的子模块
+    + `git ss`:同步子模块的远程仓库和本地仓库之间的状态
+    + `git su`:更新主仓库中的子模块
 ## git编写规则
 ### 1、当添加功能时：git commit -m 'feat(login): support create a user'
 ### 2、当修改bug时：git commit -m 'fix(login): fix username is null when create a user'

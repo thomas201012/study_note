@@ -28,4 +28,4 @@
 + 学习ble的基本概念
 + H1异步任务整理
 + D1编译报错问题排查
-+ 与greenbird用户沟通解决mini_hub的setup流程中ble发送的demo
++ 学习使用http上报数据到influxdb数据库

@@ -82,3 +82,220 @@ D75C连接云端获取数据失败日志：
 ␛[0m␛[0;34mD (8225) PAN_TR: syncCmd sendSync done
 ␛[0m.␛[0;34mD (8450) PAN_TR: <<< bye response
 ␛[0m␛[0;34mD (8465) PAN_TR: syncCmd sendByebye done
+
+
+
+
+I (119248) REQS: connecting to http://oo.oazon.com:2053/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
+D (119312) REQS: sending... (oo.oazon.com)
+D (119367) REQS: reading... (oo.oazon.com)
+D (119639) REQS: header received (oo.oazon.com)
+D (119654) REQS: receiving: 255 bytes
+W (119686) HTTP: POST status code: 400
+E (119701) SR: httpDataUpload fail
+Traceback (most recent call last):
+  File "sensor/http_request.py", line 66, in httpDataUpload
+ValueError: syntax error in JSON
+W (119709) SENSDATA: uploadData backOff: 16s
+
+
+I (143771) REQS: connecting to https://oo.oazon.com:2053/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
+W (143803) NET: wifi rssi = -43
+_D (143875) SENSDATA: upload button event: 0x124b001dd9be28
+D (143891) BLEMGR: waiting for requests
+~D (143990) HTTP: upload_mqtt_operation url: https://api.sync-sign.com/beta/user/owner/operation
+D (144014) HTTP: upload_mqtt_operation json: {"action": "POST", "uri": "node/events", "data": {"nodeId": "00124b001dd9be28", "events": [{"button": {"id": "ST4"}, "type": "PRESS_BUTTON"}]}, "requestId": 1691717593, "source": "MC083A8D2545DC", "timeStamp": 1691717593}
+D (144081) REQS: waiting for requests idle 1
+D (145733) REQS: sending... (oo.oazon.com)
+D (145781) REQS: reading... (oo.oazon.com)
+D (145972) REQS: header received (oo.oazon.com)
+D (145987) HTTP: POST status code: 204
+I (146018) SR: httpDataUpload success
+
+l =  b'HTTP/1.1 400 Bad Request\r\n'
+data =  temperature,nodeId=00124B001DD9BE28 tm=2850 1691721554
+
+l =  b'HTTP/1.1 204 No Content\r\n'
+data =  temperature,nodeId=00124B001DD9BE28 tm=2850 1691721757
+
+
+
+
+
+
+D (8253) CFGPRJ: Project ConfigMgr init
+D (8505) PLMGR: plugin calendar not available: no module named 'calendar'
+D (8525) PLMGR: plugin sops not available
+C (8588) MANAGER: Start Hub H1B v1.9.4 VSN1-DEV REV3
+I (8596) MANAGER: wdt running...(90s)
+D (8609) MANAGER: manager started
+D (8617) BLINKM: blinkmgr started
+I (8635) NET: network init
+D (8642) NET: networks start
+D (8650) DEV_HUB: Task UPLOAD_PAN_NODE wait (1) for IoT connection
+I (8664) DATA_TASK: start load_local_data_task
+I (8686) DATA_TASK: end load_local_data_task
+D (8701) DEV_MON: add task monitor [ledModeRefresh]
+D (8708) NET: connect task
+D (8832) NET: {'tryIndex': 0, 'enabled': False, 'phyType': 2}
+D (8839) NET: got wifi config
+I (12911) NET: waiting for ethernet cable...
+D (12925) DEV_MON: add task monitor [feedDogTask]
+~D (12934) MANAGER: delayed start
+W (12960) MANAGER: diag not enabled
+D (12968) DEV_HUB: hub device started
+I (12992) DEV_HUB: SYS: {'string': {'sys': '1.9.4', 'app': '0.1.0', 'hw': '0.4.1', 'type': 'H1B-DEV'}, 'numeric': {'sys': 67844, 'app': 256, 'hw': 1025, 'type': 3}}
+I (13024) DEV_HUB: SN: MC083A8D2545DC KEY: 03r3lu
+D (13038) DEV_OTA: device ota started
+D (13054) CACT: check action init
+D (13064) BLINKM: layer DEFAULT
+D (13071) BLINKM: set blink duration=0
+_D (13102) DEV_MON: add task monitor [taskRefreshDeviceAccessKey]
+D (13109) DEV_HUB: Task REQDEV wait (2) for IoT connection
+I (13918) NET: waiting for ethernet cable...
+I (14062) VSN: VSensor start
+I (14069) PARSE: SensorParser start
+I (14076) SENSDATA: DataMgr start
+I (14083) EMGR: EventMgr start
+D (14091) PAN_NET: addListNodeSuccessCb SNSREVT
+I (14105) EST1: EventST1 start
+I (14112) RULE: MyRules start
+I (14314) DST1: DataST1 start
+I (14321) ESM1: EventSM1 start
+I (14329) PAN_PROTO: pan protocol init
+D (14336) PAN_QUE: pan queue init
+D (14360) DB_NODETPL: no node tpl found (yet)
+I (14367) SMGR: SensorMgr start
+I (14375) DSM1: DataSM1 start
+I (14383) DEVSVR: SERVER_TYPE CLOUD
+D (14396) DEVSVR: connect CLOUD
+I (14409) HTTP: use CLOUD API: https://api.sync-sign.com/beta
+D (14423) DEVSVR: mocreo
+I (14430) MANAGER: starting PAN
+I (14454) PAN_SR: pan transmit init
+D (14472) DEV_MON: add task monitor [checkActiveStatusTask]
+D (14480) DEV_HUB: Task BTN wait (3) for IoT connection
+D (14493) DEV_HUB: Task SNR_DATA wait (4) for IoT connection
+D (14507) SENSDATA: wait sync time
+D (14515) DEV_HUB: Task SNR_INFO wait (5) for IoT connection
+I (14925) NET: waiting for ethernet cable...
+I (15932) NET: waiting for ethernet cable...
+I (16939) NET: waiting for ethernet cable...
+~I (17946) NET: waiting for ethernet cable...
+W (18960) NET: eth: no ethernet available
+D (18974) NET: trying wifi
+D (18981) NET: connect wifi now
+I (19111) NET: connecting to network [OZ_Office]
+D (19125) NET: #0 connecting WiFi
+D (19639) NET: #1 connecting WiFi
+D (20152) NET: #2 connecting WiFi
+D (20666) NET: #3 connecting WiFi
+D (21179) NET: #4 connecting WiFi
+D (21693) NET: #5 connecting WiFi
+I (21731) NET: wifi ok! config: ('192.168.66.120', '255.255.255.0', '192.168.66.1', '192.168.66.1')
+D (21772) NET: {'tryIndex': 0, 'enabled': False, 'phyType': 2}
+D (21877) NET: mDNS started: mocreo-45dc
+D (21914) NET: ip changed [unknown] -> [192.168.66.120]
+D (22045) DEV_MON: add task monitor [checkConnectLoop]
+D (22052) NTP: sync time from: pool.ntp.org
+D (22185) NTP: get time from NTP: 1692168526
+D (22198) NTP: sys time now: 1692168526
+W (22211) NET: net ok
+W (22218) NET: wifi rssi = -43
+D (22463) BLINKM: layer DEFAULT
+D (22471) BLINKM: set blink duration=0
+I (22485) CACT: already get time, exit sync time task
+D (22493) CACT: first check action in 1s (FAST)
+D (22512) DEV_MON: add task monitor [taskCheckAction]
+~_D (23116) HTTP: get_device_access_key url: https://api.sync-sign.com/beta/device/token?seq=0
+I (23207) REQS: connecting to https://api.sync-sign.com:443/beta/device/token?seq=0
+D (24117) CACT: sending PING request
+D (24144) HTTP: HEARTBEAT: https://sync.sync-sign.com/ping?seq=0&app=256&f=0&hw=1025&idle=10&sys=67844&type=3&tz=0&up=24&bat=-10&id=083A8D2545DC
+D (24200) REQS: waiting for requests idle 1
+I (28417) DB.NODES: 3 nodeList loaded
+D (28430) DB.NODES: clear online states
+D (28689) DB.NODES: nodeList saved
+E (28698) DB.NODES: nodeList saved = {5149013663622408: {'logoSha256': '', 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 1692168194, 'isValid': True, 'txfc': 97, 'lastSeenTime': 1692168194, 'battery': 3987, 'nwkAddr': 23995, 'type': 0, 'isOnline': True, 'hasConfig': False, 'Probes': 1, 'btnLan': 'en', 'changed': False, 'batteryLevel': 95}, 5149013663205660: {'logoSha256': '', 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 1692166929, 'isValid': True, 'txfc': 289, 'lastSeenTime': 1692166929, 'battery': 4003, 'nwkAddr': 7587, 'type': 0, 'isOnline': True, 'hasConfig': False, 'Probes': 1, 'btnLan': 'en', 'changed': False, 'batteryLevel': 100}, 5149013453684264: {'isOnline': False, 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 53, 'isValid': True, 'txfc': 129, 'lastSeenTime': 1692168035, 'battery': 3939, 'Probes': 1, 'batteryLevel': 95, 'logoSha256': '', 'hasConfig': False, 'nwkAddr': 53013, 'btnLan': 'en', 'changed': True, 'type': 0}}
+D (28829) SENSDATA: time ok
+~D (28844) REQS: sending... (api.sync-sign.com)
+D (28874) REQS: reading... (api.sync-sign.com)
+I (29029) PAN_NET: set reset pin to high
+W (30726) PAN_NET: ZNP Reset. Reason: External V2.9.5 P0
+Network Started
+I (32672) PAN_NET: newState: 9 ZB_COORD
+I (32685) PAN_NET: coordinator started
+Type: COORDINATOR
+Type: END DEVICE 0x5DBB
+Type: END DEVICE 0x1DA3
+Type: END DEVICE 0xCF15
+W (32700) NET: wifi rssi = -42
+I (32739) PAN_NET: PAN Ready (Zigbee PRO 2015 R21) - ID: 0x1768 CH26
+I (32753) PAN_NET: PAN started
+D (32773) MRD_WK: mrd worker init
+D (32811) DEV_MON: add task monitor [taskCheckNodesOffline]
+D (32876) PAN_NET: znp ping response 0x779
+D (32890) DEV_HUB: Task CHECK_NODE_ASSOC wait (6) for IoT connection
+D (32976) REQS: header received (api.sync-sign.com)
+D (32989) REQS: receiving: 474 bytes
+D (33029) HTTP: POST status code: 200
+I (33172) DEV_HUB: device access token: [d8441f1c0802ee06a8774a5ee58eb4c6d914d490] expires at: [1699944533s]
+D (33185) HTTP: set_device_access_key: d8441f1c0802ee06a8774a5ee58eb4c6d914d490
+I (33199) DEV_HUB: start 6 tasks awaiting login
+I (33215) DEV_HUB: refresh device access key in 65535s
+_D (33232) DEV_HUB: Task CHECK_NODE_ASSOC continue
+D (33246) DEV_HUB: Task SNR_INFO continue
+I (33259) SMGR: {5149013663622408: {'logoSha256': '', 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 1692168194, 'isValid': True, 'txfc': 97, 'lastSeenTime': 1692168194, 'battery': 3987, 'nwkAddr': 23995, 'type': 0, 'isOnline': True, 'hasConfig': False, 'Probes': 1, 'btnLan': 'en', 'changed': False, 'batteryLevel': 95}, 5149013663205660: {'logoSha256': '', 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 1692166929, 'isValid': True, 'txfc': 289, 'lastSeenTime': 1692166929, 'battery': 4003, 'nwkAddr': 7587, 'type': 0, 'isOnline': True, 'hasConfig': False, 'Probes': 1, 'btnLan': 'en', 'changed': False, 'batteryLevel': 100}, 5149013453684264: {'isOnline': False, 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 53, 'isValid': True, 'txfc': 129, 'lastSeenTime': 1692168035, 'battery': 3939, 'Probes': 1, 'batteryLevel': 95, 'logoSha256': '', 'hasConfig': False, 'nwkAddr': 53013, 'btnLan': 'en', 'changed': True, 'type': 0}}
+D (33283) DEV_MON: add task monitor [sensorInfoUpload]
+I (33292) SMGR: {5149013663622408: {'logoSha256': '', 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 1692168194, 'isValid': True, 'txfc': 97, 'lastSeenTime': 1692168194, 'battery': 3987, 'nwkAddr': 23995, 'type': 0, 'isOnline': True, 'hasConfig': False, 'Probes': 1, 'btnLan': 'en', 'changed': False, 'batteryLevel': 95}, 5149013663205660: {'logoSha256': '', 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 1692166929, 'isValid': True, 'txfc': 289, 'lastSeenTime': 1692166929, 'battery': 4003, 'nwkAddr': 7587, 'type': 0, 'isOnline': True, 'hasConfig': False, 'Probes': 1, 'btnLan': 'en', 'changed': False, 'batteryLevel': 100}, 5149013453684264: {'isOnline': False, 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 53, 'isValid': True, 'txfc': 129, 'lastSeenTime': 1692168035, 'battery': 3939, 'Probes': 1, 'batteryLevel': 95, 'logoSha256': '', 'hasConfig': False, 'nwkAddr': 53013, 'btnLan': 'en', 'changed': True, 'type': 0}}
+I (33317) SMGR: Probes: 1
+I (33337) SMGR: Probes: 1
+I (33356) SMGR: Probes: 1
+D (33379) HTTP: upload_nodes_info url: https://api.sync-sign.com/beta/nodes
+D (33399) HTTP: upload_nodes_info json: {"nodes": [{"batteryLevel": 95, "type": "SENSOR", "nodeId": "00124b002a5d2508", "Probes": 1, "signalLevel": 100, "model": "ST4", "onlined": true}, {"batteryLevel": 100, "type": "SENSOR", "nodeId": "00124b002a56c91c", "Probes": 1, "signalLevel": 100, "model": "ST4", "onlined": true}, {"batteryLevel": 95, "type": "SENSOR", "nodeId": "00124b001dd9be28", "Probes": 1, "signalLevel": 100, "model": "ST4", "onlined": false}]}
+I (33473) REQS: connecting to https://api.sync-sign.com:443/beta/nodes
+D (33488) DEV_HUB: Task UPLOAD_PAN_NODE continue
+D (33502) DEV_HUB: Task REQDEV continue
+D (33522) HTTP: request_device_info url: https://api.sync-sign.com/beta/device
+D (33583) REQS: waiting for requests idle 1
+D (33597) DEV_HUB: Task BTN continue
+D (33613) DEV_HUB: Task SNR_DATA continue
+D (33626) SENSDATA: sensor data upload task start
+D (33633) SENSDATA: wait sync time
+D (33640) SENSDATA: time ok
+I (33647) SENSDATA: wait get associatedList
+~D (37370) REQS: waiting for requests idle 1
+D (37385) REQS: sending... (api.sync-sign.com)
+D (37430) REQS: reading... (api.sync-sign.com)
+D (37782) MANAGER: final start
+D (37790) BUZZER: set buzzer mode 0 counter 2 interval 200
+I (37803) BUZZER: buzzer init
+I (38141) BLEMGR: bleCentral started
+I (38148) RPC: RemoteCall init
+I (38245) DEVSVR: SERVER_TYPE CLOUD
+D (38258) RPCW: using MQTT_TYPE_AWS
+I (38482) RPCW: MQTT certificates loaded
+I (38489) RPCW: RemoteCallWorker init
+D (38496) RPCW: rpc worker started
+D (38503) RPC: rpc started
+D (38520) USER: hub user started
+D (38716) HTTP_RD: http render started
+D (38734) HTTP_RD: http render for relay started
+D (39068) WEBHLPER: webserver config loaded
+I (39840) WEBSVR: Web portal listening on 80
+D (40199) RPCW: MQTT activated! 0
+I (40212) RPCW: MQTT Host=a1zjlbcv9qbzin-ats.iot.us-west-2.amazonaws.com
+D (40226) RPCW: MQTT connecting... 0
+D (40274) MQTTS: MQTT: 44.236.120.233:8883
+I (40580) MQTTS: MQTT connected
+D (42532) MQTTS: mqtt SSL socket opened
+I (43061) RPCW: MQTT live!
+D (43070) HTTP_RD: Task render running
+D (43083) DEV_MON: add task monitor [taskHttpRender]
+D (43098) DEV_MON: add task monitor [loopScan]
+D (43105) BLEMGR: waiting for requests
+~W (43150) NET: wifi rssi = -46
+_D (43666) REQS: header received (api.sync-sign.com)
+D (43681) REQS: receiving: 75 bytes
+D (43715) HTTP: PUT status code: 200
+I (43752) SR: sensor info uploaded
+I (43782) REQS: connecting to https://api.sync-sign.com:443/beta/device

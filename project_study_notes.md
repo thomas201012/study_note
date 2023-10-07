@@ -31,7 +31,7 @@
         + `ui/pages/home/PageDefault` 中`showRightButtons`部分代码
         + 主界面中将按钮与对应的“点击”事件绑定。
         + 根据不同的按钮，其对应的点击事件所处理的内容不一，根据点击事件选择`screenClass`对应的。
-        +`ui/__init__.py`中`activate`代码
+        + `ui/__init__.py`中`activate`代码
         + 当点击Settings按钮时，会”激活“settings.ScreenSettings。根据上述的代码，会再关闭原来的窗口后再激活打开对应的窗口，即会调用settings.ScreenSettings.activate()函数。
     + nwk.init()--初始化网络配置
     + ble.init()--初始化蓝牙配置
@@ -40,6 +40,10 @@
     + alert.init()--初始化警报算法
     + iot.init()--初始化登录服务器验证
 + asyncio在项目中的作用：将需要长期运行的程序（如：时间读取、数据传输、UI更改）通过asyncio.create_task()添加至长期事件中，并在所有需要运行的程序添加完毕后，通过asyncio.run()来激活长期事件，以便后续的程序运行。
++ 从MP到python层面的运行流程。
+    + 1.通过mp/ports/esp32/main.c中的mp_task()来调用python层面的_boot.py
+    + 2._boot.py 位于mp/ports/esp32/modules/中，并运行core.run()来跳转至主程序中
+    + 3.在core.run()位于code/source/core/__init__.py 中，其中导入的bootstrap中的prepareConfigs()函数通过调用了cfg_global，间接的在主程序运行之前完成了constants.py文件的导入。
 ---
 ## 创建一个项目变体
 ### 以template_basic项目模板为例
@@ -216,8 +220,16 @@
 ### 正式版本固件从发布方式分为云端固件和烧录固件两个版本，从使用方式分为出厂固件和测试固件。
 ### 发布步骤--以gateway_lcd_ble固件为例
 + 在完成项目固件的测试编译及下载确定无误后，进入到code/mp/ports/esp32/release中，执行`./auto_make.sh`指令完成固件的打包。
-+ 打包生成的文件位于upload中，并以项目或版本号的名字命名。打包生成的文件为压缩包通过`tar xzf filename.tar.gz`指令完成解压。
+    + 在H1中则是code/mp/ports/esp32/auto_release中，生成的文件为z中
++ 打包生成的文件位于upload中，并以项目或版本号的名字命名。打包生成的文件为压缩包通过`tar -zxvf  filename.tar.gz`指令完成解压。
 + 解压后的文件一般有8个，两个为一组，分别是云端出厂固件和测试固件、烧录出厂固件和测试固件。每个固件包含了固件本体.bin和数据校对文件。
 + 一般完成固件的打包后需要进行烧录测试，使用`esptool.py --port /dev/ttyUSB0 --b 921600 write_flash 0x2000 filename.bin`完成固件的烧录。
 + 之后需要将云端固件在服务器中发布。可以通过`python -m http.server 8000`指令分享当前文件夹下的文件，可以通过IP+端口访问。
 
++ 可以通过一键编译完成对固件压缩包的解压和上传git,进入~/Work/project_code/meetingroomdisplay/release/syncsign/hub/firmware_esp32中根据对应的项目进行编译`./copy.sh 版本号(1.7.9)`
+
+
+1.戳一次sensor
+2.在app上等一会儿再勾选对应的sensor 
+3.如果hub此时扫不到sensor，就不会触发relay_device获取key
+3.最后app上会显示sensor离线。

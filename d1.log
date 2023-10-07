@@ -1,0 +1,453 @@
+D (17134) NETW: #15 connecting WiFi
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x4037da1c  PS      : 0x00060031  A0      : 0x403775b1  A1      : 0x3fca10c0  
+0x4037da1c: spi_post_trans at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:653
+ (inlined by) spi_intr at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:690
+
+0x403775b1: _xt_lowint1 at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_vectors.S:1226
+
+A2      : 0x3fcf3c3c  A3      : 0x3fcf3b08  A4      : 0x00060023  A5      : 0x00000000  
+A6      : 0x3fca110c  A7      : 0x00000000  A8      : 0x8037da14  A9      : 0x3fca1090  
+A10     : 0x3fcf3c5c  A11     : 0x00000001  A12     : 0x00060021  A13     : 0x3fcf4250  
+A14     : 0x00000000  A15     : 0x00000003  SAR     : 0x0000001d  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000038  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+
+Backtrace: 0x4037da19:0x3fca10c0 0x403775ae:0x3fca1100 0x400559dd:0x3fcf4290 |<-CORRUPTED
+0x4037da19: spi_post_trans at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:652
+ (inlined by) spi_intr at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:690
+
+0x403775ae: _xt_lowint1 at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_vectors.S:1226
+
+0x400559dd: _xtos_set_intlevel in ROM
+
+
+
+
+
+ELF file SHA256: cb5bbaf605bffd8d
+
+Rebooting...
+
+
+
+_~Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x4037da1c  PS      : 0x00060031  A0      : 0x403775b1  A1      : 0x3fca10c0  
+0x4037da1c: spi_post_trans at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:653
+ (inlined by) spi_intr at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:690
+
+0x403775b1: _xt_lowint1 at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_vectors.S:1226
+
+A2      : 0x3fcf3c3c  A3      : 0x3fcf3b08  A4      : 0x00060023  A5      : 0x00000000  
+A6      : 0x3fca110c  A7      : 0x00000000  A8      : 0x8037da14  A9      : 0x3fca1090  
+A10     : 0x3fcf3c5c  A11     : 0x00000001  A12     : 0x00060021  A13     : 0x3fcf4250  
+A14     : 0x00000000  A15     : 0x00000003  SAR     : 0x0000001d  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000038  LBEG    : 0x00000000  LEND    : 0x00000000  LCOUNT  : 0x00000000  
+
+
+Backtrace: 0x4037da19:0x3fca10c0 0x403775ae:0x3fca1100 0x403828a7:0x3fcf4280 0x4212e28e:0x3fcf42a0 0x420b2a77:0x3fcf42c0 0x40386fdd:0x3fcf42e0
+0x4037da19: spi_post_trans at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:652
+ (inlined by) spi_intr at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:690
+
+0x403775ae: _xt_lowint1 at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_vectors.S:1226
+
+0x403828a7: xt_utils_wait_for_intr at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/esp_hw_support/cpu.c:111
+
+0x4212e28e: esp_pm_impl_waiti at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/esp_pm/pm_impl.c:817
+
+0x420b2a77: esp_vApplicationIdleHook at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/esp_system/freertos_hooks.c:57
+
+0x40386fdd: prvIdleTask at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/freertos/FreeRTOS-Kernel/tasks.c:4280
+
+
+
+
+
+ELF file SHA256: cb5bbaf605bffd8d
+
+Rebooting...
+
+
+
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x4037da1c  PS      : 0x00060031  A0      : 0x403775b1  A1      : 0x3fca10c0  
+0x4037da1c: spi_post_trans at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:653
+ (inlined by) spi_intr at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:690
+
+0x403775b1: _xt_lowint1 at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_vectors.S:1226
+
+A2      : 0x3fcf3c3c  A3      : 0x3fcf3b08  A4      : 0x00060023  A5      : 0x00000000  
+A6      : 0x3fca110c  A7      : 0x00000001  A8      : 0x8037da14  A9      : 0x3fca1090  
+A10     : 0x3fcf3c5c  A11     : 0x00000001  A12     : 0x00060021  A13     : 0x00000000  
+A14     : 0x00000000  A15     : 0x00000001  SAR     : 0x0000001e  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000038  LBEG    : 0x40056f5c  LEND    : 0x40056f72  LCOUNT  : 0xffffffff  
+0x40056f5c: memcpy in ROM
+
+0x40056f72: memcpy in ROM
+
+
+
+Backtrace: 0x4037da19:0x3fca10c0 0x403775ae:0x3fca1100 0x420354e1:0x3fcb4dc0 0x420354b6:0x3fcb4e00 0x420351a5:0x3fcb4e60 0x42034ddf:0x3fcb4e90 0x4207d349:0x3fcb4ef0 0x4207d005:0x3fcb4f30 0x42003a1d:0x3fcb4f70 0x4201f121:0x3fcb4f90 0x42003b91:0x3fcb4fd0 0x420c6e55:0x3fcb5010 0x420c6f19:0x3fcb5030 0x40379699:0x3fcb5050 0x420c056c:0x3fcb50f0 0x420c064d:0x3fcb5110 0x420be5d6:0x3fcb5140 0x420c6e55:0x3fcb5160 0x420c6f19:0x3fcb5180 0x40379699:0x3fcb51a0 0x420c019b:0x3fcb5240 0x420c6e55:0x3fcb5270 0x40379602:0x3fcb5290 0x420c019b:0x3fcb5330 0x420c6e55:0x3fcb5390 0x420c6f19:0x3fcb53b0 0x40379699:0x3fcb53d0 0x420c019b:0x3fcb5470 0x420c6e55:0x3fcb54e0 0x40379602:0x3fcb5500 0x420c019b:0x3fcb55a0 0x420c6e55:0x3fcb55f0 0x420c6f19:0x3fcb5610 0x40379699:0x3fcb5630 0x420c019b:0x3fcb56d0 0x420c6e55:0x3fcb5720 0x420c6e6a:0x3fcb5740 0x420f463b:0x3fcb5760 0x420f4962:0x3fcb57f0 0x420da02d:0x3fcb5820
+0x4037da19: spi_post_trans at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:652
+ (inlined by) spi_intr at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:690
+
+0x403775ae: _xt_lowint1 at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_vectors.S:1226
+
+0x420354e1: refr_area_part at lv_refr.c:?
+
+0x420354b6: refr_area at lv_refr.c:?
+
+0x420351a5: refr_invalid_areas at lv_refr.c:?
+
+0x42034ddf: _lv_disp_refr_timer at ??:?
+
+0x4207d349: lv_timer_exec at lv_timer.c:?
+
+0x4207d005: lv_timer_handler at ??:?
+
+0x42003a1d: lv_task_handler at lv_mp.c:?
+
+0x4201f121: mp_lv_task_handler at lv_mp.c:?
+
+0x42003b91: lv_fun_builtin_var_call at lv_mp.c:?
+
+0x420c6e55: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x420c6f19: mp_call_method_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:724
+
+0x40379699: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:1042
+
+0x420c056c: mp_obj_gen_resume at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objgenerator.c:219
+
+0x420c064d: gen_resume_and_raise at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objgenerator.c:268
+ (inlined by) gen_instance_send at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objgenerator.c:295
+
+0x420be5d6: fun_builtin_2_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:80
+
+0x420c6e55: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x420c6f19: mp_call_method_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:724
+
+0x40379699: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:1042
+
+0x420c019b: fun_bc_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:273
+
+0x420c6e55: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x40379602: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:957
+
+0x420c019b: fun_bc_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:273
+
+0x420c6e55: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x420c6f19: mp_call_method_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:724
+
+0x40379699: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:1042
+
+0x420c019b: fun_bc_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:273
+
+0x420c6e55: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x40379602: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:957
+
+0x420c019b: fun_bc_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:273
+
+0x420c6e55: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x420c6f19: mp_call_method_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:724
+
+0x40379699: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:1042
+
+0x420c019b: fun_bc_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:273
+
+0x420c6e55: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x420c6e6a: mp_call_function_0 at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:682
+
+0x420f463b: parse_compile_execute at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/shared/runtime/pyexec.c:123
+
+0x420f4962: pyexec_frozen_module at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/shared/runtime/pyexec.c:716
+ (inlined by) pyexec_file_if_exists at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/shared/runtime/pyexec.c:692
+
+0x420da02d: mp_task at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/ports/esp32/main.c:166 (discriminator 15)
+
+
+
+
+
+ELF file SHA256: cb5bbaf605bffd8d
+
+Rebooting...
+
+
+
+D (14471) API: get_device_access_key url: coaps://103.252.116.65/beta/device/token?seq=0
+C (14481) API: COAP not enabled
+W (14482) DEVCLOUD: invalid device access key
+D (14484) BLINKM: led refresh ERROR_API@APPLICATION
+I (14484) DEVCLOUD: refresh device access key in 8s
+D (15372): rotary = 10
+D (15674): rotary = 3
+D (15858): rotary = 5
+D (16123): rotary = 6
+~D (17771): rotary = 7
+D (17992): rotary = 8
+D (18262): rotary = 0
+D (18482): rotary = 1
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x4037da50  PS      : 0x00060031  A0      : 0x403775c5  A1      : 0x3fca12c0  
+0x4037da50: spi_post_trans at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:653
+ (inlined by) spi_intr at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:690
+
+0x403775c5: _xt_lowint1 at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_vectors.S:1226
+
+A2      : 0x3fcf3c3c  A3      : 0x3fcf3b08  A4      : 0x00060023  A5      : 0x00000000  
+A6      : 0x3fca130c  A7      : 0x00000001  A8      : 0x8037da48  A9      : 0x3fca1290  
+A10     : 0x3fcf3c5c  A11     : 0x00000001  A12     : 0x00060021  A13     : 0x00000000  
+A14     : 0x00000000  A15     : 0x00000001  SAR     : 0x0000001e  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000038  LBEG    : 0x40056f5c  LEND    : 0x40056f72  LCOUNT  : 0xffffffff  
+0x40056f5c: memcpy in ROM
+
+0x40056f72: memcpy in ROM
+
+
+
+Backtrace: 0x4037da4d:0x3fca12c0 0x403775c2:0x3fca1300 0x420354da:0x3fcb4fc0 0x420353f3:0x3fcb5000 0x42035185:0x3fcb5060 0x42034dbf:0x3fcb5090 0x4207d329:0x3fcb50f0 0x4207cfe5:0x3fcb5130 0x42003a1d:0x3fcb5170 0x4201f121:0x3fcb5190 0x42003b91:0x3fcb51d0 0x420c6e41:0x3fcb5210 0x420c6f05:0x3fcb5230 0x403796ad:0x3fcb5250 0x420c0558:0x3fcb52f0 0x420c0639:0x3fcb5310 0x420be5b6:0x3fcb5340 0x420c6e41:0x3fcb5360 0x420c6f05:0x3fcb5380 0x403796ad:0x3fcb53a0 0x420c0187:0x3fcb5440 0x420c6e41:0x3fcb5470 0x40379616:0x3fcb5490 0x420c0187:0x3fcb5530 0x420c6e41:0x3fcb5590 0x420c6f05:0x3fcb55b0 0x403796ad:0x3fcb55d0 0x420c0187:0x3fcb5670 0x420c6e41:0x3fcb56e0 0x40379616:0x3fcb5700 0x420c0187:0x3fcb57a0 0x420c6e41:0x3fcb57f0 0x420c6f05:0x3fcb5810 0x403796ad:0x3fcb5830 0x420c0187:0x3fcb58d0 0x420c6e41:0x3fcb5920 0x420c6e56:0x3fcb5940 0x420f461b:0x3fcb5960 0x420f4942:0x3fcb59f0 0x420da019:0x3fcb5a20
+0x4037da4d: spi_post_trans at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:652
+ (inlined by) spi_intr at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:690
+
+0x403775c2: _xt_lowint1 at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_vectors.S:1226
+
+0x420354da: refr_area_part at lv_refr.c:?
+
+0x420353f3: refr_area at lv_refr.c:?
+
+0x42035185: refr_invalid_areas at lv_refr.c:?
+
+0x42034dbf: _lv_disp_refr_timer at ??:?
+
+0x4207d329: lv_timer_exec at lv_timer.c:?
+
+0x4207cfe5: lv_timer_handler at ??:?
+
+0x42003a1d: lv_task_handler at lv_mp.c:?
+
+0x4201f121: mp_lv_task_handler at lv_mp.c:?
+
+0x42003b91: lv_fun_builtin_var_call at lv_mp.c:?
+
+0x420c6e41: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x420c6f05: mp_call_method_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:724
+
+0x403796ad: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:1042
+
+0x420c0558: mp_obj_gen_resume at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objgenerator.c:219
+
+0x420c0639: gen_resume_and_raise at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objgenerator.c:268
+ (inlined by) gen_instance_send at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objgenerator.c:295
+
+0x420be5b6: fun_builtin_2_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:80
+
+0x420c6e41: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x420c6f05: mp_call_method_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:724
+
+0x403796ad: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:1042
+
+0x420c0187: fun_bc_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:273
+
+0x420c6e41: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x40379616: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:957
+
+0x420c0187: fun_bc_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:273
+
+0x420c6e41: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x420c6f05: mp_call_method_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:724
+
+0x403796ad: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:1042
+
+0x420c0187: fun_bc_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:273
+
+0x420c6e41: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x40379616: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:957
+
+0x420c0187: fun_bc_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:273
+
+0x420c6e41: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x420c6f05: mp_call_method_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:724
+
+0x403796ad: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:1042
+
+0x420c0187: fun_bc_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:273
+
+0x420c6e41: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x420c6e56: mp_call_function_0 at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:682
+
+0x420f461b: parse_compile_execute at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/shared/runtime/pyexec.c:123
+
+0x420f4942: pyexec_frozen_module at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/shared/runtime/pyexec.c:716
+ (inlined by) pyexec_file_if_exists at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/shared/runtime/pyexec.c:692
+
+0x420da019: mp_task at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/ports/esp32/main.c:166 (discriminator 15)
+
+
+
+
+
+ELF file SHA256: 1a43bdf43a19fddf
+
+Rebooting...
+
+
+Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x4204084b  PS      : 0x00060130  A0      : 0x80377581  A1      : 0x3fca2040  
+0x4204084b: lv_disp_flush_ready at /home/oz13/Work/esp/esp-idf-v5.2-dev/examples/peripherals/lcd/spi_lcd_touch/managed_components/lvgl__lvgl/src/hal/lv_hal_disp.c:518
+
+A2      : 0x00000001  A3      : 0x3fca2100  A4      : 0xfff00000  A5      : 0x00000ffc  
+A6      : 0x00000001  A7      : 0x00000000  A8      : 0x00000000  A9      : 0x3fca3724  
+A10     : 0x00000003  A11     : 0x3fca3730  A12     : 0x80000000  A13     : 0xff000fff  
+A14     : 0xffffdfff  A15     : 0xffff7fff  SAR     : 0x00000020  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x0000000d  LBEG    : 0x40056f5c  LEND    : 0x40056f72  LCOUNT  : 0x00000000  
+0x40056f5c: memcpy in ROM
+
+0x40056f72: memcpy in ROM
+
+
+
+Backtrace: 0x42040848:0x3fca2040 0x4037757e:0x3fca2060 0x40377bd1:0x3fca2080 0x40378012:0x3fca20a0 0x40378065:0x3fca20c0 0x4200839a:0x3fca20e0 0x4200840b:0x3fca2130 0x42008532:0x3fca2170 0x42043347:0x3fca2240 0x4037d31d:0x3fca2270
+0x42040848: lv_disp_flush_ready at /home/oz13/Work/esp/esp-idf-v5.2-dev/examples/peripherals/lcd/spi_lcd_touch/managed_components/lvgl__lvgl/src/hal/lv_hal_disp.c:517
+
+0x4037757e: spi_post_cb_isr at /home/oz13/Work/esp/esp-idf-v5.2-dev/examples/peripherals/lcd/spi_lcd_touch/main/spi_lcd_touch_example_main.c:190 (discriminator 1)
+
+0x40377bd1: spi_post_trans at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:653 (discriminator 1)
+
+0x40378012: spi_device_polling_end at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:1081 (discriminator 15)
+
+0x40378065: spi_device_polling_transmit at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/driver/spi/gpspi/spi_master.c:1103
+
+0x4200839a: lcd_get_id at /home/oz13/Work/esp/esp-idf-v5.2-dev/examples/peripherals/lcd/spi_lcd_touch/main/spi_lcd_touch_example_main.c:362
+
+0x4200840b: lcd_init at /home/oz13/Work/esp/esp-idf-v5.2-dev/examples/peripherals/lcd/spi_lcd_touch/main/spi_lcd_touch_example_main.c:390
+
+0x42008532: app_main at /home/oz13/Work/esp/esp-idf-v5.2-dev/examples/peripherals/lcd/spi_lcd_touch/main/spi_lcd_touch_example_main.c:549 (discriminator 2)
+
+0x42043347: main_task at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/freertos/app_startup.c:208 (discriminator 13)
+
+0x4037d31d: vPortTaskWrapper at /home/oz13/Work/esp/esp-idf-v5.2-dev/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+
+
+
+
+
+
+Done
+
+
+
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x420c6e33  PS      : 0x00060030  A0      : 0x820c6edc  A1      : 0x3fcb4f60  
+0x420c6e33: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:707
+
+A2      : 0x3c2e9a90  A3      : 0x00000001  A4      : 0x00000000  A5      : 0x3fcb4f80  
+A6      : 0x00000000  A7      : 0x3fcb4f90  A8      : 0x820c6e33  A9      : 0x3fcb4f40  
+A10     : 0x00000001  A11     : 0x3fce9f6c  A12     : 0x00000000  A13     : 0x3fcb4fb0  
+A14     : 0x3fcb4f48  A15     : 0x3fcb4f70  SAR     : 0x00000004  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x0000000b  LBEG    : 0x40056f5c  LEND    : 0x40056f72  LCOUNT  : 0xffffffff  
+0x40056f5c: memcpy in ROM
+
+0x40056f72: memcpy in ROM
+
+
+
+Backtrace: 0x420c6e30:0x3fcb4f60 0x420c6ed9:0x3fcb4f80 0x420c7adc:0x3fcb4fb0 0x420c7c55:0x3fcb5030 0x40379a9e:0x3fcb5050 0x420c056c:0x3fcb50f0 0x420c064d:0x3fcb5110 0x420be5d6:0x3fcb5140 0x420c6e55:0x3fcb5160 0x420c6f19:0x3fcb5180 0x40379699:0x3fcb51a0 0x420c019b:0x3fcb5240 0x420c6e55:0x3fcb5270 0x40379602:0x3fcb5290 0x420c019b:0x3fcb5330 0x420c6e55:0x3fcb5390 0x420c6f19:0x3fcb53b0 0x40379699:0x3fcb53d0 0x420c019b:0x3fcb5470 0x420c6e55:0x3fcb54e0 0x40379602:0x3fcb5500 0x420c019b:0x3fcb55a0 0x420c6e55:0x3fcb55f0 0x420c6f19:0x3fcb5610 0x40379699:0x3fcb5630 0x420c019b:0x3fcb56d0 0x420c6e55:0x3fcb5720 0x420c6e6a:0x3fcb5740 0x420f463b:0x3fcb5760 0x420f4962:0x3fcb57f0 0x420da02d:0x3fcb5820
+0x420c6e30: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:704
+
+0x420c6ed9: mp_call_function_1 at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:686
+
+0x420c7adc: mp_call_function_1_protected at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime_utils.c:33
+
+0x420c7c55: mp_sched_run_pending at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/scheduler.c:110
+ (inlined by) mp_handle_pending at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/scheduler.c:239
+
+0x40379a9e: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:1342
+
+0x420c056c: mp_obj_gen_resume at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objgenerator.c:219
+
+0x420c064d: gen_resume_and_raise at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objgenerator.c:268
+ (inlined by) gen_instance_send at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objgenerator.c:295
+
+0x420be5d6: fun_builtin_2_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:80
+
+0x420c6e55: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x420c6f19: mp_call_method_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:724
+
+0x40379699: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:1042
+
+0x420c019b: fun_bc_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:273
+
+0x420c6e55: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x40379602: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:957
+
+0x420c019b: fun_bc_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:273
+
+0x420c6e55: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x420c6f19: mp_call_method_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:724
+
+0x40379699: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:1042
+
+0x420c019b: fun_bc_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:273
+
+0x420c6e55: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x40379602: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:957
+
+0x420c019b: fun_bc_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:273
+
+0x420c6e55: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x420c6f19: mp_call_method_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:724
+
+0x40379699: mp_execute_bytecode at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/vm.c:1042
+
+0x420c019b: fun_bc_call at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/objfun.c:273
+
+0x420c6e55: mp_call_function_n_kw at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:708
+
+0x420c6e6a: mp_call_function_0 at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/py/runtime.c:682
+
+0x420f463b: parse_compile_execute at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/shared/runtime/pyexec.c:123
+
+0x420f4962: pyexec_frozen_module at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/shared/runtime/pyexec.c:716
+ (inlined by) pyexec_file_if_exists at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/shared/runtime/pyexec.c:692
+
+0x420da02d: mp_task at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/ports/esp32/main.c:166 (discriminator 15)
+
+
+
+
+
+ELF file SHA256: f45e0f9a3b0e2fdc
+
+Rebooting...

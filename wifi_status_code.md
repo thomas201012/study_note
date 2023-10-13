@@ -1,38 +1,60 @@
+# D1连接状态码示例，
+### 连接wifi
+    EVENT = 2
+    EVENT = 4
+    EVENT = 0
+### wifi失去连接
+    EVENT = 21
+    EVENT = 5,reason = 201
+
+### 路由器黑名单
+    EVENT = 5,reason = 37
+    EVENT = 5,reason = 202
+    EVENT = 5,reason = 205
+
+### 密码错误
+    EVENT = 5,reason = 6
+    EVENT = 5,reason = 204
+    EVENT = 5,reason = 205
+    EVENT = 5,reason = 15
+
 # 网络状态码
 ## 网络事件状态ID码
-    SYSTEM_EVENT_WIFI_READY = 0,           /*!< ESP32 WiFi ready *//*!< ESP32 WiFi 就绪 */
-    SYSTEM_EVENT_SCAN_DONE,                /*!< ESP32 finish scanning AP *//*!< ESP32 完成扫描 AP */
-    SYSTEM_EVENT_STA_START,                /*!< ESP32 station start *//*!< ESP32 站启动 */
-    SYSTEM_EVENT_STA_STOP,                 /*!< ESP32 station stop *//*!< ESP32 站停止 */
-    SYSTEM_EVENT_STA_CONNECTED,            /*!< ESP32 station connected to AP *//*!< ESP32 站点已连接到 AP */
-    SYSTEM_EVENT_STA_DISCONNECTED,         /*!< ESP32 station disconnected from AP *//*!< ESP32 站点与 AP 断开连接 */
-    SYSTEM_EVENT_STA_AUTHMODE_CHANGE,      /*!< the auth mode of AP connected by ESP32 station changed *//*!< ESP32 station 连接的 AP 认证模式改变 */
-    SYSTEM_EVENT_STA_GOT_IP,               /*!< ESP32 station got IP from connected AP *//*!< ESP32 站点从连接的 AP 获取 IP */
-    SYSTEM_EVENT_STA_LOST_IP,              /*!< ESP32 station lost IP and the IP is reset to 0 *//*!< ESP32 站点丢失 IP，IP 重置为 0 */
-    SYSTEM_EVENT_STA_BSS_RSSI_LOW,         /*!< ESP32 station connected BSS rssi goes below threshold *//*!< ESP32 站连接的 BSS rssi 低于阈值 */
-    SYSTEM_EVENT_STA_WPS_ER_SUCCESS,       /*!< ESP32 station wps succeeds in enrollee mode *//*!< ESP32 站 wps 在登记者模式下成功 */
-    SYSTEM_EVENT_STA_WPS_ER_FAILED,        /*!< ESP32 station wps fails in enrollee mode *//*!< ESP32 station wps 在登记者模式下失败 */
-    SYSTEM_EVENT_STA_WPS_ER_TIMEOUT,       /*!< ESP32 station wps timeout in enrollee mode *//*!< ESP32 站员模式下 wps 超时 */
-    SYSTEM_EVENT_STA_WPS_ER_PIN,           /*!< ESP32 station wps pin code in enrollee mode *//*!< ESP32 站员模式下的 WPS PIN 码 */
-    SYSTEM_EVENT_STA_WPS_ER_PBC_OVERLAP,   /*!< ESP32 station wps overlap in enrollee mode *//*!< ESP32 站 wps 在参与者模式下重叠 */
-    SYSTEM_EVENT_AP_START,                 /*!< ESP32 soft-AP start *//*!< ESP32 软 AP 启动 */
-    SYSTEM_EVENT_AP_STOP,                  /*!< ESP32 soft-AP stop *//*!< ESP32 软 AP 停止 */
-    SYSTEM_EVENT_AP_STACONNECTED,          /*!< a station connected to ESP32 soft-AP *//*!< 连接到 ESP32 软 AP 的站点 */
-    SYSTEM_EVENT_AP_STADISCONNECTED,       /*!< a station disconnected from ESP32 soft-AP *//*!< 某个站点与 ESP32 软 AP 断开连接 */
-    SYSTEM_EVENT_AP_STAIPASSIGNED,         /*!< ESP32 soft-AP assign an IP to a connected station *//*!< ESP32 soft-AP 为连接的站点分配 IP */
-    SYSTEM_EVENT_AP_PROBEREQRECVED,        /*!< Receive probe request packet in soft-AP interface *//*!< 在软 AP 接口接收探测请求数据包 */
-    SYSTEM_EVENT_ACTION_TX_STATUS,         /*!< Receive status of Action frame transmitted *//*!< 接收发送的 Action 帧的状态 */
-    SYSTEM_EVENT_ROC_DONE,                 /*!< Indicates the completion of Remain-on-Channel operation status *//*!< 表示Remain-on-Channel操作完成状态*/
-    SYSTEM_EVENT_STA_BEACON_TIMEOUT,       /*!< ESP32 station beacon timeout *//*!< ESP32 基站信标超时 */
-    SYSTEM_EVENT_FTM_REPORT,               /*!< Receive report of FTM procedure *//*!< 接收FTM过程报告*/
-    SYSTEM_EVENT_GOT_IP6,                  /*!< ESP32 station or ap or ethernet interface v6IP addr is preferred *//*!< 首选 ESP32 站或 ap 或以太网接口 v6IP 地址 */
-    SYSTEM_EVENT_ETH_START,                /*!< ESP32 ethernet start *//*!< ESP32 以太网启动 */
-    SYSTEM_EVENT_ETH_STOP,                 /*!< ESP32 ethernet stop *//*!< ESP32 以太网停止 */
-    SYSTEM_EVENT_ETH_CONNECTED,            /*!< ESP32 ethernet phy link up *//*!< ESP32 以太网 phy 连接 */
-    SYSTEM_EVENT_ETH_DISCONNECTED,         /*!< ESP32 ethernet phy link down *//*!< ESP32 以太网物理链路断开 */
-    SYSTEM_EVENT_ETH_GOT_IP,               /*!< ESP32 ethernet got IP from connected AP *//*!< ESP32 以太网从连接的 AP 获取 IP */
-    SYSTEM_EVENT_ETH_LOST_IP,              /*!< ESP32 ethernet lost IP and the IP is reset to 0 *//*!< ESP32 以太网丢失 IP 并且 IP 重置为 0 */
-    SYSTEM_EVENT_MAX                       /*!< Number of members in this enum *//*!< 此枚举中的成员数 */
+    SYSTEM_EVENT_WIFI_READY                = 0,           /*!< ESP32 WiFi ready *//*!< ESP32 WiFi 就绪 */
+    SYSTEM_EVENT_SCAN_DONE,                = 1,           /*!< ESP32 finish scanning AP *//*!< ESP32 完成扫描 AP */
+    SYSTEM_EVENT_STA_START,                = 2,           /*!< ESP32 station start *//*!< ESP32 站启动 */
+    SYSTEM_EVENT_STA_STOP,                 = 3,           /*!< ESP32 station stop *//*!< ESP32 站停止 */
+    SYSTEM_EVENT_STA_CONNECTED,            = 4,           /*!< ESP32 station connected to AP *//*!< ESP32 站点已连接到 AP */
+    SYSTEM_EVENT_STA_DISCONNECTED,         = 5,           /*!< ESP32 station disconnected from AP *//*!< ESP32 站点与 AP 断开连接 */
+    SYSTEM_EVENT_STA_AUTHMODE_CHANGE,      = 6,           /*!< the auth mode of AP connected by ESP32 station changed *//*!< ESP32 station 连接的 AP 认证模式改变 */
+    SYSTEM_EVENT_STA_GOT_IP,               = 7,           /*!< ESP32 station got IP from connected AP *//*!< ESP32 站点从连接的 AP 获取 IP */
+    SYSTEM_EVENT_STA_LOST_IP,              = 8,           /*!< ESP32 station lost IP and the IP is reset to 0 *//*!< ESP32 站点丢失 IP，IP 重置为 0 */
+    SYSTEM_EVENT_STA_BSS_RSSI_LOW,         = 9,           /*!< ESP32 station connected BSS rssi goes below threshold *//*!< ESP32 站连接的 BSS rssi 低于阈值 */
+    SYSTEM_EVENT_STA_WPS_ER_SUCCESS,       = 10,          /*!< ESP32 station wps succeeds in enrollee mode *//*!< ESP32 站 wps 在登记者模式下成功 */
+    SYSTEM_EVENT_STA_WPS_ER_FAILED,        = 11,          /*!< ESP32 station wps fails in enrollee mode *//*!< ESP32 station wps 在登记者模式下失败 */
+    SYSTEM_EVENT_STA_WPS_ER_TIMEOUT,       = 12,          /*!< ESP32 station wps timeout in enrollee mode *//*!< ESP32 站员模式下 wps 超时 */
+    SYSTEM_EVENT_STA_WPS_ER_PIN,           = 13,          /*!< ESP32 station wps pin code in enrollee mode *//*!< ESP32 站员模式下的 WPS PIN 码 */
+    SYSTEM_EVENT_STA_WPS_ER_PBC_OVERLAP,   = 14,          /*!< ESP32 station wps overlap in enrollee mode *//*!< ESP32 站 wps 在参与者模式下重叠 */
+    SYSTEM_EVENT_AP_START,                 = 15,          /*!< ESP32 soft-AP start *//*!< ESP32 软 AP 启动 */
+    SYSTEM_EVENT_AP_STOP,                  = 16,          /*!< ESP32 soft-AP stop *//*!< ESP32 软 AP 停止 */
+    SYSTEM_EVENT_AP_STACONNECTED,          = 17,          /*!< a station connected to ESP32 soft-AP *//*!< 连接到 ESP32 软 AP 的站点 */
+    SYSTEM_EVENT_AP_STADISCONNECTED,       = 18,          /*!< a station disconnected from ESP32 soft-AP *//*!< 某个站点与 ESP32 软 AP 断开连接 */
+    SYSTEM_EVENT_AP_STAIPASSIGNED,         = 19,          /*!< ESP32 soft-AP assign an IP to a connected station *//*!< ESP32 soft-AP 为连接的站点分配 IP */
+    SYSTEM_EVENT_AP_PROBEREQRECVED,        = 20,          /*!< Receive probe request packet in soft-AP interface *//*!< 在软 AP 接口接收探测请求数据包 */
+    SYSTEM_EVENT_ACTION_TX_STATUS,         = 21,          /*!< Receive status of Action frame transmitted *//*!< 接收发送的 Action 帧的状态 */
+    SYSTEM_EVENT_ROC_DONE,                 = 22,          /*!< Indicates the completion of Remain-on-Channel operation status *//*!< 表示Remain-on-Channel操作完成状态*/
+    SYSTEM_EVENT_STA_BEACON_TIMEOUT,       = 23,          /*!< ESP32 station beacon timeout *//*!< ESP32 基站信标超时 */
+    SYSTEM_EVENT_FTM_REPORT,               = 24,          /*!< Receive report of FTM procedure *//*!< 接收FTM过程报告*/
+    SYSTEM_EVENT_GOT_IP6,                  = 25,          /*!< ESP32 station or ap or ethernet interface v6IP addr is preferred *//*!< 首选 ESP32 站或 ap 或以太网接口 v6IP 地址 */
+
+
+    SYSTEM_EVENT_ETH_START,                = 26,          /*!< ESP32 ethernet start *//*!< ESP32 以太网启动 */
+    SYSTEM_EVENT_ETH_STOP,                 = 27,          /*!< ESP32 ethernet stop *//*!< ESP32 以太网停止 */
+    SYSTEM_EVENT_ETH_CONNECTED,            = 28,          /*!< ESP32 ethernet phy link up *//*!< ESP32 以太网 phy 连接 */
+    SYSTEM_EVENT_ETH_DISCONNECTED,         = 29,          /*!< ESP32 ethernet phy link down *//*!< ESP32 以太网物理链路断开 */
+    SYSTEM_EVENT_ETH_GOT_IP,               = 30,          /*!< ESP32 ethernet got IP from connected AP *//*!< ESP32 以太网从连接的 AP 获取 IP */
+    SYSTEM_EVENT_ETH_LOST_IP,              = 31,          /*!< ESP32 ethernet lost IP and the IP is reset to 0 *//*!< ESP32 以太网丢失 IP 并且 IP 重置为 0 */
+    SYSTEM_EVENT_MAX                       = 32,          /*!< Number of members in this enum *//*!< 此枚举中的成员数 */
 
 ## 网络事件信息
 

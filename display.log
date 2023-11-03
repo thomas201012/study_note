@@ -1,301 +1,110 @@
-D75C连接云端获取数据失败日志：
-␛[0;32mI (990) RUN: SN:MCD4D4DA7932A8 KEY:rq51kx
-␛[0m␛[0;32mI (999) RUN: wdt running...(90s)
-␛[0m␛[0;33mW (1075) RUN: esp32 power on
-␛[0m␛[0;32mI (1078) RNDMGR: 800x480
-␛[0m␛[1;35mC (1900) RUN: Ver 1.73.0V
-␛[0m␛[0;32mI (2480) PAN_TR: pan transmit init
-␛[0m␛[0;32mI (2494) PAN_NWK: pan network init
-␛[0m␛[0;32mI (2736) OPSW: SOPSWorker start
-␛[0m␛[0;33mW (2747) DEVSVR: SERVER_TYPE CLOUD
-␛[0m␛[0;33mW (2839) HTTP: use CLOUD API: https://api.sync-sign.com/v2
-␛[0m␛[0;32mI (2842) RUN: init completed, infinite async loop starts
-␛[0m␛[0;32mI (2877) PAN_NWK: UART RX task running
-␛[0m␛[0;34mD (2893) PAN_TR: feed watchdog by SYNC 60
-␛[0m␛[0;34mD (2897) PAN_TR: say hello to ZNP
-␛[0m␛[0;32mI (2900) EXTIF: EXT-UART RX task running
-␛[0m_.␛[0;34mD (2996) PAN_TR: <<< set_watchdog sent confirmed
-␛[0m␛[0;34mD (3012) PAN_TR: syncCmd setWatchDogPeriod done
-␛[0m.␛[0;32mI (3051) PAN_TR: {'linkIsUp': 0, 'lastLqi': 0, 'currentPollrate': 10000, 'batteryLevel': 159, 'SN': 0, 'time': 1691043519, 'panChannel': 0, 'panType': 4, 'version': 43707, 'type': 22, 'btnStatus': 0, 'txPower': 0, 'panId': 48879}
-␛[0m␛[0;34mD (3061) PAN_TR: batteryLevel = 51
-␛[0m␛[0;34mD (3064) PAN_TR: <<< hello response
-␛[0m␛[0;34mD (3079) PAN_TR: syncCmd sendHello done
-␛[0m␛[0;34mD (3836) PAN_TR: why brought me up?
-␛[0m.␛[0;34mD (3860) PAN_TR: <<< data received
-␛[0m␛[0;34mD (3862) PAN_TR: packet op=20 len=2
-␛[0m␛[0;32mI (3865) PAN_TR: LOCAL (CMD=0 SEQ=0)
-␛[0m␛[0;33mW (3868) RUN: trigger button pressed #0 cnt=1
-␛[0m␛[0;32mI (4085) RUN: trigger mode
-␛[0m␛[0;34mD (4117) PAN_TR: requestData with result
-␛[0m␛[0;32mI (4119) RUN: PAN started
-␛[0m_␛[0;32mI (4317) NWKPRE: start wifi...
-␛[0m␛[0;32mI (4324) NWKS: do wifi None
-␛[0m␛[0;32mI (4338) NWKS: essid = OZ_Office, password = driveChange
-␛[0m␛[0;32mI (4471) NWK_WIFI: connecting [OZ_Office] [driveChange]...
-␛[0m__␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀␀prepare paths
-␛[0;32mI (990) RUN: SN:MCD4D4DA7932A8 KEY:rq51kx
-␛[0m␛[0;32mI (999) RUN: wdt running...(90s)
-␛[0m␛[0;33mW (1075) RUN: esp32 power on
-␛[0m␛[0;32mI (1078) RNDMGR: 800x480
-␛[0m␛[1;35mC (1900) RUN: Ver 1.73.0V
-␛[0m␛[0;32mI (2480) PAN_TR: pan transmit init
-␛[0m␛[0;32mI (2494) PAN_NWK: pan network init
-␛[0m␛[0;32mI (2736) OPSW: SOPSWorker start
-␛[0m␛[0;33mW (2747) DEVSVR: SERVER_TYPE CLOUD
-␛[0m␛[0;33mW (2839) HTTP: use CLOUD API: https://api.sync-sign.com/v2
-␛[0m␛[0;32mI (2842) RUN: init completed, infinite async loop starts
-␛[0m␛[0;32mI (2877) PAN_NWK: UART RX task running
-␛[0m␛[0;34mD (2893) PAN_TR: feed watchdog by SYNC 60
-␛[0m␛[0;34mD (2897) PAN_TR: say hello to ZNP
-␛[0m␛[0;32mI (2900) EXTIF: EXT-UART RX task running
-␛[0m_.␛[0;34mD (2996) PAN_TR: <<< set_watchdog sent confirmed
-␛[0m␛[0;34mD (3012) PAN_TR: syncCmd setWatchDogPeriod done
-␛[0m.␛[0;32mI (3050) PAN_TR: {'linkIsUp': 0, 'lastLqi': 0, 'currentPollrate': 10000, 'batteryLevel': 159, 'SN': 0, 'time': 1691043526, 'panChannel': 0, 'panType': 4, 'version': 43707, 'type': 22, 'btnStatus': 0, 'txPower': 0, 'panId': 48879}
-␛[0m␛[0;34mD (3060) PAN_TR: batteryLevel = 51
-␛[0m␛[0;34mD (3063) PAN_TR: <<< hello response
-␛[0m␛[0;34mD (3078) PAN_TR: syncCmd sendHello done
-␛[0m␛[0;34mD (3836) PAN_TR: why brought me up?
-␛[0m.␛[0;34mD (3859) PAN_TR: no data available
-␛[0m␛[0;34mD (3906) PAN_TR: requestData no result
-␛[0m_.␛[0;34mD (3977) PAN_TR: no data available
-␛[0m␛[0;34mD (4023) PAN_TR: requestData no result
-␛[0m.␛[0;34mD (4094) PAN_TR: no data available
-␛[0m␛[0;34mD (4140) PAN_TR: requestData no result
-␛[0m.␛[0;34mD (4211) PAN_TR: no data available
-␛[0m␛[0;34mD (4257) PAN_TR: requestData no result
-␛[0m.␛[0;34mD (4328) PAN_TR: no data available
-␛[0m␛[0;34mD (4374) PAN_TR: requestData no result
-␛[0m.␛[0;34mD (4446) PAN_TR: no data available
-␛[0m␛[0;34mD (4492) PAN_TR: requestData no result
-␛[0m.␛[0;34mD (4563) PAN_TR: no data available
-␛[0m␛[0;34mD (4609) PAN_TR: requestData no result
-␛[0m.␛[0;34mD (4680) PAN_TR: no data available
-␛[0m␛[0;34mD (4726) PAN_TR: requestData no result
-␛[0m.␛[0;34mD (4797) PAN_TR: no data available
-␛[0m␛[0;34mD (4843) PAN_TR: requestData no result
-␛[0m.␛[0;34mD (4914) PAN_TR: no data available
-␛[0m_␛[0;34mD (4960) PAN_TR: requestData no result
-␛[0m__␛[0;34mD (7897) PAN_TR: feed watchdog by SYNC 59
-␛[0m_0 {'beginMinute': 0, 'weekdays': [0, 1, 2, 3, 4, 5, 6], 'endMinute': 1440}
-␛[0;33mW (8174) BOOTMGR: DPRES: power down in 50ms, no auto wake up
-␛[0m.␛[0;34mD (8210) PAN_TR: <<< sync response
-␛[0m␛[0;34mD (8225) PAN_TR: syncCmd sendSync done
-␛[0m.␛[0;34mD (8450) PAN_TR: <<< bye response
-␛[0m␛[0;34mD (8465) PAN_TR: syncCmd sendByebye done
-
-
-
-
-I (119248) REQS: connecting to http://oo.oazon.com:2053/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
-D (119312) REQS: sending... (oo.oazon.com)
-D (119367) REQS: reading... (oo.oazon.com)
-D (119639) REQS: header received (oo.oazon.com)
-D (119654) REQS: receiving: 255 bytes
-W (119686) HTTP: POST status code: 400
-E (119701) SR: httpDataUpload fail
-Traceback (most recent call last):
-  File "sensor/http_request.py", line 66, in httpDataUpload
-ValueError: syntax error in JSON
-W (119709) SENSDATA: uploadData backOff: 16s
-
-
-I (143771) REQS: connecting to https://oo.oazon.com:2053/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
-W (143803) NET: wifi rssi = -43
-_D (143875) SENSDATA: upload button event: 0x124b001dd9be28
-D (143891) BLEMGR: waiting for requests
-~D (143990) HTTP: upload_mqtt_operation url: https://api.sync-sign.com/beta/user/owner/operation
-D (144014) HTTP: upload_mqtt_operation json: {"action": "POST", "uri": "node/events", "data": {"nodeId": "00124b001dd9be28", "events": [{"button": {"id": "ST4"}, "type": "PRESS_BUTTON"}]}, "requestId": 1691717593, "source": "MC083A8D2545DC", "timeStamp": 1691717593}
-D (144081) REQS: waiting for requests idle 1
-D (145733) REQS: sending... (oo.oazon.com)
-D (145781) REQS: reading... (oo.oazon.com)
-D (145972) REQS: header received (oo.oazon.com)
-D (145987) HTTP: POST status code: 204
-I (146018) SR: httpDataUpload success
-
-l =  b'HTTP/1.1 400 Bad Request\r\n'
-data =  temperature,nodeId=00124B001DD9BE28 tm=2850 1691721554
-
-l =  b'HTTP/1.1 204 No Content\r\n'
-data =  temperature,nodeId=00124B001DD9BE28 tm=2850 1691721757
-
-
-
-
-
-
-D (8253) CFGPRJ: Project ConfigMgr init
-D (8505) PLMGR: plugin calendar not available: no module named 'calendar'
-D (8525) PLMGR: plugin sops not available
-C (8588) MANAGER: Start Hub H1B v1.9.4 VSN1-DEV REV3
-I (8596) MANAGER: wdt running...(90s)
-D (8609) MANAGER: manager started
-D (8617) BLINKM: blinkmgr started
-I (8635) NET: network init
-D (8642) NET: networks start
-D (8650) DEV_HUB: Task UPLOAD_PAN_NODE wait (1) for IoT connection
-I (8664) DATA_TASK: start load_local_data_task
-I (8686) DATA_TASK: end load_local_data_task
-D (8701) DEV_MON: add task monitor [ledModeRefresh]
-D (8708) NET: connect task
-D (8832) NET: {'tryIndex': 0, 'enabled': False, 'phyType': 2}
-D (8839) NET: got wifi config
-I (12911) NET: waiting for ethernet cable...
-D (12925) DEV_MON: add task monitor [feedDogTask]
-~D (12934) MANAGER: delayed start
-W (12960) MANAGER: diag not enabled
-D (12968) DEV_HUB: hub device started
-I (12992) DEV_HUB: SYS: {'string': {'sys': '1.9.4', 'app': '0.1.0', 'hw': '0.4.1', 'type': 'H1B-DEV'}, 'numeric': {'sys': 67844, 'app': 256, 'hw': 1025, 'type': 3}}
-I (13024) DEV_HUB: SN: MC083A8D2545DC KEY: 03r3lu
-D (13038) DEV_OTA: device ota started
-D (13054) CACT: check action init
-D (13064) BLINKM: layer DEFAULT
-D (13071) BLINKM: set blink duration=0
-_D (13102) DEV_MON: add task monitor [taskRefreshDeviceAccessKey]
-D (13109) DEV_HUB: Task REQDEV wait (2) for IoT connection
-I (13918) NET: waiting for ethernet cable...
-I (14062) VSN: VSensor start
-I (14069) PARSE: SensorParser start
-I (14076) SENSDATA: DataMgr start
-I (14083) EMGR: EventMgr start
-D (14091) PAN_NET: addListNodeSuccessCb SNSREVT
-I (14105) EST1: EventST1 start
-I (14112) RULE: MyRules start
-I (14314) DST1: DataST1 start
-I (14321) ESM1: EventSM1 start
-I (14329) PAN_PROTO: pan protocol init
-D (14336) PAN_QUE: pan queue init
-D (14360) DB_NODETPL: no node tpl found (yet)
-I (14367) SMGR: SensorMgr start
-I (14375) DSM1: DataSM1 start
-I (14383) DEVSVR: SERVER_TYPE CLOUD
-D (14396) DEVSVR: connect CLOUD
-I (14409) HTTP: use CLOUD API: https://api.sync-sign.com/beta
-D (14423) DEVSVR: mocreo
-I (14430) MANAGER: starting PAN
-I (14454) PAN_SR: pan transmit init
-D (14472) DEV_MON: add task monitor [checkActiveStatusTask]
-D (14480) DEV_HUB: Task BTN wait (3) for IoT connection
-D (14493) DEV_HUB: Task SNR_DATA wait (4) for IoT connection
-D (14507) SENSDATA: wait sync time
-D (14515) DEV_HUB: Task SNR_INFO wait (5) for IoT connection
-I (14925) NET: waiting for ethernet cable...
-I (15932) NET: waiting for ethernet cable...
-I (16939) NET: waiting for ethernet cable...
-~I (17946) NET: waiting for ethernet cable...
-W (18960) NET: eth: no ethernet available
-D (18974) NET: trying wifi
-D (18981) NET: connect wifi now
-I (19111) NET: connecting to network [OZ_Office]
-D (19125) NET: #0 connecting WiFi
-D (19639) NET: #1 connecting WiFi
-D (20152) NET: #2 connecting WiFi
-D (20666) NET: #3 connecting WiFi
-D (21179) NET: #4 connecting WiFi
-D (21693) NET: #5 connecting WiFi
-I (21731) NET: wifi ok! config: ('192.168.66.120', '255.255.255.0', '192.168.66.1', '192.168.66.1')
-D (21772) NET: {'tryIndex': 0, 'enabled': False, 'phyType': 2}
-D (21877) NET: mDNS started: mocreo-45dc
-D (21914) NET: ip changed [unknown] -> [192.168.66.120]
-D (22045) DEV_MON: add task monitor [checkConnectLoop]
-D (22052) NTP: sync time from: pool.ntp.org
-D (22185) NTP: get time from NTP: 1692168526
-D (22198) NTP: sys time now: 1692168526
-W (22211) NET: net ok
-W (22218) NET: wifi rssi = -43
-D (22463) BLINKM: layer DEFAULT
-D (22471) BLINKM: set blink duration=0
-I (22485) CACT: already get time, exit sync time task
-D (22493) CACT: first check action in 1s (FAST)
-D (22512) DEV_MON: add task monitor [taskCheckAction]
-~_D (23116) HTTP: get_device_access_key url: https://api.sync-sign.com/beta/device/token?seq=0
-I (23207) REQS: connecting to https://api.sync-sign.com:443/beta/device/token?seq=0
-D (24117) CACT: sending PING request
-D (24144) HTTP: HEARTBEAT: https://sync.sync-sign.com/ping?seq=0&app=256&f=0&hw=1025&idle=10&sys=67844&type=3&tz=0&up=24&bat=-10&id=083A8D2545DC
-D (24200) REQS: waiting for requests idle 1
-I (28417) DB.NODES: 3 nodeList loaded
-D (28430) DB.NODES: clear online states
-D (28689) DB.NODES: nodeList saved
-E (28698) DB.NODES: nodeList saved = {5149013663622408: {'logoSha256': '', 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 1692168194, 'isValid': True, 'txfc': 97, 'lastSeenTime': 1692168194, 'battery': 3987, 'nwkAddr': 23995, 'type': 0, 'isOnline': True, 'hasConfig': False, 'Probes': 1, 'btnLan': 'en', 'changed': False, 'batteryLevel': 95}, 5149013663205660: {'logoSha256': '', 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 1692166929, 'isValid': True, 'txfc': 289, 'lastSeenTime': 1692166929, 'battery': 4003, 'nwkAddr': 7587, 'type': 0, 'isOnline': True, 'hasConfig': False, 'Probes': 1, 'btnLan': 'en', 'changed': False, 'batteryLevel': 100}, 5149013453684264: {'isOnline': False, 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 53, 'isValid': True, 'txfc': 129, 'lastSeenTime': 1692168035, 'battery': 3939, 'Probes': 1, 'batteryLevel': 95, 'logoSha256': '', 'hasConfig': False, 'nwkAddr': 53013, 'btnLan': 'en', 'changed': True, 'type': 0}}
-D (28829) SENSDATA: time ok
-~D (28844) REQS: sending... (api.sync-sign.com)
-D (28874) REQS: reading... (api.sync-sign.com)
-I (29029) PAN_NET: set reset pin to high
-W (30726) PAN_NET: ZNP Reset. Reason: External V2.9.5 P0
-Network Started
-I (32672) PAN_NET: newState: 9 ZB_COORD
-I (32685) PAN_NET: coordinator started
-Type: COORDINATOR
-Type: END DEVICE 0x5DBB
-Type: END DEVICE 0x1DA3
-Type: END DEVICE 0xCF15
-W (32700) NET: wifi rssi = -42
-I (32739) PAN_NET: PAN Ready (Zigbee PRO 2015 R21) - ID: 0x1768 CH26
-I (32753) PAN_NET: PAN started
-D (32773) MRD_WK: mrd worker init
-D (32811) DEV_MON: add task monitor [taskCheckNodesOffline]
-D (32876) PAN_NET: znp ping response 0x779
-D (32890) DEV_HUB: Task CHECK_NODE_ASSOC wait (6) for IoT connection
-D (32976) REQS: header received (api.sync-sign.com)
-D (32989) REQS: receiving: 474 bytes
-D (33029) HTTP: POST status code: 200
-I (33172) DEV_HUB: device access token: [d8441f1c0802ee06a8774a5ee58eb4c6d914d490] expires at: [1699944533s]
-D (33185) HTTP: set_device_access_key: d8441f1c0802ee06a8774a5ee58eb4c6d914d490
-I (33199) DEV_HUB: start 6 tasks awaiting login
-I (33215) DEV_HUB: refresh device access key in 65535s
-_D (33232) DEV_HUB: Task CHECK_NODE_ASSOC continue
-D (33246) DEV_HUB: Task SNR_INFO continue
-I (33259) SMGR: {5149013663622408: {'logoSha256': '', 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 1692168194, 'isValid': True, 'txfc': 97, 'lastSeenTime': 1692168194, 'battery': 3987, 'nwkAddr': 23995, 'type': 0, 'isOnline': True, 'hasConfig': False, 'Probes': 1, 'btnLan': 'en', 'changed': False, 'batteryLevel': 95}, 5149013663205660: {'logoSha256': '', 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 1692166929, 'isValid': True, 'txfc': 289, 'lastSeenTime': 1692166929, 'battery': 4003, 'nwkAddr': 7587, 'type': 0, 'isOnline': True, 'hasConfig': False, 'Probes': 1, 'btnLan': 'en', 'changed': False, 'batteryLevel': 100}, 5149013453684264: {'isOnline': False, 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 53, 'isValid': True, 'txfc': 129, 'lastSeenTime': 1692168035, 'battery': 3939, 'Probes': 1, 'batteryLevel': 95, 'logoSha256': '', 'hasConfig': False, 'nwkAddr': 53013, 'btnLan': 'en', 'changed': True, 'type': 0}}
-D (33283) DEV_MON: add task monitor [sensorInfoUpload]
-I (33292) SMGR: {5149013663622408: {'logoSha256': '', 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 1692168194, 'isValid': True, 'txfc': 97, 'lastSeenTime': 1692168194, 'battery': 3987, 'nwkAddr': 23995, 'type': 0, 'isOnline': True, 'hasConfig': False, 'Probes': 1, 'btnLan': 'en', 'changed': False, 'batteryLevel': 95}, 5149013663205660: {'logoSha256': '', 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 1692166929, 'isValid': True, 'txfc': 289, 'lastSeenTime': 1692166929, 'battery': 4003, 'nwkAddr': 7587, 'type': 0, 'isOnline': True, 'hasConfig': False, 'Probes': 1, 'btnLan': 'en', 'changed': False, 'batteryLevel': 100}, 5149013453684264: {'isOnline': False, 'rxfc': 0, 'signalLevel': 100, 'linkQualityDown': 0, 'model': 'ST4', 'linkQualityUp': 0, 'txPower': 0, 'version': 0, 'lastSeen': 53, 'isValid': True, 'txfc': 129, 'lastSeenTime': 1692168035, 'battery': 3939, 'Probes': 1, 'batteryLevel': 95, 'logoSha256': '', 'hasConfig': False, 'nwkAddr': 53013, 'btnLan': 'en', 'changed': True, 'type': 0}}
-I (33317) SMGR: Probes: 1
-I (33337) SMGR: Probes: 1
-I (33356) SMGR: Probes: 1
-D (33379) HTTP: upload_nodes_info url: https://api.sync-sign.com/beta/nodes
-D (33399) HTTP: upload_nodes_info json: {"nodes": [{"batteryLevel": 95, "type": "SENSOR", "nodeId": "00124b002a5d2508", "Probes": 1, "signalLevel": 100, "model": "ST4", "onlined": true}, {"batteryLevel": 100, "type": "SENSOR", "nodeId": "00124b002a56c91c", "Probes": 1, "signalLevel": 100, "model": "ST4", "onlined": true}, {"batteryLevel": 95, "type": "SENSOR", "nodeId": "00124b001dd9be28", "Probes": 1, "signalLevel": 100, "model": "ST4", "onlined": false}]}
-I (33473) REQS: connecting to https://api.sync-sign.com:443/beta/nodes
-D (33488) DEV_HUB: Task UPLOAD_PAN_NODE continue
-D (33502) DEV_HUB: Task REQDEV continue
-D (33522) HTTP: request_device_info url: https://api.sync-sign.com/beta/device
-D (33583) REQS: waiting for requests idle 1
-D (33597) DEV_HUB: Task BTN continue
-D (33613) DEV_HUB: Task SNR_DATA continue
-D (33626) SENSDATA: sensor data upload task start
-D (33633) SENSDATA: wait sync time
-D (33640) SENSDATA: time ok
-I (33647) SENSDATA: wait get associatedList
-~D (37370) REQS: waiting for requests idle 1
-D (37385) REQS: sending... (api.sync-sign.com)
-D (37430) REQS: reading... (api.sync-sign.com)
-D (37782) MANAGER: final start
-D (37790) BUZZER: set buzzer mode 0 counter 2 interval 200
-I (37803) BUZZER: buzzer init
-I (38141) BLEMGR: bleCentral started
-I (38148) RPC: RemoteCall init
-I (38245) DEVSVR: SERVER_TYPE CLOUD
-D (38258) RPCW: using MQTT_TYPE_AWS
-I (38482) RPCW: MQTT certificates loaded
-I (38489) RPCW: RemoteCallWorker init
-D (38496) RPCW: rpc worker started
-D (38503) RPC: rpc started
-D (38520) USER: hub user started
-D (38716) HTTP_RD: http render started
-D (38734) HTTP_RD: http render for relay started
-D (39068) WEBHLPER: webserver config loaded
-I (39840) WEBSVR: Web portal listening on 80
-D (40199) RPCW: MQTT activated! 0
-I (40212) RPCW: MQTT Host=a1zjlbcv9qbzin-ats.iot.us-west-2.amazonaws.com
-D (40226) RPCW: MQTT connecting... 0
-D (40274) MQTTS: MQTT: 44.236.120.233:8883
-I (40580) MQTTS: MQTT connected
-D (42532) MQTTS: mqtt SSL socket opened
-I (43061) RPCW: MQTT live!
-D (43070) HTTP_RD: Task render running
-D (43083) DEV_MON: add task monitor [taskHttpRender]
-D (43098) DEV_MON: add task monitor [loopScan]
-D (43105) BLEMGR: waiting for requests
-~W (43150) NET: wifi rssi = -46
-_D (43666) REQS: header received (api.sync-sign.com)
-D (43681) REQS: receiving: 75 bytes
-D (43715) HTTP: PUT status code: 200
-I (43752) SR: sensor info uploaded
-I (43782) REQS: connecting to https://api.sync-sign.com:443/beta/device
+...~.....D (165850) RPCW: get: topic[$aws/things/MC94B555770980/shadow/update/accepted] msg[{"state":{"reported":{"nodes":{"0034945400082400":{"relayRenderTimestamp":1698715356,"taskId":1630,"priority":1}}}},"metadata":{"reported":{"nodes":{"0034945400082400":{"relayRenderTimestamp":{"timestamp":1698715357},"taskId":{"timestamp":1698715357},"priority":{"timestamp":1698715357}}}}},"version":1129,"timestamp":1698715357}]
+D (165867) IDLE: reset sys idle time reason: got mqtt accepted msg
+I (165945) MANAGER: node relay render modified 0034945400082400 @1630 priority=1
+I (165991) HTTP_RD: 0034945400082400 add asynchronous task:<Task>
+D (166219) HTTP: get_relay_renders url: https://api.sync-sign.com/beta/nodes/0034945400082400/renders
+D (166282) REQS: waiting for requests idle 1
+D (166413) REQS: header received (api.sync-sign.com)
+D (166428) REQS: receiving: 138 bytes
+.D (166466) HTTP: POST status code: 200
+I (166550) BLEONLINE: Equipment Dict: {'0034945400082400': '4CZmRkmzrppRMAX3', '00c8f09e72c65c00': None}
+I (170989) BLEONLINE: Need to report ble node info 1 times
+I (171008) REQS: connecting to https://api.sync-sign.com:443/beta/nodes/0034945400082400/renders
+D (171045) RPCW: get: topic[$aws/things/MC94B555770980/shadow/update/accepted] msg[{"state":{"reported":{"nodes":{"00c8f09e72c65c00":{"notifyRefreshTimestamp":1698715362,"notifyRefreshId":1631,"notifyRefreshPrio":1}}}},"metadata":{"reported":{"nodes":{"00c8f09e72c65c00":{"notifyRefreshTimestamp":{"timestamp":1698715362},"notifyRefreshId":{"timestamp":1698715362},"notifyRefreshPrio":{"timestamp":1698715362}}}}},"version":1130,"timestamp":1698715362}]
+D (171064) IDLE: reset sys idle time reason: got mqtt accepted msg
+I (171159) MANAGER: node relay render modified 00c8f09e72c65c00 @1631 priority=1
+W (171181) NET: wifi rssi = -29
+_D (171226) BLEMGR: waiting for requests
+~I (171286) HTTP_RD: 00c8f09e72c65c00 add asynchronous task:<Task>
+D (171458) HTTP: get_relay_renders url: https://api.sync-sign.com/beta/nodes/00c8f09e72c65c00/renders
+D (171521) REQS: waiting for requests idle 1
+D (174432) REQS: sending... (api.sync-sign.com)
+.D (174472) REQS: reading... (api.sync-sign.com)
+......D (176019) BLEONLINE: report surrounding nodes
+D (177754) HTTP: report_ble_nodes_for_relay url: https://api.sync-sign.com/beta/relay_devices/MC94B555770980
+D (177784) HTTP: report_ble_nodes_for_relay list: ["00D4D4DA7937B800", "00D4D4DA22D4FC00", "0030AEA4FFFE1F00", "0034945400000300", "0034945400074500", "0030AEA400DA1100", "003494540007BD00", "0034945400078100", "0008161F00003600", "0030AEA400097600", "00D4D4DA22D51000", "000000000000D900", "0030AEA400003600", "0030AEA400092A00", "0034945400087C00", "0030AEA4FFFE2800", "0008B61F0000FE00", "0030AEA40000CC00", "0030AEA4004AE500", "0030AEA40000E300", "0034945400070000", "0030AEA400002500", "0030AEA400A26800", "0030AEA400000F00", "00D4D4DA7930E000", "0030AEA400FFC300", "000C8B9541C50C00", "0034945400074C00", "00D4D4DA792FD400", "0034945400077500", "00A4C13875B4A400", "0034945400074600", "0034945400088000", "00D4D4DA79348C00", "0034945400076A00", "0030AEA400396C00", "0030AEA400097B00", "0030AEA400FFC600", "00D4D4DA7932C800", "0030AEA400191F00", "0030AEA40000F800", "00C8F09E71E7D800", "0030AEA400006000", "0030AEA40000EA00", "0030AEA400008E00", "0030AEA40017D900", "0034945400076300", "0030AEA400006B00", "0034945400002600", "0034945400075C00", "0030AEA400000900", "00D4D4DA7932B800", "003494540008AD00", "0030AEA400D94B00", "0030AEA400003900", "0030AEA400091200", "0034945400072600", "00D4D4DA792FF000", "003494540007A700", "0034945400001400", "0030AEA400000600", "0030AEA40000C100", "0000000000110700", "003494540007EF00", "0030AEA40000AA00", "00B0B21C055E2C00", "0034945400082400", "0030AEA40000D600", "0008B61F00030C00", "0030AEA40000B600", "0030AEA400009C00", "0034945400000500", "00D4D4DA22D55C00", "0034945400076000", "0030AEA4004B1300", "0034945400075F00", "00D4D4DA7937A400", "003494540008A700", "0008B61F00033800", "0034945400077700", "0030AEA40000BF00", "0034945400003500", "0030AEA400498500", "0034945400074400", "00D4D4DA7934C400", "0008161F00001400", "00A4C138CEE93D00", "0030AEA400000300", "0030AEA400004600", "000000000000D800", "0034945400086900", "0030AEA40000FE00", "0030AEA40000D300", "0034945400087B00", "0030AEA40000ED00", "0030AEA400009F00", "0034945400000000", "0030AEA40000B800", "00D4D4DA7932A800", "00A4C13820225200", "0030AEA4004A5C00", "00A4C138AEABD500", "00D4D4DA792FE400", "0034945400077B00", "0030AEA40086B300", "0034945400077200", "000CB81507ED8C00", "0030AEA4FFFF2600", "0030AEA4FFFE2900", "0034945400070300", "0030AEA400096800", "0030AEA400005800", "0030AEA400192D00", "0030AEA40000E800", "003494540007AF00", "0034945400080D00", "0030AEA4002F6300", "0030AEA40000B300", "0030AEA40000A800", "0008B61F0000A300", "0030AEA40000A700", "000C8B9541C83800", "0030AEA400A15800", "0034945400076E00", "0030AEA400092300", "0034945400075D00", "00D4D4DA22D54400", "0030AEA400A1E200", "0034945400075500", "0008161F00001D00", "0034945400076200", "00D4D4DA79318400", "00D4D4DA79379400", "0030AEA40000A500", "0030AEA40000B100", "0030AEA400009900", "00D4D4DA79379C00", "0030AEA400009700", "0030AEA400009400", "000C8B9541C82000", "0030AEA40000C200", "00D4D4DA7932EC00", "0034945400088300", "0008B61F00003700", "0034945400077100", "00D4D4DA7937E000", "0030AEA400008800", "00D4D4DA7930AC00", "0030AEA4FFFE2A00", "0030AEA400D94100", "00D4D4DA22DB4800", "00D4D4DA7931A800", "00D4D4DA22D52000", "0030AEA400007B00", "003494540008A600", "00A4C138393E4A00", "005443B2BADFBC00", "0090380C62981400", "005443B2BADFB000", "0030AEA400094600", "00D4D4DA7937B400", "0030AEA400090800", "003494540008BA00", "0030AEA400022000", "000C8B9541C4F800", "00D4D4DA7937A800", "0030AEA400006F00", "0034945400000900", "00D4D4DA22D5A400", "0030AEA400007600", "0030AEA400497300", "0008B61F00043100", "00D4D4DA79309800", "0030AEA400006100", "0034945400079900", "0030AEA400CE0600", "0030AEA40000B900", "0034945400077C00", "0034945400076400", "0034945400071500", "00D4D4DA7937A000", "0034945400002500", "0034945400001500", "0000000000110300", "0030AEA400007E00", "0030AEA400161400", "0036342462A26B00", "00A4C138DAC75400", "0034945400086B00", "0030AEA40000C000", "0030AEA40017B600", "0008B61F0008E200", "0030AEA40003D500", "0034945400087100", "0034945400074000", "0030AEA400A12B00", "000C8B9541C49C00", "00D4D4DA7937C400", "0034945400073300", "00C8F09E72C65C00", "0030AEA400002A00", "0034945400077600", "0000000000BBCF00", "0030AEA40018EC00", "00D4D4DA7931B000", "0030AEA400004700", "0034945400076100", "0030AEA400A20C00", "0034945400011200", "00E33714386BF800", "0034945400075300", "0030AEA4FFFE2000"]
+D (178032) REQS: waiting for requests idle 1
+D (178053) BLEMGR: waiting for requests
+~.D (178120) REQS: header received (api.sync-sign.com)
+D (178135) REQS: receiving: 1126 bytes
+D (178175) HTTP: GET status code: 200
+D (178429) HTTP_RD: relay render 0034945400082400
+I (178448) REQS: connecting to https://api.sync-sign.com:443/beta/relay_devices/MC94B555770980
+curr connection list :['0034945400082400_render_template']
+I (178510) STPH: sending 4 bytes to b'4\x94T\x00\x08$' [FFF4] retry=10 (keep connection)
+I (178532) BLEMGR: BLE Connecting to 349454000824...
+D (181642) BLECNTL: _IRQ_PERIPHERAL_CONNECT handle=0 addrtype=0 addr=b'4\x94T\x00\x08$'
+D (181657) BLEMGR: update last seen on connected
+I (181672) BLEMGR: BLE Connected to 349454000824
+W (181712) NET: wifi rssi = -30
+_.D (181761) REQS: sending... (api.sync-sign.com)
+D (181892) BLECNTL: MTU EXCHANGED conn=0 mtu=247
+D (181937) REQS: reading... (api.sync-sign.com)
+..D (182193) BLECNTL: TX complete, conn=0 valh=24 status=0
+D (182215) BLEMGR: subscribe to 349454000824 ok
+D (182235) SR: MTU Exchanged: 244
+D (182250) SR:    sending chunk b'\x03\x02\x01\x05' (l=4)
+.D (182493) BLECNTL: RX 0 23 b'\x04\x03\x05\\\x06'
+D (182515) BLEMGR: got notified from 349454000824: b'\x04\x03\x05\\\x06'
+D (182530) STPH: RX from b'4\x94T\x00\x08$': b'\x04\x03\x05\\\x06'
+I (182558) STPH: querySetResultDict:{'targetTaskId': 1628}
+D (182566) BLEMGR:   onRx returned None
+D (182581) BLECNTL: TX complete, conn=0 valh=23 status=0
+D (182602) BLEMGR: write 349454000824 with response ok
+I (182621) SR: all chunks(s) sent.
+D (182629) SR: don't disconnect, will reuse connection later
+D (182650) STPL: send full bin tpl len=135
+D (182666) STPH: CRC=0x33C8
+D (182681) STPH: pkt len=141
+I (182696) STPH: sending 143 bytes to b'4\x94T\x00\x08$' [FFF1] retry=10  (keep connection)
+I (182711) SR: sendToSyncSignResume
+..D (183068) DEV_MON: remove task monitor [loopScan]
+~..D (183836) REQS: header received (api.sync-sign.com)
+D (183850) REQS: receiving: 138 bytes
+.D (183889) HTTP: POST status code: 200
+I (183976) BLEONLINE: Equipment Dict: {'0034945400082400': '4CZmRkmzrppRMAX3', '00c8f09e72c65c00': None}
+I (188456) BLEONLINE: Need to report ble node info 0 times
+I (188477) REQS: connecting to https://api.sync-sign.com:443/beta/nodes/00c8f09e72c65c00/renders
+~D (191585) REQS: sending... (api.sync-sign.com)
+.D (191622) REQS: reading... (api.sync-sign.com)
+W (191756) NET: wifi rssi = -29
+_......D (193241) REQS: header received (api.sync-sign.com)
+D (193255) REQS: receiving: 1127 bytes
+D (193297) HTTP: GET status code: 200
+D (193553) HTTP_RD: relay render 00c8f09e72c65c00
+.~............W (196029) PAN_SR: ExpectResponse from 0x0 timeout, retry
+W (196044) PAN_SR: blind sending, retry #1
+D (196561) PAN_NET: --------------------------------------------------
+D (196575) PAN_NET: target network address 0xffff FC=0
+I (196597) PAN_SR: >>>>>>>>>>>>> sending to 0x0 (5 Bytes) tId=0 CMD=06, SEQ=0 (NOACK)
+D (196618) PAN_SR: awaiting 15s for 0x0's ack
+.........~................W (201801) NET: wifi rssi = -28
+_........~.........................~................W (211844) NET: wifi rssi = -29
+_.W (211998) PAN_SR: ExpectResponse from 0x0 timeout, retry
+W (212013) PAN_SR: blind sending, retry #0
+D (212530) PAN_NET: --------------------------------------------------
+D (212545) PAN_NET: target network address 0xffff FC=0
+I (212566) PAN_SR: >>>>>>>>>>>>> sending to 0x0 (5 Bytes) tId=0 CMD=06, SEQ=0 (NOACK)
+D (212588) PAN_SR: awaiting 15s for 0x0's ack
+....~.........................~..............D (221498) RLT: Model D75C_LEWI(b'\xc8\xf0\x9er\xc6\\') does not need to be issued by HUB
+W (221507) CALASSET: no templatesRes, don't check Template Version
+..W (221887) NET: wifi rssi = -29
+_........~......................W (227966) PAN_SR: ExpectResponse from 0x0 timeout, retry
+W (227981) PAN_SR: max retried blind sending completed
+D (227996) PAN_SR: clear session of node 0x0, transId=0
+I (228515) RLT: The equipment that needs to update LOGO this time: [b'4\x94T\x00\x08$']
+~W (231931) NET: wifi rssi = -28
+_~~W (241974) NET: wifi rssi = -29
+_~~D (251803) RPCW: mqtt ping...
+W (252017) NET: wifi rssi = -30
+_D (252166) RPCW: pong...
+~~W (262062) NET: wifi rssi = -28
+_~~W (272106) NET: wifi rssi = -29
+_~~W (282150) NET: wifi rssi = -30
+_~~W (292194) NET: wifi rssi = -30
+_~~W (302236) NET: wifi rssi = -29
+_~~W (312280) NET: wifi rssi = -30
+_~~W (322323) NET: wifi rssi = -31
+_~~W (332366) NET: wifi rssi = -30
+_~~W (342409) NET: wifi rssi = -28
+_

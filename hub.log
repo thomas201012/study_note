@@ -1,816 +1,353 @@
-I (313730) DEV_OTA: (√)[step 1/6] network ready, start OTA
-I (313737) DEV_OTA: (√)[step 2/6] get updatePartition
-<Partition type=0, subtype=17, address=3145728, size=3080192, label=ota_1, encrypted=0>
-D (313752) HTTP: update_shadow url: https://api.sync-sign.com/v2/shadow
-D (313771) HTTP: update_shadow json: {"state": {"reported": {"ota": {"type": 1, "step": "Reading disk information", "code": 2, "status": true, "data": {"progress": 0}}}, "desired": null}}
-I (313842) REQS: connecting to https://api.sync-sign.com:443/v2/shadow
-D (317231) RPCW: get: topic[$aws/things/MC943CC60175D8/shadow/update/accepted] msg[{"state":{"reported":{"ota":{"type":1,"step":"Checking network status","code":1,"status":true,"data":{"progress":0}}},"desired":null},"metadata":{"reported":{"ota":{"type":{"timestamp":1696817095},"step":{"timestamp":1696817095},"code":{"timestamp":1696817095},"status":{"timestamp":1696817095},"data":{"progress":{"timestamp":1696817095}}}},"desired":{"timestamp":1696817095}},"version":4218,"timestamp":1696817095}]
-D (317248) IDLE: reset sys idle time reason: got mqtt accepted msg
-D (317373) BLEMGR: waiting for requests
-D (317387) REQS: sending... (api.sync-sign.com)
-D (317433) REQS: reading... (api.sync-sign.com)
-_~D (318387) RPCW: get: topic[$aws/things/MC943CC60175D8/shadow/update/accepted] msg[{"state":{"reported":{"ota":{"type":1,"step":"Reading disk information","code":2,"status":true,"data":{"progress":0}}},"desired":null},"metadata":{"reported":{"ota":{"type":{"timestamp":1696817100},"step":{"timestamp":1696817100},"code":{"timestamp":1696817100},"status":{"timestamp":1696817100},"data":{"progress":{"timestamp":1696817100}}}},"desired":{"timestamp":1696817100}},"version":4219,"timestamp":1696817100}]
-D (318404) IDLE: reset sys idle time reason: got mqtt accepted msg
-D (318602) REQS: header received (api.sync-sign.com)
-D (318615) REQS: receiving: 560 bytes
-D (318652) HTTP: PUT status code: 200
-D (318696) RPC: update_shadow_http success
-D (325664) HTTP: update_shadow url: https://api.sync-sign.com/v2/shadow
-D (325684) HTTP: update_shadow json: {"state": {"reported": {"ota": {"type": 1, "step": "Preparing disk", "code": 3, "status": true, "data": {"progress": 0}}}, "desired": null}}
-I (325755) REQS: connecting to https://api.sync-sign.com:443/v2/shadow
-D (325774) BLEMGR: waiting for requests
-D (325844) PAN_NET: znp ping response 0x779
-W (325861) NET: wifi rssi = -51
-~D (329141) BLEMGR: waiting for requests
-_D (329156) REQS: sending... (api.sync-sign.com)
-D (329200) REQS: reading... (api.sync-sign.com)
-D (330155) RPCW: get: topic[$aws/things/MC943CC60175D8/shadow/update/accepted] msg[{"state":{"reported":{"ota":{"type":1,"step":"Preparing disk","code":3,"status":true,"data":{"progress":0}}},"desired":null},"metadata":{"reported":{"ota":{"type":{"timestamp":1696817112},"step":{"timestamp":1696817112},"code":{"timestamp":1696817112},"status":{"timestamp":1696817112},"data":{"progress":{"timestamp":1696817112}}}},"desired":{"timestamp":1696817112}},"version":4220,"timestamp":1696817112}]
-D (330172) IDLE: reset sys idle time reason: got mqtt accepted msg
-D (330895) REQS: header received (api.sync-sign.com)
-D (330909) REQS: receiving: 550 bytes
-~D (330955) HTTP: PUT status code: 200
-D (330999) RPC: update_shadow_http success
-I (331009) DEV_OTA: fetching: https://somebody.oss-cn-shenzhen.aliyuncs.com/firmware/vsn1/prd/application-HUB_H1B-1.9.5-prd.bin using bulk=1024
-D (331323) DEV_OTA: alloc 294768, free 3291152
-I (331380) REQS: connecting to https://somebody.oss-cn-shenzhen.aliyuncs.com:443/firmware/vsn1/prd/application-HUB_H1B-1.9.5-prd.bin
-D (331400) BLEMGR: start BLE scanning
-D (333664) BLECNTL: _IRQ_SCAN_DONE
-D (333679) BLEMGR: Peripheral: 08161F00001D "MOCREO" at=0 RSSI=-79 (9/18=0.5)
-I (333719) BLEMGR: 08161F00001D: The device is in factory condition,64
-D (333741) BLEMGR: Peripheral: 30AEA40000E8 "MOCREO" at=0 RSSI=-68 (14/21=0.667)
-D (333769) BLEMGR: Peripheral: 30AEA4004AE5 "MOCREO" at=0 RSSI=-64 (11/18=0.611)
-D (333796) BLEMGR: Peripheral: 30AEA4FFFE28 "MOCREO" at=0 RSSI=-71 (15/21=0.714)
-D (333825) BLEMGR: Peripheral: 30AEA4000009 "MOCREO" at=0 RSSI=-66 (14/22=0.636)
-I (333864) BLEMGR: 30AEA4000009: The device is in factory condition,64
-D (333885) BLEMGR: Peripheral: 30AEA4000003 "MOCREO" at=0 RSSI=-41 (16/22=0.727)
-D (333905) BLEMGR: 30AEA4000003 node key: dwHPjwbbG5J5nDXX
-D (333935) BLEMGR: Peripheral: 30AEA40000E3 "MOCREO" at=0 RSSI=-66 (14/20=0.7)
-D (333963) BLEMGR: Peripheral: 30AEA4000959 "MOCREO" at=0 RSSI=-39 (12/21=0.571)
-D (333984) BLEMGR: 30AEA4000959 node key: p5TxJQYtBmBeTmF7
-D (334012) BLEMGR: Peripheral: 08161F000036 "MOCREO" at=0 RSSI=-65 (14/21=0.667)
-D (334043) BLEMGR: Peripheral: 30AEA4000946 "MOCREO" at=0 RSSI=-57 (14/22=0.636)
-D (334073) BLEMGR: Peripheral: 08B61F00030C "MOCREO" at=0 RSSI=-71 (15/21=0.714)
-D (334101) BLEMGR: Peripheral: 30AEA4004985 "MOCREO" at=0 RSSI=-73 (15/21=0.714)
-D (334132) BLEMGR: Peripheral: 30AEA4004A5C "MOCREO" at=0 RSSI=-70 (13/21=0.619)
-D (334160) BLEMGR: Peripheral: 30AEA400007E "MOCREO" at=0 RSSI=-44 (20/22=0.909)
-D (334188) BLEMGR: Peripheral: 30AEA4000912 "MOCREO" at=0 RSSI=-66 (13/18=0.722)
-D (334217) BLEMGR: Peripheral: 08B61F000431 "MOCREO" at=0 RSSI=-74 (11/21=0.524)
-D (334246) BLEMGR: Peripheral: 30AEA40000AA "MOCREO" at=0 RSSI=-73 (15/21=0.714)
-D (334275) BLEMGR: Peripheral: 30AEA4FFFF26 "MOCREO" at=0 RSSI=-81 (9/22=0.409)
-D (334303) BLEMGR: Peripheral: 30AEA40000A8 "MOCREO" at=0 RSSI=-71 (14/19=0.737)
-D (334334) BLEMGR: Peripheral: 08161F000039 "MOCREO" at=0 RSSI=-69 (18/21=0.857)
-D (334362) BLEMGR: Peripheral: 30AEA40000D6 "MOCREO" at=0 RSSI=-67 (12/19=0.632)
-D (334391) BLEMGR: Peripheral: 30AEA400002A "MOCREO" at=0 RSSI=-62 (13/22=0.591)
-D (334419) BLEMGR: Peripheral: 30AEA4000046 "MOCREO" at=0 RSSI=-74 (11/21=0.524)
-D (334450) BLEMGR: Peripheral: 30AEA4000025 "MOCREO" at=0 RSSI=-59 (14/22=0.636)
-D (334470) BLEMGR: 30AEA4000025 node key: CE3kKEWrTcezS7Gz
-D (334497) BLEMGR: Peripheral: 30AEA400FFC6 "MOCREO" at=0 RSSI=-58 (13/22=0.591)
-D (334526) BLEMGR: Peripheral: 30AEA4000911 "MOCREO" at=0 RSSI=-73 (16/22=0.727)
-I (334565) BLEMGR: 30AEA4000911: The device is in factory condition,64
-D (334586) BLEMGR: Peripheral: 30AEA40000FE "MOCREO" at=0 RSSI=-60 (15/22=0.682)
-D (334615) BLEMGR: Peripheral: 30AEA400009F "MOCREO" at=0 RSSI=-66 (19/22=0.864)
-D (334644) BLEMGR: Peripheral: A4C1388BF74A "ATC_8BF74A" at=0 RSSI=-50 (22/22=1.0)
-D (334672) BLEMGR: Peripheral: 30AEA400A20C "MOCREO" at=0 RSSI=-62 (17/21=0.81)
-D (334701) BLEMGR: Peripheral: 30AEA4002F63 "MOCREO" at=0 RSSI=-73 (9/21=0.429)
-D (334730) BLEMGR: Peripheral: 30AEA400006B "MOCREO" at=0 RSSI=-72 (17/22=0.773)
-D (334760) BLEMGR: Peripheral: 08B61F000035 "MOCREO" at=0 RSSI=-76 (10/19=0.526)
-I (334798) BLEMGR: 08B61F000035: The device is in factory condition,64
-D (334821) BLEMGR: Peripheral: 08B61F0000A3 "MOCREO" at=0 RSSI=-65 (10/21=0.476)
-D (334850) BLEMGR: Peripheral: 30AEA4000097 "MOCREO" at=0 RSSI=-72 (12/21=0.571)
-D (334879) BLEMGR: Peripheral: 30AEA400097B "MOCREO" at=0 RSSI=-76 (15/22=0.682)
-D (334907) BLEMGR: Peripheral: 30AEA4FFFFAA "MOCREO" at=0 RSSI=-65 (14/22=0.636)
-D (334936) BLEMGR: Peripheral: 30AEA400191F "MOCREO" at=0 RSSI=-72 (11/22=0.5)
-D (334967) BLEMGR: Peripheral: 08B61F00FEB1 "MOCREO" at=0 RSSI=-72 (14/22=0.636)
-D (334996) BLEMGR: Peripheral: 30AEA40000C1 "MOCREO" at=0 RSSI=-76 (14/20=0.7)
-D (335024) BLEMGR: Peripheral: 30AEA4000937 "MOCREO" at=0 RSSI=-70 (17/22=0.773)
-I (335064) BLEMGR: 30AEA4000937: The device is in factory condition,64
-D (335086) BLEMGR: Peripheral: 08B61F000038 "MOCREO" at=0 RSSI=-72 (14/21=0.667)
-I (335124) BLEMGR: 08B61F000038: The device is in factory condition,64
-D (335147) BLEMGR: Peripheral: 30AEA40000ED "MOCREO" at=0 RSSI=-75 (9/19=0.474)
-D (335177) BLEMGR: Peripheral: 30AEA40000C0 "MOCREO" at=0 RSSI=-67 (13/22=0.591)
-D (335206) BLEMGR: Peripheral: 30AEA4000220 "MOCREO" at=0 RSSI=-59 (15/21=0.714)
-D (335234) BLEMGR: Peripheral: 30AEA4FFFE2A "MOCREO" at=0 RSSI=-73 (13/20=0.65)
-I (335274) BLEMGR: 30AEA4FFFE2A: The device is in factory condition,64
-D (335317) CACT: sending PING request
-D (335343) HTTP: HEARTBEAT: https://sync.sync-sign.com/ping?seq=1&app=256&f=0&hw=1025&idle=5&sys=67845&type=4&tz=0&up=335&bat=-10&id=943CC60175D8
-I (335400) REQS: connecting to https://sync.sync-sign.com:443/ping?seq=1&app=256&f=0&hw=1025&idle=5&sys=67845&type=4&tz=0&up=335&bat=-10&id=943CC60175D8
-W (335449) DMR: 30AEA40000E6:The probe of this sensor has been unplugged
-W (335590) DMR: 30AEA40000B9:The sensor crc check error
-W (335623) DMR: 30AEA40000B8:The probe of this sensor has been unplugged
-W (335727) DMR: 30AEA40000AA:The probe of this sensor has been unplugged
-W (335761) DMR: 30AEA40000A8:The probe of this sensor has been unplugged
-W (335850) DMR: 30AEA400009E:The sensor crc check error
-W (335885) DMR: 30AEA4000006:The probe of this sensor has been unplugged
-W (335925) DMR: 30AEA4000099:The sensor crc check error
-W (335982) DMR: 30AEA4000094:The sensor crc check error
-W (336095) DMR: 30AEA400007E:The probe of this sensor has been unplugged
-W (336179) DMR: 30AEA4004973:The sensor crc check error
-W (336240) DMR: 30AEA4000061:The probe of this sensor has been unplugged
-W (336274) DMR: 30AEA4FFFE2A:The sensor crc check error
-I (336393) BLEPRO: 00a4c1388bf74a00:{'key': False, 'failure': False, 'rssi': -50, 'batteryLevel': 59, 'val': {'measureId': 132, 'tm': 2755, 'hu': 7102}, 'model': 'SS1'}
-I (336458) TASK_REQUEST: New data:[{'id': 132, 'pt': 'temperature,nodeId=00A4C1388BF74A00 tm=2755 1696817118\nhumidity,nodeId=00A4C1388BF74A00 hu=7102 1696817118'}]
-I (336534) REQS: connecting to https://ts.mocreo.com:443/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
-W (336604) NET: wifi rssi = -39
-~D (336675) REQS: sending... (somebody.oss-cn-shenzhen.aliyuncs.com)
-D (340974) BLEMGR: start BLE scanning
-_D (341117) REQS: sending... (sync.sync-sign.com)
-D (341134) REQS: sending... (ts.mocreo.com)
-D (341162) REQS: reading... (somebody.oss-cn-shenzhen.aliyuncs.com)
-D (341220) REQS: reading... (sync.sync-sign.com)
-D (341415) REQS: reading... (ts.mocreo.com)
-~D (342158) RPCW: mqtt ping...
-D (342642) RPCW: pong...
-D (342752) REQS: header received (somebody.oss-cn-shenzhen.aliyuncs.com)
-D (342873) DEV_OTA: write offset: 0, len: 5120, next offset: 5120
-D (342994) BLECNTL: _IRQ_SCAN_DONE
-D (343010) BLEMGR: Peripheral: 08161F00001D "MOCREO" at=0 RSSI=-83 (10/19=0.526)
-I (343049) BLEMGR: 08161F00001D: The device is in factory condition,64
-D (343070) BLEMGR: Peripheral: 30AEA40000E8 "MOCREO" at=0 RSSI=-66 (15/22=0.682)
-D (343099) BLEMGR: Peripheral: 30AEA40000B9 "MOCREO" at=0 RSSI=-63 (12/22=0.545)
-D (343128) BLEMGR: Peripheral: 30AEA4FFFE29 "MOCREO" at=0 RSSI=-67 (11/23=0.478)
-D (343156) BLEMGR: Peripheral: 30AEA40017D9 "MOCREO" at=0 RSSI=-58 (13/23=0.565)
-D (343185) BLEMGR: Peripheral: 30AEA4FFFE28 "MOCREO" at=0 RSSI=-71 (16/22=0.727)
-D (343213) BLEMGR: Peripheral: 30AEA40000E3 "MOCREO" at=0 RSSI=-78 (15/21=0.714)
-D (343241) BLEMGR: Peripheral: 30AEA4000959 "MOCREO" at=0 RSSI=-41 (13/22=0.591)
-D (343261) BLEMGR: 30AEA4000959 node key: p5TxJQYtBmBeTmF7
-D (343289) BLEMGR: Peripheral: 08161F000036 "MOCREO" at=0 RSSI=-64 (15/22=0.682)
-D (343319) BLEMGR: Peripheral: 30AEA4000926 "MOCREO" at=0 RSSI=-66 (14/20=0.7)
-D (343347) BLEMGR: Peripheral: 30AEA4000025 "MOCREO" at=0 RSSI=-57 (15/23=0.652)
-D (343367) BLEMGR: 30AEA4000025 node key: CE3kKEWrTcezS7Gz
-D (343395) BLEMGR: Peripheral: 30AEA4000946 "MOCREO" at=0 RSSI=-61 (15/23=0.652)
-D (343425) BLEMGR: Peripheral: 30AEA4FFFE1F "MOCREO" at=0 RSSI=-49 (18/23=0.783)
-D (343446) BLEMGR: 30AEA4FFFE1F node key: sRDHMWCaE2eRtNPD
-D (343474) BLEMGR: Peripheral: 30AEA400007E "MOCREO" at=0 RSSI=-52 (21/23=0.913)
-D (343502) BLEMGR: Peripheral: 30AEA4000923 "MOCREO" at=0 RSSI=-72 (12/21=0.571)
-D (343531) BLEMGR: Peripheral: 30AEA4004A5C "MOCREO" at=0 RSSI=-71 (14/22=0.636)
-D (343559) BLEMGR: Peripheral: 30AEA4004973 "MOCREO" at=0 RSSI=-78 (10/19=0.526)
-I (343598) BLEMGR: 30AEA4004973: The device is in factory condition,64
-D (343620) BLEMGR: Peripheral: 30AEA4000968 "MOCREO" at=0 RSSI=-60 (13/22=0.591)
-D (343648) BLEMGR: Peripheral: 30AEA40000AA "MOCREO" at=0 RSSI=-75 (16/22=0.727)
-D (343677) BLEMGR: Peripheral: 30AEA40000D6 "MOCREO" at=0 RSSI=-66 (13/20=0.65)
-D (343705) BLEMGR: Peripheral: 30AEA4004985 "MOCREO" at=0 RSSI=-74 (16/22=0.727)
-D (343733) BLEMGR: Peripheral: 30AEA40000A5 "MOCREO" at=0 RSSI=-82 (7/17=0.412)
-D (343761) BLEMGR: Peripheral: 30AEA40000D3 "MOCREO" at=0 RSSI=-61 (14/22=0.636)
-D (343791) BLEMGR: Peripheral: 30AEA40000A8 "MOCREO" at=0 RSSI=-73 (15/20=0.75)
-D (343819) BLEMGR: Peripheral: 30AEA4FFFE20 "MOCREO" at=0 RSSI=-76 (13/22=0.591)
-D (343848) BLEMGR: Peripheral: 30AEA4000046 "MOCREO" at=0 RSSI=-71 (12/22=0.545)
-D (343876) BLEMGR: Peripheral: 30AEA400009F "MOCREO" at=0 RSSI=-68 (20/23=0.87)
-D (343904) BLEMGR: Peripheral: 30AEA400009E "MOCREO" at=0 RSSI=-80 (13/22=0.591)
-D (343932) BLEMGR: Peripheral: A4C1388BF74A "ATC_8BF74A" at=0 RSSI=-49 (23/23=1.0)
-D (343960) BLEMGR: Peripheral: 08B61F000338 "MOCREO" at=0 RSSI=-75 (13/19=0.684)
-D (343988) BLEMGR: Peripheral: 30AEA40000CC "MOCREO" at=0 RSSI=-76 (16/23=0.696)
-D (344016) BLEMGR: Peripheral: 30AEA400006B "MOCREO" at=0 RSSI=-65 (18/23=0.783)
-D (344045) BLEMGR: Peripheral: 30AEA40000F8 "MOCREO" at=0 RSSI=-74 (14/19=0.737)
-D (344074) BLEMGR: Peripheral: 08B61F0000A3 "MOCREO" at=0 RSSI=-68 (11/22=0.5)
-D (344101) BLEMGR: Peripheral: 30AEA400191F "MOCREO" at=0 RSSI=-74 (12/23=0.522)
-D (344130) BLEMGR: Peripheral: 30AEA4000908 "MOCREO" at=0 RSSI=-77 (11/22=0.5)
-D (344158) BLEMGR: Peripheral: 30AEA40000C1 "MOCREO" at=0 RSSI=-79 (15/21=0.714)
-D (344186) BLEMGR: Peripheral: 30AEA4000220 "MOCREO" at=0 RSSI=-52 (16/22=0.727)
-D (344214) BLEMGR: Peripheral: 08B61F000038 "MOCREO" at=0 RSSI=-68 (15/22=0.682)
-I (344253) BLEMGR: 08B61F000038: The device is in factory condition,64
-D (344275) BLEMGR: Peripheral: 30AEA40000ED "MOCREO" at=0 RSSI=-76 (10/20=0.5)
-D (344304) BLEMGR: Peripheral: 30AEA4001614 "MOCREO" at=0 RSSI=-64 (15/22=0.682)
-D (344332) BLEMGR: Peripheral: 30AEA400008E "MOCREO" at=0 RSSI=-78 (10/22=0.455)
-D (344361) BLEMGR: Peripheral: 30AEA4FFFE2A "MOCREO" at=0 RSSI=-71 (14/21=0.667)
-I (344400) BLEMGR: 30AEA4FFFE2A: The device is in factory condition,64
-W (344508) DMR: 30AEA40000E6:The probe of this sensor has been unplugged
-W (344648) DMR: 30AEA40000B9:The sensor crc check error
-W (344681) DMR: 30AEA40000B8:The probe of this sensor has been unplugged
-W (344785) DMR: 30AEA40000AA:The probe of this sensor has been unplugged
-W (344818) DMR: 30AEA40000A8:The probe of this sensor has been unplugged
-W (344908) DMR: 30AEA400009E:The sensor crc check error
-W (344941) DMR: 30AEA4000006:The probe of this sensor has been unplugged
-W (344981) DMR: 30AEA4000099:The sensor crc check error
-W (345036) DMR: 30AEA4000094:The sensor crc check error
-W (345148) DMR: 30AEA400007E:The probe of this sensor has been unplugged
-W (345231) DMR: 30AEA4004973:The sensor crc check error
-W (345292) DMR: 30AEA4000061:The probe of this sensor has been unplugged
-W (345325) DMR: 30AEA4FFFE2A:The sensor crc check error
-I (345444) BLEPRO: 00a4c1388bf74a00:{'key': False, 'failure': False, 'rssi': -49, 'batteryLevel': 60, 'val': {'measureId': 136, 'tm': 2755, 'hu': 7095}, 'model': 'SS1'}
-I (345509) TASK_REQUEST: New data:[{'id': 136, 'pt': 'temperature,nodeId=00A4C1388BF74A00 tm=2755 1696817127\nhumidity,nodeId=00A4C1388BF74A00 hu=7095 1696817127'}]
-I (345585) REQS: connecting to https://ts.mocreo.com:443/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
-D (346070) REQS: header received (ts.mocreo.com)
-D (346084) REQS: receiving: 23 bytes
-D (346102) REQS: header received (sync.sync-sign.com)
-D (346116) REQS: receiving unknown length
-D (346155) HTTP: POST status code: 200
-I (346177) HTTP_REQUEST: httpDataUpload success
-I (346184) REQUEST_BASE: HTTPS success
-D (346210) HTTP: GET status code: 200
-I (346239) CACT: action=none
-D (346253) CACT: check action ok, retry ping in 300s (SLOW)
-D (346461) BLEMGR: start BLE scanning
-W (346644) NET: wifi rssi = -38
-~D (348472) BLECNTL: _IRQ_SCAN_DONE
-D (348487) BLEMGR: Peripheral: 30AEA4FFFE20 "MOCREO" at=0 RSSI=-72 (14/23=0.609)
-D (348515) BLEMGR: Peripheral: 08B61F000338 "MOCREO" at=0 RSSI=-61 (14/20=0.7)
-D (348543) BLEMGR: Peripheral: 30AEA400A20C "MOCREO" at=0 RSSI=-74 (18/23=0.783)
-D (348571) BLEMGR: Peripheral: A4C1388BF74A "ATC_8BF74A" at=0 RSSI=-48 (24/24=1.0)
-D (348598) BLEMGR: Peripheral: 30AEA40018EC "MOCREO" at=0 RSSI=-69 (13/24=0.542)
-D (348628) BLEMGR: Peripheral: 30AEA4000926 "MOCREO" at=0 RSSI=-70 (15/21=0.714)
-D (348656) BLEMGR: Peripheral: 30AEA4FFFFAA "MOCREO" at=0 RSSI=-69 (15/24=0.625)
-D (348683) BLEMGR: Peripheral: 30AEA4000009 "MOCREO" at=0 RSSI=-65 (15/24=0.625)
-I (348721) BLEMGR: 30AEA4000009: The device is in factory condition,64
-D (348742) BLEMGR: Peripheral: 30AEA40000C1 "MOCREO" at=0 RSSI=-78 (16/22=0.727)
-D (348771) BLEMGR: Peripheral: 30AEA4000923 "MOCREO" at=0 RSSI=-73 (13/22=0.591)
-D (348798) BLEMGR: Peripheral: 30AEA40000C0 "MOCREO" at=0 RSSI=-70 (14/24=0.583)
-D (348827) BLEMGR: Peripheral: 30AEA400002A "MOCREO" at=0 RSSI=-64 (14/24=0.583)
-D (348854) BLEMGR: Peripheral: 30AEA4001614 "MOCREO" at=0 RSSI=-75 (16/23=0.696)
-D (348882) BLEMGR: Peripheral: 30AEA400006F "MOCREO" at=0 RSSI=-79 (14/23=0.609)
-D (348910) BLEMGR: Peripheral: 30AEA40000B9 "MOCREO" at=0 RSSI=-67 (13/23=0.565)
-D (348938) BLEMGR: Peripheral: 30AEA4000959 "MOCREO" at=0 RSSI=-42 (14/23=0.609)
-D (348958) BLEMGR: 30AEA4000959 node key: p5TxJQYtBmBeTmF7
-D (348986) BLEMGR: Peripheral: 30AEA4000946 "MOCREO" at=0 RSSI=-58 (16/24=0.667)
-D (349015) BLEMGR: Peripheral: 30AEA4004A5C "MOCREO" at=0 RSSI=-66 (15/23=0.652)
-D (349043) BLEMGR: Peripheral: 30AEA400006B "MOCREO" at=0 RSSI=-69 (19/24=0.792)
-D (349071) BLEMGR: Peripheral: 30AEA40000B3 "MOCREO" at=0 RSSI=-75 (8/22=0.364)
-D (349099) BLEMGR: Peripheral: 30AEA400008E "MOCREO" at=0 RSSI=-77 (11/23=0.478)
-D (349127) BLEMGR: Peripheral: 30AEA4FFFE2A "MOCREO" at=0 RSSI=-72 (15/22=0.682)
-I (349166) BLEMGR: 30AEA4FFFE2A: The device is in factory condition,64
-D (349187) BLEMGR: Peripheral: 30AEA400191F "MOCREO" at=0 RSSI=-78 (13/24=0.542)
-D (349215) BLEMGR: Peripheral: 30AEA4FFFE28 "MOCREO" at=0 RSSI=-69 (17/23=0.739)
-D (349243) BLEMGR: Peripheral: 30AEA4004973 "MOCREO" at=0 RSSI=-70 (11/20=0.55)
-I (349281) BLEMGR: 30AEA4004973: The device is in factory condition,64
-D (349303) BLEMGR: Peripheral: 30AEA4000968 "MOCREO" at=0 RSSI=-61 (14/23=0.609)
-D (349331) BLEMGR: Peripheral: 30AEA40000F8 "MOCREO" at=0 RSSI=-67 (15/20=0.75)
-D (349358) BLEMGR: Peripheral: 30AEA4000220 "MOCREO" at=0 RSSI=-51 (17/23=0.739)
-D (349386) BLEMGR: Peripheral: 30AEA4000061 "MOCREO" at=0 RSSI=-69 (8/23=0.348)
-D (349414) BLEMGR: Peripheral: 30AEA40000D3 "MOCREO" at=0 RSSI=-61 (15/23=0.652)
-D (349445) BLEMGR: Peripheral: 08B61F000035 "MOCREO" at=0 RSSI=-76 (11/21=0.524)
-I (349483) BLEMGR: 08B61F000035: The device is in factory condition,64
-D (349505) BLEMGR: Peripheral: 30AEA40000CC "MOCREO" at=0 RSSI=-77 (17/24=0.708)
-D (349533) BLEMGR: Peripheral: 30AEA4000912 "MOCREO" at=0 RSSI=-65 (14/20=0.7)
-W (349615) DMR: 30AEA40000E6:The probe of this sensor has been unplugged
-W (349754) DMR: 30AEA40000B9:The sensor crc check error
-W (349787) DMR: 30AEA40000B8:The probe of this sensor has been unplugged
-W (349891) DMR: 30AEA40000AA:The probe of this sensor has been unplugged
-W (349924) DMR: 30AEA40000A8:The probe of this sensor has been unplugged
-W (350013) DMR: 30AEA400009E:The sensor crc check error
-W (350046) DMR: 30AEA4000006:The probe of this sensor has been unplugged
-W (350087) DMR: 30AEA4000099:The sensor crc check error
-W (350141) DMR: 30AEA4000094:The sensor crc check error
-W (350253) DMR: 30AEA400007E:The probe of this sensor has been unplugged
-W (350336) DMR: 30AEA4004973:The sensor crc check error
-W (350398) DMR: 30AEA4000061:The probe of this sensor has been unplugged
-W (350431) DMR: 30AEA4FFFE2A:The sensor crc check error
-I (350549) BLEPRO: 00a4c1388bf74a00:{'key': False, 'failure': False, 'rssi': -48, 'batteryLevel': 59, 'val': {'measureId': 138, 'tm': 2757, 'hu': 7093}, 'model': 'SS1'}
-I (350614) TASK_REQUEST: New data:[{'id': 138, 'pt': 'temperature,nodeId=00A4C1388BF74A00 tm=2757 1696817132\nhumidity,nodeId=00A4C1388BF74A00 hu=7093 1696817132'}]
-I (350690) REQS: connecting to https://ts.mocreo.com:443/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
-_E (351453) DEV_OTA: request & write failed
-Traceback (most recent call last):
-  File "core/device_ota.py", line 325, in fetchFirmwareOnce
-  File "uasyncio/stream.py", line 1, in read
-OSError: -113
-D (351594) BLEMGR: start BLE scanning
-E (351623) REQS: OSError 113
-Traceback (most recent call last):
-  File "arequests.py", line 170, in request
-  File "uasyncio/funcs.py", line 1, in wait_for
-  File "uasyncio/funcs.py", line 1, in runner
-  File "uasyncio/core.py", line 1, in run_until_complete
-  File "uasyncio/stream.py", line 1, in open_connection
-OSError: [Errno 113] EHOSTUNREACH
-E (351657) REQS: https://ts.mocreo.com/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s request failed.
-E (351670) HTTP: POST request fail (1/1)
-Traceback (most recent call last):
-  File "core/http_api_request.py", line 445, in do_request
-  File "arequests.py", line 287, in post
-  File "arequests.py", line 176, in request
-ValueError: open connection OSError
-D (351729) HTTP: failed for 1
-E (351750) REQS: OSError 113
-Traceback (most recent call last):
-  File "arequests.py", line 170, in request
-  File "uasyncio/funcs.py", line 1, in wait_for
-  File "uasyncio/funcs.py", line 1, in runner
-  File "uasyncio/core.py", line 1, in run_until_complete
-  File "uasyncio/stream.py", line 1, in open_connection
-OSError: [Errno 113] EHOSTUNREACH
-E (351766) REQS: https://ts.mocreo.com/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s request failed.
-E (351780) HTTP: POST request fail (1/1)
-Traceback (most recent call last):
-  File "core/http_api_request.py", line 445, in do_request
-  File "arequests.py", line 287, in post
-  File "arequests.py", line 176, in request
-ValueError: open connection OSError
-D (351794) HTTP: failed for 2
-W (351813) DEV_OTA: retry #9
-E (351832) RPCW: MQTT check message problem
-Traceback (most recent call last):
-  File "core/rpc_notification_worker.py", line 514, in taskMqttWorker
-  File "umqtt/simple.py", line 227, in check_msg
-  File "umqtt/simple.py", line 187, in wait_msg
-OSError: -113
-W (351840) RPCW: MQTT disconnecting...
-E (351856) RPCW: Could not disconnect MQTT
-Traceback (most recent call last):
-  File "core/rpc_notification_worker.py", line 371, in _clientDisconnect
-  File "umqtt/simple.py", line 118, in disconnect
-OSError: -113
-D (351958) RPCW: MQTT connecting... 0
-D (359133) BLECNTL: _IRQ_SCAN_DONE
-D (359148) BLEMGR: Peripheral: 08161F00001D "MOCREO" at=0 RSSI=-79 (11/21=0.524)
-I (359187) BLEMGR: 08161F00001D: The device is in factory condition,64
-D (359208) BLEMGR: Peripheral: 30AEA4FFFE2A "MOCREO" at=0 RSSI=-73 (16/23=0.696)
-I (359247) BLEMGR: 30AEA4FFFE2A: The device is in factory condition,64
-D (359268) BLEMGR: Peripheral: 30AEA4FFFE29 "MOCREO" at=0 RSSI=-71 (12/25=0.48)
-D (359296) BLEMGR: Peripheral: 30AEA40000C0 "MOCREO" at=0 RSSI=-69 (15/25=0.6)
-D (359326) BLEMGR: Peripheral: 30AEA40017D9 "MOCREO" at=0 RSSI=-75 (14/25=0.56)
-D (359353) BLEMGR: Peripheral: 30AEA4004AE5 "MOCREO" at=0 RSSI=-61 (12/21=0.571)
-D (359381) BLEMGR: Peripheral: 30AEA4000959 "MOCREO" at=0 RSSI=-39 (15/24=0.625)
-D (359401) BLEMGR: 30AEA4000959 node key: p5TxJQYtBmBeTmF7
-D (359429) BLEMGR: Peripheral: 30AEA4000968 "MOCREO" at=0 RSSI=-71 (15/24=0.625)
-D (359458) BLEMGR: Peripheral: 08161F000036 "MOCREO" at=0 RSSI=-63 (16/24=0.667)
-D (359488) BLEMGR: Peripheral: 30AEA4FFFE20 "MOCREO" at=0 RSSI=-78 (15/24=0.625)
-D (359515) BLEMGR: Peripheral: 08B61F00043E "MOCREO" at=0 RSSI=-64 (13/24=0.542)
-D (359544) BLEMGR: Peripheral: 30AEA400000F "MOCREO" at=0 RSSI=-67 (6/24=0.25)
-D (359572) BLEMGR: Peripheral: 30AEA4FFFE1F "MOCREO" at=0 RSSI=-43 (19/25=0.76)
-D (359592) BLEMGR: 30AEA4FFFE1F node key: sRDHMWCaE2eRtNPD
-D (359620) BLEMGR: Peripheral: 30AEA400007E "MOCREO" at=0 RSSI=-41 (22/25=0.88)
-D (359648) BLEMGR: Peripheral: 30AEA400002A "MOCREO" at=0 RSSI=-69 (15/25=0.6)
-D (359676) BLEMGR: Peripheral: 30AEA40000B9 "MOCREO" at=0 RSSI=-65 (14/24=0.583)
-D (359704) BLEMGR: Peripheral: 30AEA4004985 "MOCREO" at=0 RSSI=-74 (17/24=0.708)
-D (359732) BLEMGR: Peripheral: 30AEA4004A5C "MOCREO" at=0 RSSI=-64 (16/24=0.667)
-D (359759) BLEMGR: Peripheral: 30AEA40000A8 "MOCREO" at=0 RSSI=-64 (16/22=0.727)
-D (359787) BLEMGR: Peripheral: 30AEA4000088 "MOCREO" at=0 RSSI=-71 (13/21=0.619)
-D (359816) BLEMGR: Peripheral: 30AEA40018EC "MOCREO" at=0 RSSI=-74 (14/25=0.56)
-D (359845) BLEMGR: Peripheral: 30AEA40000A5 "MOCREO" at=0 RSSI=-83 (8/19=0.421)
-D (359874) BLEMGR: Peripheral: 30AEA4000047 "MOCREO" at=0 RSSI=-63 (14/25=0.56)
-D (359902) BLEMGR: Peripheral: 30AEA4000976 "MOCREO" at=0 RSSI=-63 (13/21=0.619)
-D (359930) BLEMGR: Peripheral: 30AEA40000D3 "MOCREO" at=0 RSSI=-75 (16/24=0.667)
-D (359960) BLEMGR: Peripheral: 30AEA400009F "MOCREO" at=0 RSSI=-70 (21/25=0.84)
-D (359989) BLEMGR: Peripheral: 30AEA400009E "MOCREO" at=0 RSSI=-58 (14/24=0.583)
-D (360016) BLEMGR: Peripheral: A4C1388BF74A "ATC_8BF74A" at=0 RSSI=-47 (25/25=1.0)
-D (360044) BLEMGR: Peripheral: 30AEA400009C "MOCREO" at=0 RSSI=-66 (12/24=0.5)
-D (360072) BLEMGR: Peripheral: 08B61F000338 "MOCREO" at=0 RSSI=-59 (15/21=0.714)
-D (360100) BLEMGR: Peripheral: 30AEA400A20C "MOCREO" at=0 RSSI=-61 (19/24=0.792)
-D (360128) BLEMGR: Peripheral: 30AEA4000099 "MOCREO" at=0 RSSI=-63 (17/25=0.68)
-I (360168) BLEMGR: 30AEA4000099: The device is in factory condition,64
-D (360190) BLEMGR: Peripheral: 30AEA4002F63 "MOCREO" at=0 RSSI=-74 (10/24=0.417)
-D (360218) BLEMGR: Peripheral: 30AEA40000F8 "MOCREO" at=0 RSSI=-71 (16/21=0.762)
-D (360246) BLEMGR: Peripheral: 30AEA400097B "MOCREO" at=0 RSSI=-80 (16/25=0.64)
-D (360275) BLEMGR: Peripheral: 30AEA4FFFFAA "MOCREO" at=0 RSSI=-72 (16/25=0.64)
-D (360303) BLEMGR: Peripheral: 30AEA4000039 "MOCREO" at=0 RSSI=-63 (18/25=0.72)
-D (360331) BLEMGR: Peripheral: 30AEA40000C2 "MOCREO" at=0 RSSI=-65 (12/25=0.48)
-D (360359) BLEMGR: Peripheral: 30AEA4000006 "MOCREO" at=0 RSSI=-59 (16/23=0.696)
-D (360388) BLEMGR: Peripheral: 30AEA40000C1 "MOCREO" at=0 RSSI=-78 (17/23=0.739)
-D (360417) BLEMGR: Peripheral: 08B61F000038 "MOCREO" at=0 RSSI=-66 (16/24=0.667)
-I (360456) BLEMGR: 08B61F000038: The device is in factory condition,64
-D (360477) BLEMGR: Peripheral: 08B61F00030C "MOCREO" at=0 RSSI=-70 (16/24=0.667)
-D (360506) BLEMGR: Peripheral: 08B61F00FEB1 "MOCREO" at=0 RSSI=-63 (15/25=0.6)
-D (360535) BLEMGR: Peripheral: 30AEA4000060 "MOCREO" at=0 RSSI=-78 (10/25=0.4)
-D (360563) BLEMGR: Peripheral: 30AEA40000EA "MOCREO" at=0 RSSI=-56 (16/25=0.64)
-E (360591) RPCW: Could not establish MQTT connection
-Traceback (most recent call last):
-  File "core/rpc_notification_worker.py", line 357, in _clientConnect
-  File "umqtt/simple.py", line 68, in connect
-OSError: -202
-W (360599) RPCW: MQTT connect fail
-D (360607) RPCW: reconnect attempt backoff: 2s
-~I (360629) DEV_OTA: fetching: https://somebody.oss-cn-shenzhen.aliyuncs.com/firmware/vsn1/prd/application-HUB_H1B-1.9.5-prd.bin using bulk=256
-D (360945) DEV_OTA: alloc 291648, free 3294272
-I (361004) REQS: connecting to https://somebody.oss-cn-shenzhen.aliyuncs.com:443/firmware/vsn1/prd/application-HUB_H1B-1.9.5-prd.bin
-D (361031) BLINKM: layer APPLICATION
-D (361039) BLINKM: set blink duration=0
-I (361128) REQS: connecting to https://ts.mocreo.com:443/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
-I (361213) REQS: connecting to https://ts.mocreo.com:443/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
-W (361229) NET: net fail
-D (361236) NET: connection lost 1
-W (361285) DMR: 30AEA40000E6:The probe of this sensor has been unplugged
-W (361425) DMR: 30AEA40000B9:The sensor crc check error
-W (361459) DMR: 30AEA40000B8:The probe of this sensor has been unplugged
-W (361562) DMR: 30AEA40000AA:The probe of this sensor has been unplugged
-W (361595) DMR: 30AEA40000A8:The probe of this sensor has been unplugged
-W (361684) DMR: 30AEA400009E:The sensor crc check error
-W (361717) DMR: 30AEA4000006:The probe of this sensor has been unplugged
-W (361759) DMR: 30AEA4000099:The sensor crc check error
-W (361813) DMR: 30AEA4000094:The sensor crc check error
-W (361927) DMR: 30AEA400007E:The probe of this sensor has been unplugged
-W (362010) DMR: 30AEA4004973:The sensor crc check error
-W (362071) DMR: 30AEA4000061:The probe of this sensor has been unplugged
-W (362105) DMR: 30AEA4FFFE2A:The sensor crc check error
-I (362224) BLEPRO: 00a4c1388bf74a00:{'key': False, 'failure': False, 'rssi': -47, 'batteryLevel': 60, 'val': {'measureId': 140, 'tm': 2757, 'hu': 7090}, 'model': 'SS1'}
-I (362289) TASK_REQUEST: New data:[{'id': 140, 'pt': 'temperature,nodeId=00A4C1388BF74A00 tm=2757 1696817144\nhumidity,nodeId=00A4C1388BF74A00 hu=7090 1696817144'}]
-I (362365) REQS: connecting to https://ts.mocreo.com:443/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
-_D (369147) BLINKM: layer APPLICATION
-D (369155) BLINKM: set blink duration=0
-D (369187) BLEMGR: start BLE scanning
-~E (369248) REQS: OSError -202
-Traceback (most recent call last):
-  File "arequests.py", line 170, in request
-  File "uasyncio/funcs.py", line 1, in wait_for
-  File "uasyncio/funcs.py", line 1, in runner
-  File "uasyncio/core.py", line 1, in run_until_complete
-  File "uasyncio/stream.py", line 1, in open_connection
-OSError: -202
-E (369263) REQS: https://somebody.oss-cn-shenzhen.aliyuncs.com/firmware/vsn1/prd/application-HUB_H1B-1.9.5-prd.bin request failed.
-E (369277) DEV_OTA: request & write failed
-Traceback (most recent call last):
-  File "core/device_ota.py", line 317, in fetchFirmwareOnce
-  File "arequests.py", line 284, in get
-  File "arequests.py", line 176, in request
-ValueError: open connection OSError
-E (369293) REQS: OSError 118
-Traceback (most recent call last):
-  File "arequests.py", line 170, in request
-  File "uasyncio/funcs.py", line 1, in wait_for
-  File "uasyncio/funcs.py", line 1, in runner
-  File "uasyncio/core.py", line 1, in run_until_complete
-  File "uasyncio/stream.py", line 1, in open_connection
-  File "uasyncio/stream.py", line 1, in open_connection
-OSError: 118
-E (369310) REQS: https://ts.mocreo.com/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s request failed.
-E (369323) HTTP: POST request fail (1/1)
-Traceback (most recent call last):
-  File "core/http_api_request.py", line 445, in do_request
-  File "arequests.py", line 287, in post
-  File "arequests.py", line 176, in request
-ValueError: open connection OSError
-D (369338) HTTP: failed for 3
-E (369524) REQS: OSError 118
-Traceback (most recent call last):
-  File "arequests.py", line 170, in request
-  File "uasyncio/funcs.py", line 1, in wait_for
-  File "uasyncio/funcs.py", line 1, in runner
-  File "uasyncio/core.py", line 1, in run_until_complete
-  File "uasyncio/stream.py", line 1, in open_connection
-  File "uasyncio/stream.py", line 1, in open_connection
-OSError: 118
-E (369540) REQS: https://ts.mocreo.com/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s request failed.
-E (369554) HTTP: POST request fail (1/1)
-Traceback (most recent call last):
-  File "core/http_api_request.py", line 445, in do_request
-  File "arequests.py", line 287, in post
-  File "arequests.py", line 176, in request
-ValueError: open connection OSError
-D (369569) HTTP: failed for 4
-E (369590) REQS: OSError 118
-Traceback (most recent call last):
-  File "arequests.py", line 170, in request
-  File "uasyncio/funcs.py", line 1, in wait_for
-  File "uasyncio/funcs.py", line 1, in runner
-  File "uasyncio/core.py", line 1, in run_until_complete
-  File "uasyncio/stream.py", line 1, in open_connection
-  File "uasyncio/stream.py", line 1, in open_connection
-OSError: 118
-E (369789) REQS: https://ts.mocreo.com/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s request failed.
-E (369803) HTTP: POST request fail (1/1)
-Traceback (most recent call last):
-  File "core/http_api_request.py", line 445, in do_request
-  File "arequests.py", line 287, in post
-  File "arequests.py", line 176, in request
-ValueError: open connection OSError
-D (369818) HTTP: failed for 5
-W (370282) DEV_OTA: retry #8
-I (370301) DEV_OTA: fetching: https://somebody.oss-cn-shenzhen.aliyuncs.com/firmware/vsn1/prd/application-HUB_H1B-1.9.5-prd.bin using bulk=512
-D (370980) DEV_OTA: alloc 293568, free 3292352
-I (371037) REQS: connecting to https://somebody.oss-cn-shenzhen.aliyuncs.com:443/firmware/vsn1/prd/application-HUB_H1B-1.9.5-prd.bin
-D (371203) BLECNTL: _IRQ_SCAN_DONE
-D (371219) BLEMGR: Peripheral: 08161F00001D "MOCREO" at=0 RSSI=-82 (12/22=0.545)
-I (371257) BLEMGR: 08161F00001D: The device is in factory condition,64
-D (371278) BLEMGR: Peripheral: 30AEA4004AE5 "MOCREO" at=0 RSSI=-62 (13/22=0.591)
-D (371307) BLEMGR: Peripheral: 30AEA40000B8 "MOCREO" at=0 RSSI=-57 (14/26=0.538)
-D (371334) BLEMGR: Peripheral: 30AEA400002A "MOCREO" at=0 RSSI=-69 (16/26=0.615)
-D (371362) BLEMGR: Peripheral: 30AEA4000058 "MOCREO" at=0 RSSI=-73 (12/25=0.48)
-I (371401) BLEMGR: 30AEA4000058: The device is in factory condition,64
-D (371423) BLEMGR: Peripheral: 30AEA40017D9 "MOCREO" at=0 RSSI=-64 (15/26=0.577)
-D (371450) BLEMGR: Peripheral: 30AEA4FFFF26 "MOCREO" at=0 RSSI=-85 (10/26=0.385)
-D (371479) BLEMGR: Peripheral: 30AEA4000959 "MOCREO" at=0 RSSI=-43 (16/25=0.64)
-D (371499) BLEMGR: 30AEA4000959 node key: p5TxJQYtBmBeTmF7
-D (371527) BLEMGR: Peripheral: 08161F000036 "MOCREO" at=0 RSSI=-61 (17/25=0.68)
-D (371557) BLEMGR: Peripheral: 30AEA40003D5 "MOCREO" at=0 RSSI=-77 (10/24=0.417)
-D (371585) BLEMGR: Peripheral: 30AEA400192D "MOCREO" at=0 RSSI=-66 (11/25=0.44)
-D (371613) BLEMGR: Peripheral: 30AEA4000968 "MOCREO" at=0 RSSI=-67 (16/25=0.64)
-D (371642) BLEMGR: Peripheral: 30AEA4000912 "MOCREO" at=0 RSSI=-64 (15/22=0.682)
-D (371669) BLEMGR: Peripheral: 30AEA4FFFE1F "MOCREO" at=0 RSSI=-50 (20/26=0.769)
-D (371690) BLEMGR: 30AEA4FFFE1F node key: sRDHMWCaE2eRtNPD
-D (371717) BLEMGR: Peripheral: 30AEA400007E "MOCREO" at=0 RSSI=-52 (23/26=0.885)
-D (371744) BLEMGR: Peripheral: 30AEA4000088 "MOCREO" at=0 RSSI=-69 (14/22=0.636)
-D (371773) BLEMGR: Peripheral: 30AEA4FFFE28 "MOCREO" at=0 RSSI=-73 (18/25=0.72)
-D (371801) BLEMGR: Peripheral: 30AEA400007A "MOCREO" at=0 RSSI=-79 (8/26=0.308)
-D (371829) BLEMGR: Peripheral: 30AEA40000A8 "MOCREO" at=0 RSSI=-70 (17/23=0.739)
-D (371856) BLEMGR: Peripheral: 30AEA40000A7 "MOCREO" at=0 RSSI=-70 (13/26=0.5)
-D (371884) BLEMGR: Peripheral: 08161F000039 "MOCREO" at=0 RSSI=-61 (19/25=0.76)
-D (371912) BLEMGR: Peripheral: 30AEA400FFC3 "MOCREO" at=0 RSSI=-72 (9/20=0.45)
-I (371951) BLEMGR: 30AEA400FFC3: The device is in factory condition,64
-D (371972) BLEMGR: Peripheral: 30AEA4000047 "MOCREO" at=0 RSSI=-57 (15/26=0.577)
-D (371999) BLEMGR: Peripheral: 30AEA40000D3 "MOCREO" at=0 RSSI=-71 (17/25=0.68)
-D (372029) BLEMGR: Peripheral: 30AEA400FFC6 "MOCREO" at=0 RSSI=-60 (14/26=0.538)
-D (372058) BLEMGR: Peripheral: 30AEA4000976 "MOCREO" at=0 RSSI=-77 (14/22=0.636)
-D (372085) BLEMGR: Peripheral: A4C138393E4A "ATC_393E4A" at=0 RSSI=-77 (5/24=0.208)
-D (372113) BLEMGR: Peripheral: 30AEA400009E "MOCREO" at=0 RSSI=-59 (15/25=0.6)
-D (372141) BLEMGR: Peripheral: 08B61F000338 "MOCREO" at=0 RSSI=-64 (16/22=0.727)
-D (372168) BLEMGR: Peripheral: 08B61F000035 "MOCREO" at=0 RSSI=-80 (12/23=0.522)
-I (372206) BLEMGR: 08B61F000035: The device is in factory condition,64
-D (372228) BLEMGR: Peripheral: 30AEA40000F8 "MOCREO" at=0 RSSI=-66 (17/22=0.773)
-D (372258) BLEMGR: Peripheral: 08B61F000037 "MOCREO" at=0 RSSI=-70 (14/25=0.56)
-D (372287) BLEMGR: Peripheral: 30AEA40017B6 "MOCREO" at=0 RSSI=-71 (13/26=0.5)
-D (372315) BLEMGR: Peripheral: 30AEA4000039 "MOCREO" at=0 RSSI=-77 (19/26=0.731)
-D (372343) BLEMGR: Peripheral: 30AEA4FFFFAA "MOCREO" at=0 RSSI=-66 (17/26=0.654)
-D (372372) BLEMGR: Peripheral: 30AEA400006B "MOCREO" at=0 RSSI=-67 (20/26=0.769)
-D (372400) BLEMGR: Peripheral: 30AEA4000036 "MOCREO" at=0 RSSI=-55 (17/26=0.654)
-D (372428) BLEMGR: Peripheral: 08B61F00FEB1 "MOCREO" at=0 RSSI=-63 (16/26=0.615)
-D (372456) BLEMGR: Peripheral: 30AEA40000C2 "MOCREO" at=0 RSSI=-80 (13/26=0.5)
-D (372484) BLEMGR: Peripheral: 30AEA4000094 "MOCREO" at=0 RSSI=-61 (12/25=0.48)
-I (372523) BLEMGR: 30AEA4000094: The device is in factory condition,64
-D (372545) BLEMGR: Peripheral: 08B61F000038 "MOCREO" at=0 RSSI=-65 (17/25=0.68)
-I (372583) BLEMGR: 08B61F000038: The device is in factory condition,64
-D (372605) BLEMGR: Peripheral: 30AEA400008E "MOCREO" at=0 RSSI=-72 (12/25=0.48)
-D (372634) BLEMGR: Peripheral: 30AEA40000EA "MOCREO" at=0 RSSI=-63 (17/26=0.654)
-D (372668) NET: connection lost 2
-I (372756) REQS: connecting to https://ts.mocreo.com:443/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
-_W (372809) DMR: 30AEA40000E6:The probe of this sensor has been unplugged
-W (372935) DMR: 30AEA40000B9:The sensor crc check error
-W (372968) DMR: 30AEA40000B8:The probe of this sensor has been unplugged
-W (373074) DMR: 30AEA40000AA:The probe of this sensor has been unplugged
-W (373108) DMR: 30AEA40000A8:The probe of this sensor has been unplugged
-W (373198) DMR: 30AEA400009E:The sensor crc check error
-W (373232) DMR: 30AEA4000006:The probe of this sensor has been unplugged
-W (373272) DMR: 30AEA4000099:The sensor crc check error
-W (373327) DMR: 30AEA4000094:The sensor crc check error
-W (373454) DMR: 30AEA400007E:The probe of this sensor has been unplugged
-W (373537) DMR: 30AEA4004973:The sensor crc check error
-W (373599) DMR: 30AEA4000061:The probe of this sensor has been unplugged
-W (373632) DMR: 30AEA4FFFE2A:The sensor crc check error
-I (373750) BLEPRO: 00a4c138393e4a00:{'key': False, 'failure': False, 'rssi': -77, 'batteryLevel': 73, 'val': {'measureId': 10, 'tm': 2715, 'hu': 6916}, 'model': 'SS1'}
-I (373815) TASK_REQUEST: New data:[{'id': 10, 'pt': 'temperature,nodeId=00A4C138393E4A00 tm=2715 1696817155\nhumidity,nodeId=00A4C138393E4A00 hu=6916 1696817155'}]
-I (373892) REQS: connecting to https://ts.mocreo.com:443/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
-W (380127) DEV_OTA: timeout! cancel download task
-I (380203) REQS: connecting to https://ts.mocreo.com:443/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
-I (380287) REQS: connecting to https://ts.mocreo.com:443/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
-W (380302) DEV_OTA: retry #7
-~D (380345) BLEMGR: start BLE scanning
-E (380451) REQS: OSError -202
-Traceback (most recent call last):
-  File "arequests.py", line 170, in request
-  File "uasyncio/funcs.py", line 1, in wait_for
-  File "uasyncio/funcs.py", line 1, in runner
-  File "uasyncio/core.py", line 1, in run_until_complete
-  File "uasyncio/stream.py", line 1, in open_connection
-OSError: -202
-E (380488) REQS: https://somebody.oss-cn-shenzhen.aliyuncs.com/firmware/vsn1/prd/application-HUB_H1B-1.9.5-prd.bin request failed.
-E (380502) DEV_OTA: request & write failed
-Traceback (most recent call last):
-  File "core/device_ota.py", line 317, in fetchFirmwareOnce
-  File "arequests.py", line 284, in get
-  File "arequests.py", line 176, in request
-ValueError: open connection OSError
-E (380520) REQS: OSError 118
-Traceback (most recent call last):
-  File "arequests.py", line 170, in request
-  File "uasyncio/funcs.py", line 1, in wait_for
-  File "uasyncio/funcs.py", line 1, in runner
-  File "uasyncio/core.py", line 1, in run_until_complete
-  File "uasyncio/stream.py", line 1, in open_connection
-  File "uasyncio/stream.py", line 1, in open_connection
-OSError: 118
-E (380536) REQS: https://ts.mocreo.com/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s request failed.
-E (380549) HTTP: POST request fail (1/1)
-Traceback (most recent call last):
-  File "core/http_api_request.py", line 445, in do_request
-  File "arequests.py", line 287, in post
-  File "arequests.py", line 176, in request
-ValueError: open connection OSError
-D (380564) HTTP: failed for 6
-I (380751) DEV_OTA: fetching: https://somebody.oss-cn-shenzhen.aliyuncs.com/firmware/vsn1/prd/application-HUB_H1B-1.9.5-prd.bin using bulk=128
-D (381568) DEV_OTA: alloc 290928, free 3294992
-I (381756) REQS: connecting to https://somebody.oss-cn-shenzhen.aliyuncs.com:443/firmware/vsn1/prd/application-HUB_H1B-1.9.5-prd.bin
-E (381779) REQS: OSError 118
-Traceback (most recent call last):
-  File "arequests.py", line 170, in request
-  File "uasyncio/funcs.py", line 1, in wait_for
-  File "uasyncio/funcs.py", line 1, in runner
-  File "uasyncio/core.py", line 1, in run_until_complete
-  File "uasyncio/stream.py", line 1, in open_connection
-  File "uasyncio/stream.py", line 1, in open_connection
-OSError: 118
-E (381795) REQS: https://ts.mocreo.com/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s request failed.
-E (381920) HTTP: POST request fail (1/1)
-Traceback (most recent call last):
-  File "core/http_api_request.py", line 445, in do_request
-  File "arequests.py", line 287, in post
-  File "arequests.py", line 176, in request
-ValueError: open connection OSError
-D (381935) HTTP: failed for 7
-E (381960) REQS: OSError 118
-Traceback (most recent call last):
-  File "arequests.py", line 170, in request
-  File "uasyncio/funcs.py", line 1, in wait_for
-  File "uasyncio/funcs.py", line 1, in runner
-  File "uasyncio/core.py", line 1, in run_until_complete
-  File "uasyncio/stream.py", line 1, in open_connection
-  File "uasyncio/stream.py", line 1, in open_connection
-OSError: 118
-E (381976) REQS: https://ts.mocreo.com/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s request failed.
-E (381989) HTTP: POST request fail (1/1)
-Traceback (most recent call last):
-  File "core/http_api_request.py", line 445, in do_request
-  File "arequests.py", line 287, in post
-  File "arequests.py", line 176, in request
-ValueError: open connection OSError
-D (382004) HTTP: failed for 8
-I (382029) BLINKM: apiNormal :False
-E (382227) REQS: OSError 118
-Traceback (most recent call last):
-  File "arequests.py", line 170, in request
-  File "uasyncio/funcs.py", line 1, in wait_for
-  File "uasyncio/funcs.py", line 1, in runner
-  File "uasyncio/core.py", line 1, in run_until_complete
-  File "uasyncio/stream.py", line 1, in open_connection
-  File "uasyncio/stream.py", line 1, in open_connection
-OSError: 118
-E (382244) REQS: https://ts.mocreo.com/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s request failed.
-E (382257) HTTP: POST request fail (1/1)
-Traceback (most recent call last):
-  File "core/http_api_request.py", line 445, in do_request
-  File "arequests.py", line 287, in post
-  File "arequests.py", line 176, in request
-ValueError: open connection OSError
-D (382272) HTTP: failed for 9
-D (382391) BLECNTL: _IRQ_SCAN_DONE
-D (382407) BLEMGR: Peripheral: 30AEA4000061 "MOCREO" at=0 RSSI=-71 (9/26=0.346)
-D (382435) BLEMGR: Peripheral: 30AEA4000025 "MOCREO" at=0 RSSI=-61 (16/27=0.593)
-D (382455) BLEMGR: 30AEA4000025 node key: CE3kKEWrTcezS7Gz
-D (382483) BLEMGR: Peripheral: 30AEA4000060 "MOCREO" at=0 RSSI=-70 (11/27=0.407)
-D (382510) BLEMGR: Peripheral: 30AEA4000926 "MOCREO" at=0 RSSI=-70 (16/24=0.667)
-D (382538) BLEMGR: Peripheral: 30AEA4000099 "MOCREO" at=0 RSSI=-57 (18/27=0.667)
-I (382577) BLEMGR: 30AEA4000099: The device is in factory condition,64
-D (382598) BLEMGR: Peripheral: 30AEA4000097 "MOCREO" at=0 RSSI=-75 (13/26=0.5)
-D (382626) BLEMGR: Peripheral: 30AEA4000923 "MOCREO" at=0 RSSI=-74 (14/25=0.56)
-D (382657) BLEMGR: Peripheral: 30AEA4000058 "MOCREO" at=0 RSSI=-74 (13/26=0.5)
-I (382695) BLEMGR: 30AEA4000058: The device is in factory condition,64
-D (382716) BLEMGR: Peripheral: 30AEA4000094 "MOCREO" at=0 RSSI=-60 (13/26=0.5)
-I (382755) BLEMGR: 30AEA4000094: The device is in factory condition,64
-D (382777) BLEMGR: Peripheral: 30AEA40000CC "MOCREO" at=0 RSSI=-63 (18/27=0.667)
-D (382805) BLEMGR: Peripheral: 08B61F0000A3 "MOCREO" at=0 RSSI=-60 (12/26=0.462)
-D (382834) BLEMGR: Peripheral: 30AEA400008E "MOCREO" at=0 RSSI=-62 (13/26=0.5)
-D (382863) BLEMGR: Peripheral: 30AEA400192D "MOCREO" at=0 RSSI=-65 (12/26=0.462)
-D (382891) BLEMGR: Peripheral: 30AEA4000912 "MOCREO" at=0 RSSI=-66 (16/23=0.696)
-D (382921) BLEMGR: Peripheral: 30AEA4000911 "MOCREO" at=0 RSSI=-73 (17/27=0.63)
-I (382959) BLEMGR: 30AEA4000911: The device is in factory condition,64
-D (382981) BLEMGR: Peripheral: 30AEA400FFC3 "MOCREO" at=0 RSSI=-71 (10/21=0.476)
-I (383021) BLEMGR: 30AEA400FFC3: The device is in factory condition,64
-D (383043) BLEMGR: Peripheral: 30AEA4FFFF26 "MOCREO" at=0 RSSI=-78 (11/27=0.407)
-D (383071) BLEMGR: Peripheral: 30AEA4000959 "MOCREO" at=0 RSSI=-43 (17/26=0.654)
-D (383091) BLEMGR: 30AEA4000959 node key: p5TxJQYtBmBeTmF7
-D (383118) BLEMGR: Peripheral: 30AEA4000047 "MOCREO" at=0 RSSI=-52 (16/27=0.593)
-D (383146) BLEMGR: Peripheral: 30AEA4000046 "MOCREO" at=0 RSSI=-75 (13/26=0.5)
-D (383174) BLEMGR: Peripheral: 30AEA400FFC6 "MOCREO" at=0 RSSI=-54 (15/27=0.556)
-D (383202) BLEMGR: Peripheral: 30AEA40000C0 "MOCREO" at=0 RSSI=-64 (16/27=0.593)
-D (383231) BLEMGR: Peripheral: 30AEA40000B9 "MOCREO" at=0 RSSI=-65 (15/26=0.577)
-D (383260) BLEMGR: Peripheral: 30AEA40000B8 "MOCREO" at=0 RSSI=-56 (15/27=0.556)
-D (383289) BLEMGR: Peripheral: 08B61F000035 "MOCREO" at=0 RSSI=-79 (13/24=0.542)
-I (383328) BLEMGR: 08B61F000035: The device is in factory condition,64
-D (383351) BLEMGR: Peripheral: 30AEA4004A5C "MOCREO" at=0 RSSI=-69 (17/26=0.654)
-D (383380) BLEMGR: Peripheral: 30AEA400007A "MOCREO" at=0 RSSI=-77 (9/27=0.333)
-D (383408) BLEMGR: Peripheral: 30AEA400007B "MOCREO" at=0 RSSI=-68 (14/27=0.519)
-I (383447) BLEMGR: 30AEA400007B: The device is in factory condition,64
-D (383469) BLEMGR: Peripheral: 30AEA40003D5 "MOCREO" at=0 RSSI=-72 (11/25=0.44)
-D (383499) BLEMGR: Peripheral: 08B61F000037 "MOCREO" at=0 RSSI=-75 (15/26=0.577)
-D (383530) BLEMGR: Peripheral: 30AEA4FFFFAA "MOCREO" at=0 RSSI=-72 (18/27=0.667)
-D (383560) BLEMGR: Peripheral: 30AEA4000003 "MOCREO" at=0 RSSI=-42 (17/27=0.63)
-D (383580) BLEMGR: 30AEA4000003 node key: dwHPjwbbG5J5nDXX
-D (383609) BLEMGR: Peripheral: 30AEA4000009 "MOCREO" at=0 RSSI=-64 (16/27=0.593)
-I (383648) BLEMGR: 30AEA4000009: The device is in factory condition,64
-D (383670) BLEMGR: Peripheral: 30AEA4000976 "MOCREO" at=0 RSSI=-60 (15/23=0.652)
-D (383699) BLEMGR: Peripheral: 30AEA40000E8 "MOCREO" at=0 RSSI=-62 (16/26=0.615)
-D (383728) BLEMGR: Peripheral: 30AEA4FFFE28 "MOCREO" at=0 RSSI=-68 (19/26=0.731)
-D (383757) BLEMGR: Peripheral: 30AEA4004973 "MOCREO" at=0 RSSI=-69 (12/23=0.522)
-I (383795) BLEMGR: 30AEA4004973: The device is in factory condition,64
-D (383816) BLEMGR: Peripheral: 30AEA400006F "MOCREO" at=0 RSSI=-75 (15/26=0.577)
-D (383845) BLEMGR: Peripheral: 30AEA4000036 "MOCREO" at=0 RSSI=-58 (18/27=0.667)
-D (383874) BLEMGR: Peripheral: 30AEA40000E3 "MOCREO" at=0 RSSI=-65 (16/25=0.64)
-D (383903) BLEMGR: Peripheral: 30AEA40000A7 "MOCREO" at=0 RSSI=-74 (14/27=0.519)
-D (383931) BLEMGR: Peripheral: 08161F000039 "MOCREO" at=0 RSSI=-55 (20/26=0.769)
-D (383960) BLEMGR: Peripheral: 0000000000D9 "MOCREO" at=0 RSSI=-76 (11/24=0.458)
-D (383989) BLEMGR: Peripheral: 30AEA400006B "MOCREO" at=0 RSSI=-67 (21/27=0.778)
-D (384018) BLEMGR: Peripheral: 30AEA4000937 "MOCREO" at=0 RSSI=-72 (18/27=0.667)
-I (384057) BLEMGR: 30AEA4000937: The device is in factory condition,64
-D (384078) BLEMGR: Peripheral: 0000000000D8 "MOCREO" at=0 RSSI=-84 (8/27=0.296)
-D (384108) BLEMGR: Peripheral: 30AEA400097B "MOCREO" at=0 RSSI=-71 (17/27=0.63)
-D (384136) BLEMGR: Peripheral: A4C1388BF74A "ATC_8BF74A" at=0 RSSI=-48 (26/27=0.963)
-D (384164) BLEMGR: Peripheral: 30AEA4004AE5 "MOCREO" at=0 RSSI=-58 (14/23=0.609)
-W (384195) DEV_OTA: retry #6
-D (384213) BLINKM: layer APPLICATION
-D (384222) BLINKM: set blink duration=0
-I (391107) DATA_TASK: start wirte_local_data_task
-I (391152) DATA_TASK: end wirte_local_data_task
-D (391161) NET: connection lost 3
-_I (391253) REQS: connecting to https://ts.mocreo.com:443/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
-W (391301) DMR: 30AEA40000E6:The probe of this sensor has been unplugged
-W (391442) DMR: 30AEA40000B9:The sensor crc check error
-W (391476) DMR: 30AEA40000B8:The probe of this sensor has been unplugged
-W (391580) DMR: 30AEA40000AA:The probe of this sensor has been unplugged
-W (391614) DMR: 30AEA40000A8:The probe of this sensor has been unplugged
-W (391702) DMR: 30AEA400009E:The sensor crc check error
-W (391736) DMR: 30AEA4000006:The probe of this sensor has been unplugged
-W (391776) DMR: 30AEA4000099:The sensor crc check error
-W (391831) DMR: 30AEA4000094:The sensor crc check error
-W (391942) DMR: 30AEA400007E:The probe of this sensor has been unplugged
-W (392025) DMR: 30AEA4004973:The sensor crc check error
-W (392088) DMR: 30AEA4000061:The probe of this sensor has been unplugged
-W (392121) DMR: 30AEA4FFFE2A:The sensor crc check error
-I (392241) BLEPRO: 00a4c1388bf74a00:{'key': False, 'failure': False, 'rssi': -48, 'batteryLevel': 60, 'val': {'measureId': 152, 'tm': 2757, 'hu': 7118}, 'model': 'SS1'}
-I (392370) REQS: connecting to https://ts.mocreo.com:443/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
-I (392385) DEV_OTA: fetching: https://somebody.oss-cn-shenzhen.aliyuncs.com/firmware/vsn1/prd/application-HUB_H1B-1.9.5-prd.bin using bulk=2048
-D (392696) DEV_OTA: alloc 300544, free 3285376
-I (392753) REQS: connecting to https://somebody.oss-cn-shenzhen.aliyuncs.com:443/firmware/vsn1/prd/application-HUB_H1B-1.9.5-prd.bin
-I (392842) REQS: connecting to https://ts.mocreo.com:443/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s
-~D (392870) BLEMGR: start BLE scanning
-E (392889) REQS: OSError -202
-Traceback (most recent call last):
-  File "arequests.py", line 170, in request
-  File "uasyncio/funcs.py", line 1, in wait_for
-  File "uasyncio/funcs.py", line 1, in runner
-  File "uasyncio/core.py", line 1, in run_until_complete
-  File "uasyncio/stream.py", line 1, in open_connection
-OSError: -202
-E (392948) REQS: https://somebody.oss-cn-shenzhen.aliyuncs.com/firmware/vsn1/prd/application-HUB_H1B-1.9.5-prd.bin request failed.
-E (392961) DEV_OTA: request & write failed
-Traceback (most recent call last):
-  File "core/device_ota.py", line 317, in fetchFirmwareOnce
-  File "arequests.py", line 284, in get
-  File "arequests.py", line 176, in request
-ValueError: open connection OSError
-D (400492) BLECNTL: _IRQ_SCAN_DONE
-D (400508) BLEMGR: Peripheral: 30AEA400097B "MOCREO" at=0 RSSI=-72 (18/28=0.643)
-D (400536) BLEMGR: Peripheral: 30AEA4000061 "MOCREO" at=0 RSSI=-78 (10/27=0.37)
-D (400566) BLEMGR: Peripheral: 30AEA4000060 "MOCREO" at=0 RSSI=-67 (12/28=0.429)
-D (400595) BLEMGR: Peripheral: 30AEA400009C "MOCREO" at=0 RSSI=-64 (13/27=0.481)
-D (400623) BLEMGR: Peripheral: 000000001107 "MOCREO" at=0 RSSI=-60 (11/23=0.478)
-I (400662) BLEMGR: 000000001107: The device is in factory condition,64
-D (400684) BLEMGR: Peripheral: 30AEA40000D3 "MOCREO" at=0 RSSI=-74 (18/27=0.667)
-D (400714) BLEMGR: Peripheral: 30AEA4000099 "MOCREO" at=0 RSSI=-65 (19/28=0.679)
-I (400752) BLEMGR: 30AEA4000099: The device is in factory condition,64
-D (400774) BLEMGR: Peripheral: 30AEA4004B13 "MOCREO" at=0 RSSI=-83 (8/24=0.333)
-D (400804) BLEMGR: Peripheral: 30AEA4000094 "MOCREO" at=0 RSSI=-69 (14/27=0.519)
-I (400843) BLEMGR: 30AEA4000094: The device is in factory condition,64
-D (400864) BLEMGR: Peripheral: 08161F000014 "MOCREO" at=0 RSSI=-77 (8/27=0.296)
-I (400903) BLEMGR: 08161F000014: The device is in factory condition,64
-D (400924) BLEMGR: Peripheral: 30AEA40017D9 "MOCREO" at=0 RSSI=-75 (16/28=0.571)
-D (400952) BLEMGR: Peripheral: 30AEA4000968 "MOCREO" at=0 RSSI=-60 (17/27=0.63)
-D (400980) BLEMGR: Peripheral: 30AEA40000CC "MOCREO" at=0 RSSI=-70 (19/28=0.679)
-D (401010) BLEMGR: Peripheral: 08B61F0000A3 "MOCREO" at=0 RSSI=-70 (13/27=0.481)
-D (401041) BLEMGR: Peripheral: 30AEA400092A "MOCREO" at=0 RSSI=-81 (6/28=0.214)
-D (401069) BLEMGR: Peripheral: 08161F00001D "MOCREO" at=0 RSSI=-76 (13/24=0.542)
-I (401108) BLEMGR: 08161F00001D: The device is in factory condition,64
-D (401131) BLEMGR: Peripheral: 30AEA40000FE "MOCREO" at=0 RSSI=-61 (16/28=0.571)
-D (401160) BLEMGR: Peripheral: 30AEA4000088 "MOCREO" at=0 RSSI=-67 (15/24=0.625)
-D (401189) BLEMGR: Peripheral: 30AEA40000C1 "MOCREO" at=0 RSSI=-73 (18/26=0.692)
-D (401218) BLEMGR: Peripheral: 30AEA400000F "MOCREO" at=0 RSSI=-73 (7/27=0.259)
-D (401247) BLEMGR: Peripheral: 30AEA4000946 "MOCREO" at=0 RSSI=-58 (17/28=0.607)
-D (401278) BLEMGR: Peripheral: 30AEA4000047 "MOCREO" at=0 RSSI=-52 (17/28=0.607)
-D (401306) BLEMGR: Peripheral: 30AEA40018EC "MOCREO" at=0 RSSI=-75 (15/28=0.536)
-D (401335) BLEMGR: Peripheral: 30AEA400007E "MOCREO" at=0 RSSI=-50 (24/28=0.857)
-D (401364) BLEMGR: Peripheral: 30AEA4000009 "MOCREO" at=0 RSSI=-63 (17/28=0.607)
-I (401404) BLEMGR: 30AEA4000009: The device is in factory condition,64
-D (401425) BLEMGR: Peripheral: 30AEA4000006 "MOCREO" at=0 RSSI=-55 (17/26=0.654)
-D (401454) BLEMGR: Peripheral: 30AEA400007B "MOCREO" at=0 RSSI=-63 (15/28=0.536)
-I (401493) BLEMGR: 30AEA400007B: The device is in factory condition,64
-D (401515) BLEMGR: Peripheral: 08B61F00030C "MOCREO" at=0 RSSI=-67 (17/27=0.63)
-D (401545) BLEMGR: Peripheral: 08B61F00043E "MOCREO" at=0 RSSI=-66 (14/27=0.519)
-D (401574) BLEMGR: Peripheral: 30AEA4000003 "MOCREO" at=0 RSSI=-42 (18/28=0.643)
-D (401594) BLEMGR: 30AEA4000003 node key: dwHPjwbbG5J5nDXX
-D (401622) BLEMGR: Peripheral: 08161F000036 "MOCREO" at=0 RSSI=-75 (18/27=0.667)
-D (401653) BLEMGR: Peripheral: 30AEA4000039 "MOCREO" at=0 RSSI=-65 (20/28=0.714)
-D (401681) BLEMGR: Peripheral: 30AEA4FFFE2A "MOCREO" at=0 RSSI=-71 (17/26=0.654)
-I (401720) BLEMGR: 30AEA4FFFE2A: The device is in factory condition,64
-D (401741) BLEMGR: Peripheral: 30AEA40000EA "MOCREO" at=0 RSSI=-57 (18/28=0.643)
-D (401770) BLEMGR: Peripheral: 30AEA4FFFE28 "MOCREO" at=0 RSSI=-72 (20/27=0.741)
-D (401801) BLEMGR: Peripheral: 30AEA4FFFE29 "MOCREO" at=0 RSSI=-74 (13/28=0.464)
-D (401830) BLEMGR: Peripheral: 30AEA4000908 "MOCREO" at=0 RSSI=-73 (12/27=0.444)
-D (401858) BLEMGR: Peripheral: 30AEA40000AA "MOCREO" at=0 RSSI=-69 (17/27=0.63)
-D (401889) BLEMGR: Peripheral: 30AEA40000E3 "MOCREO" at=0 RSSI=-67 (17/26=0.654)
-D (401918) BLEMGR: Peripheral: 30AEA40000A8 "MOCREO" at=0 RSSI=-76 (18/25=0.72)
-D (401947) BLEMGR: Peripheral: 08B61F000038 "MOCREO" at=0 RSSI=-66 (18/27=0.667)
-I (401986) BLEMGR: 08B61F000038: The device is in factory condition,64
-D (402009) BLEMGR: Peripheral: 30AEA4002F63 "MOCREO" at=0 RSSI=-79 (11/27=0.407)
-D (402038) BLEMGR: Peripheral: 30AEA4FFFE20 "MOCREO" at=0 RSSI=-71 (16/27=0.593)
-D (402066) BLEMGR: Peripheral: 30AEA4000937 "MOCREO" at=0 RSSI=-72 (19/28=0.679)
-I (402104) BLEMGR: 30AEA4000937: The device is in factory condition,64
-D (402127) BLEMGR: Peripheral: 30AEA4FFFE1F "MOCREO" at=0 RSSI=-58 (21/28=0.75)
-D (402148) BLEMGR: 30AEA4FFFE1F node key: sRDHMWCaE2eRtNPD
-D (402175) BLEMGR: Peripheral: 30AEA400002A "MOCREO" at=0 RSSI=-81 (17/28=0.607)
-D (402203) BLEMGR: Peripheral: 30AEA400009F "MOCREO" at=0 RSSI=-67 (22/28=0.786)
-D (402232) BLEMGR: Peripheral: 30AEA400009E "MOCREO" at=0 RSSI=-70 (16/27=0.593)
-E (402291) REQS: OSError 118
-Traceback (most recent call last):
-  File "arequests.py", line 170, in request
-  File "uasyncio/funcs.py", line 1, in wait_for
-  File "uasyncio/funcs.py", line 1, in runner
-  File "uasyncio/core.py", line 1, in run_until_complete
-  File "uasyncio/stream.py", line 1, in open_connection
-  File "uasyncio/stream.py", line 1, in open_connection
-OSError: 118
-E (402307) REQS: https://ts.mocreo.com/api/v2/write?org=SyncSign&bucket=SyncSign&precision=s request failed.
-E (402320) HTTP: POST request fail (1/1)
-Traceback (most recent call last):
-  File "core/http_api_request.py", line 445, in do_request
-  File "arequests.py", line 287, in post
-  File "arequests.py", line 176, in request
-ValueError: open connection OSError
-E (402335) HTTP: too many http request failure
-D (402412) DB.NODES: nodeList saved
-D (402437) STORAGE: recordData save
-I (404057) CFGPRJ: cfg saved ok
-I (404094) IDLE: created CONFIG_AUTO_REBOOT flag
+D (3691) CFGPRJ: Project ConfigMgr init
+D (4008) PLMGR: plugin calendar not available: no module named 'calendar'
+D (4017) PLMGR: plugin sops not available
+C (4025) MANAGER: Start Hub H1B v1.9.5 VSN1-DEV REV3
+I (4766) WDTTASK: Initialize TWDT. Timeout: 90
+I (4027) MANAGER: wdt running...(90s)
+D (4030) MANAGER: manager started
+D (4036) BLINKM: blinkmgr started
+I (4080) NET: network init
+D (4082) NET: networks start
+D (4091) DEV_HUB: Task UPLOAD_PAN_NODE wait (1) for IoT connection
+I (4094) DATA_TASK: start load_local_data_task
+I (4114) DATA_TASK: end load_local_data_task
+D (4121) DEV_MON: add task monitor [ledModeRefresh]
+D (4123) NET: connect task
+D (4163) NET: {'tryIndex': 1, 'enabled': False, 'phyType': 2}
+D (4165) NET: got wifi config
+I (4921) system_api: Base MAC address is not set
+I (4921) system_api: read default base MAC address from EFUSE
+I (4942) esp_eth.netif.netif_glue: 08:3a:8d:25:45:df
+I (4943) esp_eth.netif.netif_glue: ethernet attached to netif
+I (4943) esp_eth.netif.netif_glue: 08:3a:8d:25:45:df
+I (4943) esp_eth.netif.netif_glue: ethernet attached to netif
+I (8975) ethernet: Ethernet Started
+I (8236) NET: waiting for ethernet cable...
+I (8238) NET: eth link up...
+I (8239) NET: waiting for DHCP...
+I (8252) MANAGER: Maintenance reboot 202 seconds earlier
+D (8258) DEV_MON: add task monitor [feedDogTask]
+~D (8261) MANAGER: delayed start
+D (8270) DEV_HUB: hub device started
+I (8281) DEV_HUB: SYS: {'string': {'sys': '1.9.5', 'app': '0.1.0', 'hw': '0.4.1', 'type': 'H1B-DEV'}, 'numeric': {'sys': 67845, 'app': 256, 'hw': 1025, 'type': 3}}
+I (8314) DEV_HUB: SN: MC083A8D2545DC KEY: 03r3lu
+D (8320) DEV_OTA: device ota started
+D (8368) CACT: check action init
+D (8372) BLINKM: layer DEFAULT
+D (8373) BLINKM: set blink duration=0
+_D (8415) DEV_MON: add task monitor [taskRefreshDeviceAccessKey]
+D (8416) DEV_HUB: Task REQDEV wait (2) for IoT connection
+I (9242) NET: waiting for DHCP...
+I (9385) VSN: VSensor start
+I (9387) PARSE: SensorParser start
+I (9389) SENSDATA: DataMgr start
+I (9390) EMGR: EventMgr start
+D (9392) PAN_NET: addListNodeSuccessCb SNSREVT
+I (9395) EST1: EventST1 start
+I (9396) RULE: MyRules start
+I (9433) DST1: DataST1 start
+I (9435) ESM1: EventSM1 start
+I (9437) PAN_PROTO: pan protocol init
+D (9439) PAN_QUE: pan queue init
+D (9446) DB_NODETPL: no node tpl found (yet)
+I (9451) SMGR: SensorMgr start
+I (9453) DSM1: DataSM1 start
+I (9463) DEVSVR: SERVER_TYPE CLOUD
+D (9465) DEVSVR: connect CLOUD
+I (9471) HTTP: use CLOUD API: https://api.sync-sign.com/beta
+D (9473) DEVSVR: mocreo
+I (9474) MANAGER: starting PAN
+I (9489) PAN_SR: pan transmit init
+D (9509) DEV_MON: add task monitor [checkActiveStatusTask]
+D (9510) DEV_HUB: Task BTN wait (3) for IoT connection
+D (9517) DEV_HUB: Task SNR_DATA wait (4) for IoT connection
+D (9519) SENSDATA: wait sync time
+D (9529) DEV_HUB: Task SNR_INFO wait (5) for IoT connection
+I (10245) NET: waiting for DHCP...
+I (11248) NET: waiting for DHCP...
+I (12251) NET: waiting for DHCP...
+I (13254) NET: waiting for DHCP...
+~I (14257) NET: waiting for DHCP...
+I (15260) NET: waiting for DHCP...
+I (16263) NET: waiting for DHCP...
+I (17266) NET: waiting for DHCP...
+~I (18269) NET: waiting for DHCP...
+_I (19272) NET: waiting for DHCP...
+I (20275) NET: waiting for DHCP...
+I (21278) NET: waiting for DHCP...
+I (22281) NET: waiting for DHCP...
+~W (23284) NET: connect ethernet fail
+I (24026) ethernet: Ethernet Stopped
+D (23287) NET: trying wifi
+D (23296) NET: connect wifi now
+I (24039) wifi:wifi driver task: 3ffdea64, prio:23, stack:6656, core=0
+I (24040) wifi:wifi firmware version: 0f80fa0
+I (24040) wifi:wifi certification version: v7.0
+I (24040) wifi:config NVS flash: disabled
+I (24041) wifi:config nano formating: disabled
+I (24041) wifi:Init data frame dynamic rx buffer num: 32
+I (24042) wifi:Init management frame dynamic rx buffer num: 32
+I (24042) wifi:Init management short buffer num: 32
+I (24043) wifi:Init static tx buffer num: 16
+I (24044) wifi:Init tx cache buffer num: 32
+I (24044) wifi:Init static rx buffer size: 1600
+I (24045) wifi:Init static rx buffer num: 16
+I (24045) wifi:Init dynamic rx buffer num: 32
+I (24046) wifi_init: rx ba win: 16
+I (24046) wifi_init: tcpip mbox: 32
+I (24046) wifi_init: udp mbox: 6
+I (24047) wifi_init: tcp mbox: 6
+I (24047) wifi_init: tcp tx win: 5744
+I (24048) wifi_init: tcp rx win: 5744
+I (24048) wifi_init: tcp mss: 1440
+I (24049) wifi_init: WiFi/LWIP prefer SPIRAM
+I (24050) phy_init: phy_version 4670,719f9f6,Feb 18 2021,17:07:07
+I (24131) wifi:mode : sta (08:3a:8d:25:45:dc)
+I (24131) wifi:enable tsf
+I (24132) wifi: STA_START
+I (23418) NET: connecting to network [OZ_Office]
+D (23421) NET: #0 connecting WiFi
+I (24171) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1
+I (24489) wifi:state: init -> auth (b0)
+I (24529) wifi:state: auth -> assoc (0)
+I (24589) wifi:state: assoc -> run (10)
+I (24645) wifi:connected with OZ_Office, aid = 4, channel 1, BW20, bssid = 88:c3:97:cd:51:fb
+I (24646) wifi:security: WPA2-PSK, phy: bgn, rssi: -46
+I (24646) wifi:pm start, type: 1
+
+I (24648) network: CONNECTED
+D (23923) NET: #1 connecting WiFi
+I (24718) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+D (24427) NET: #2 connecting WiFi
+D (24930) NET: #3 connecting WiFi
+I (26053) wifi:<ba-add>idx:0 (ifx:0, 88:c3:97:cd:51:fb), tid:6, ssn:2, winSize:64
+D (25433) NET: #4 connecting WiFi
+D (25935) NET: #5 connecting WiFi
+I (27148) ethernet: Ethernet Started
+I (27148) esp_netif_handlers: sta ip: 192.168.66.119, mask: 255.255.255.0, gw: 192.168.66.1
+I (27149) network: GOT_IP
+D (26439) NET: #6 connecting WiFi
+I (26444) NET: wifi ok! config: ('192.168.66.119', '255.255.255.0', '192.168.66.1', '192.168.66.1')
+D (26455) NET: {'tryIndex': 1, 'enabled': False, 'phyType': 2}
+D (26559) NET: mDNS started: mocreo-45dc
+D (26564) NET: ip changed [unknown] -> [192.168.66.119]
+D (26775) CACT: first check action in 1s (FAST)
+D (26779) DEV_MON: add task monitor [taskCheckAction]
+D (26786) DEV_MON: add task monitor [checkConnectLoop]
+D (26814) NTP: sync time from: pool.ntp.org
+I (27599) wifi:<ba-add>idx:1 (ifx:0, 88:c3:97:cd:51:fb), tid:0, ssn:0, winSize:64
+D (27124) NTP: get time from NTP: 1697764579
+D (27136) NTP: sys time now: 1697764579
+W (27138) NET: net ok
+W (27140) NET: wifi rssi = -45
+D (27767) BLINKM: layer DEFAULT
+D (27770) BLINKM: set blink duration=0
+D (27793) CACT: sending PING request
+D (27815) HTTP: HEARTBEAT: https://sync.sync-sign.com/ping?seq=0&app=256&f=0&hw=1025&idle=217&sys=67845&type=3&tz=0&up=27&bat=-10&id=083A8D2545DC
+I (27845) REQS: connecting to https://sync.sync-sign.com:443/ping?seq=0&app=256&f=0&hw=1025&idle=217&sys=67845&type=3&tz=0&up=27&bat=-10&id=083A8D2545DC
+~_D (29942) HTTP: get_device_access_key url: https://api.sync-sign.com/beta/device/token?seq=0
+D (30008) REQS: waiting for requests idle 1
+D (30022) SENSDATA: time ok
+D (30082) DB.NODES: clear online states
+D (30186) DB.NODES: nodeList saved
+I (30190) DB.NODES: 2 nodeList loaded
+I (30944) ZNP: creating ZNP-RPC thread @core 0
+I (30994) ZMT: flushed 0 message from msg queue
+I (30994) ZNP: creating ZNP-Queue thread @core 0
+I (30994) ZNP: ZNP host started
+D (30322) REQS: sending... (sync.sync-sign.com)
+D (30330) REQS: reading... (sync.sync-sign.com)
+I (30521) PAN_NET: set reset pin to high
+I (31563) ZMT: Resetting CoP
+I (33027) ZMT: ZNP Reset Reason:1 Version: 2.9.5 P0
+I (33027) ZMT: CoP reset done
+W (32290) PAN_NET: ZNP Reset. Reason: External V2.9.5 P0
+D (32551) REQS: header received (sync.sync-sign.com)
+D (32553) REQS: receiving unknown length
+W (33529) ZNP: panNwkKey len invalid!
+I (33555) ZMT: register 2 AF endpoints
+I (34955) ZMT: zdoInit RESTORED_NETWORK
+I (34955) ZMT: waiting for zdoStatechange callbacks
+Network Started
+I (34975) ZMT: mtZdoStateChangeIndCb: Started as Zigbee Coordinator
+I (34985) MTPARSER: mtProcess: MT_APP_CNF_BDB_COMMISSIONING_NOTIFICATION
+I (35160) MTPARSER: mtProcess: MT_APP_CNF_BDB_COMMISSIONING_NOTIFICATION
+I (40167) ZMT: TxPower: 20dB
+00:00:39:39:0C:0C:43:43:24:24:00:00:4B
+4B:12:00:00:00:01:09:03:40:8B:79:63:16:DF:6B
+I (39497) PAN_NET: newState: 9 ZB_COORD
+I (39500) PAN_NET: coordinator started
+0x0000 has 3 children:
+Type: COORDINATOR
+Type: END DEVICE 0x8B40
+Type: END DEVICE 0x6379
+Type: END DEVICE 0xDF16
+I (39513) CACT: already get time, exit sync time task
+~W (39518) NET: wifi rssi = -54
+_D (40548) HTTP: GET status code: 200
+I (40553) CACT: action=none
+D (40556) CACT: check action ok, retry ping in 300s (SLOW)
+I (41561) REQS: connecting to https://api.sync-sign.com:443/beta/device/token?seq=0
+~D (45637) REQS: sending... (api.sync-sign.com)
+D (45648) REQS: reading... (api.sync-sign.com)
+W (49750) NET: wifi rssi = -49
+_~~W (60033) NET: wifi rssi = -52
+_~D (66197) REQS: header received (api.sync-sign.com)
+D (66199) REQS: receiving: 474 bytes
+~D (67228) HTTP: POST status code: 200
+I (67243) DEV_HUB: device access token: [f3740ee191dcb50dbc06db2af52f118e1ad7fb37] expires at: [1705540598s]
+D (67254) HTTP: set_device_access_key: f3740ee191dcb50dbc06db2af52f118e1ad7fb37
+I (67256) DEV_HUB: start 5 tasks awaiting login
+I (67260) DEV_HUB: refresh device access key in 65535s
+D (68264) DEV_HUB: Task UPLOAD_PAN_NODE continue
+D (68267) DEV_HUB: Task REQDEV continue
+D (68274) HTTP: request_device_info url: https://api.sync-sign.com/beta/device
+I (68303) REQS: connecting to https://api.sync-sign.com:443/beta/device
+D (68306) DEV_HUB: Task BTN continue
+D (68309) DEV_HUB: Task SNR_DATA continue
+D (68311) SENSDATA: sensor data upload task start
+D (68313) SENSDATA: wait sync time
+D (68323) SENSDATA: time ok
+I (68325) SENSDATA: wait get associatedList
+D (68332) DEV_HUB: Task SNR_INFO continue
+D (68343) DEV_MON: add task monitor [sensorInfoUpload]
+D (68349) HTTP: upload_nodes_info url: https://api.sync-sign.com/beta/nodes
+D (68352) HTTP: upload_nodes_info json: {"nodes": [{"batteryLevel": 95, "type": "SENSOR", "nodeId": "00124b0023acd9fc", "probes": 1, "signalLevel": 100, "model": "ST1", "onlined": true}, {"batteryLevel": 100, "type": "SENSOR", "nodeId": "00124b00250e6f21", "probes": 1, "signalLevel": 100, "model": "ST3", "onlined": true}]}
+D (68393) REQS: waiting for requests idle 1
+W (70428) NET: wifi rssi = -52
+_~D (73340) REQS: waiting for requests idle 1
+D (74346) REQS: sending... (api.sync-sign.com)
+D (74359) REQS: reading... (api.sync-sign.com)
+~W (80524) NET: wifi rssi = -48
+_~~W (90803) NET: wifi rssi = -46
+D (93890) REQS: header received (api.sync-sign.com)
+D (93892) REQS: receiving: 515 bytes
+_~D (94921) HTTP: GET status code: 200
+I (94945) REQS: connecting to https://api.sync-sign.com:443/beta/nodes
+~D (99909) REQS: sending... (api.sync-sign.com)
+D (100926) REQS: reading... (api.sync-sign.com)
+W (100930) NET: wifi rssi = -51
+_~~W (111212) NET: wifi rssi = -49
+_~D (120458) REQS: header received (api.sync-sign.com)
+D (120461) REQS: receiving: 75 bytes
+~D (120486) HTTP: PUT status code: 200
+I (120491) SR: sensor info uploaded
+I (121497) REQS: connecting to https://api.sync-sign.com:443/beta/nodes?associated=true&relay_device=BLE
+W (121501) NET: wifi rssi = -48
+_~D (125475) REQS: sending... (api.sync-sign.com)
+D (125486) REQS: reading... (api.sync-sign.com)
+~W (131625) NET: wifi rssi = -43
+_~~W (141903) NET: wifi rssi = -45
+D (146016) REQS: header received (api.sync-sign.com)
+D (146018) REQS: receiving: 1071 bytes
+_~D (147049) HTTP: GET status code: 200
+I (147080) HTTP_REQUEST: httpQuerySensorStatus success
+~W (152167) NET: wifi rssi = -50
+_~~W (162368) NET: wifi rssi = -47
+_~~W (172568) NET: wifi rssi = -50
+_~~W (182769) NET: wifi rssi = -49
+_~~W (192969) NET: wifi rssi = -44
+_~~W (203170) NET: wifi rssi = -46
+_~~W (213370) NET: wifi rssi = -51
+_~~W (223570) NET: wifi rssi = -48
+_~~W (233773) NET: wifi rssi = -50
+_~~W (243973) NET: wifi rssi = -51
+_~~W (254173) NET: wifi rssi = -48
+_~~W (264374) NET: wifi rssi = -45
+_~~W (274574) NET: wifi rssi = -44
+_~~W (284775) NET: wifi rssi = -46
+_~~W (294976) NET: wifi rssi = -47
+_~~W (305176) NET: wifi rssi = -54
+_~~W (315378) NET: wifi rssi = -47
+_~~W (325578) NET: wifi rssi = -48
+_~~W (335778) NET: wifi rssi = -57
+I (339004) PARSE: temperature: 2740 [0x124b0023acd9fc]
+D (339007) SMGR: setNodesInventory 0x124b0023acd9fc
+I (339016) PARSE: humidity: 7875 [0x124b0023acd9fc]
+D (339029) DST1: 0x124b0023acd9fc addOneST1Data {"tm": 2740, "hu": 7875, "ts": 1697764890}
+D (339031) DST1: 5149013551405564:{'model': 'ST1', 'data': {'tm': 2740, 'hu': 7875}}
+W (339034) EST1: server not ok, don't check alarm
+_~D (341072) CACT: sending PING request
+D (341094) HTTP: HEARTBEAT: https://sync.sync-sign.com/ping?seq=1&app=256&f=0&hw=1025&idle=517&sys=67845&type=3&tz=0&up=341&bat=-10&id=083A8D2545DC
+I (341124) REQS: connecting to https://sync.sync-sign.com:443/ping?seq=1&app=256&f=0&hw=1025&idle=517&sys=67845&type=3&tz=0&up=341&bat=-10&id=083A8D2545DC
+I (345374) PARSE: temperature: 2743 [0x124b00250e6f21]
+D (345377) SMGR: setNodesInventory 0x124b00250e6f21
+I (345386) PARSE: humidity: 7671 [0x124b00250e6f21]
+D (345399) DST1: 0x124b00250e6f21 addOneST1Data {"tm": 2743, "hu": 7671, "ts": 1697764897}
+D (345401) DST1: 5149013574577953:{'model': 'ST3', 'data': {'tm': 2743, 'hu': 7671}}
+W (345404) EST1: server not ok, don't check alarm
+~D (346411) REQS: sending... (sync.sync-sign.com)
+W (346417) NET: wifi rssi = -55
+D (347440) REQS: reading... (sync.sync-sign.com)
+_~~W (356684) NET: wifi rssi = -55
+D (359772) REQS: header received (sync.sync-sign.com)
+D (359775) REQS: receiving unknown length
+_~D (360815) HTTP: GET status code: 200
+I (360820) CACT: action=none
+D (360822) CACT: check action ok, retry ping in 300s (SLOW)
+~W (366928) NET: wifi rssi = -55
+_~~W (377130) NET: wifi rssi = -52
+_~~W (387330) NET: wifi rssi = -44
+_~~W (397529) NET: wifi rssi = -44
+_~~W (407731) NET: wifi rssi = -47
+_~~W (417932) NET: wifi rssi = -45
+_~~W (428132) NET: wifi rssi = -45
+_~~W (438332) NET: wifi rssi = -45
+_~~W (448532) NET: wifi rssi = -50
+_~~W (458733) NET: wifi rssi = -45
+_~~W (468933) NET: wifi rssi = -51
+_~~W (479133) NET: wifi rssi = -51
+_~~W (489333) NET: wifi rssi = -44
+_~~W (499532) NET: wifi rssi = -48
+_~~W (509734) NET: wifi rssi = -48
+_~~W (519934) NET: wifi rssi = -49
+_~~W (530135) NET: wifi rssi = -52
+_~~W (540336) NET: wifi rssi = -49
+_~~W (550536) NET: wifi rssi = -58
+_~E (557695) PAN_NET: no PAN available?
+W (557697) DB.NODES: key:  b''
+I (557700) DB.NODES: save PAN ID 0x0 (CH0) (KEY: ) (BO: 9 C) to config
+I (557785) PAN_NET: PAN Ready (Zigbee PRO 2015 R21) - ID: 0x0 CH0
+I (557792) PAN_NET: PAN started
+D (557824) MRD_WK: mrd worker init
+D (557837) DEV_MON: add task monitor [taskCheckNodesOffline]
+D (557846) PAN_NET: znp ping response 0x779
+~W (560551) NET: wifi rssi = -55
+D (562828) MANAGER: final start
+D (562835) BUZZER: set buzzer mode 0 counter 2 interval 200
+I (562838) BUZZER: buzzer init
+I (564693) BTDM_INIT: BT controller compile version [97e0759]
+W (564152) BLEONLINE: onNodeGone 30AEA4000003 (for 6124s)
+W (564165) BLEONLINE: onNodeGone 30AEA400007E (for 6124s)
+I (564168) BLEMGR: bleCentral started
+I (564175) RPC: RemoteCall init
+I (564239) DEVSVR: SERVER_TYPE CLOUD
+D (564241) RPCW: using MQTT_TYPE_AWS
+I (564317) RPCW: MQTT certificates loaded
+I (564319) RPCW: RemoteCallWorker init
+D (564321) RPCW: rpc worker started
+D (564322) RPC: rpc started
+D (564354) USER: hub user started
+D (564440) HTTP_RD: http render started
+D (564495) HTTP_RD: http render for relay started
+D (564751) WEBHLPER: webserver config loaded
+I (565527) WEBSVR: Web portal listening on 80
+D (565900) RPCW: MQTT activated! 0
+I (565902) RPCW: MQTT Host=a1zjlbcv9qbzin-ats.iot.us-west-2.amazonaws.com
+D (565905) RPCW: MQTT connecting... 0
+D (565921) MQTTS: MQTT: 44.237.220.33:8883
+I (566107) MQTTS: MQTT connected
+Skip CA verify
+
+D (567430) MQTTS: mqtt SSL socket opened
+I (567933) RPCW: MQTT live!
+D (567940) HTTP_RD: Task render running
+D (567943) DEV_MON: add task monitor [taskHttpRender]
+_~D (567963) DEV_MON: add task monitor [loopScan]
+D (567965) BLEMGR: start BLE scanning
+I (568706) NimBLE: GAP procedure initiated: discovery; 
+I (568706) NimBLE: own_addr_type=0 filter_policy=0 passive=1 limited=0 filter_duplicates=0 
+I (568707) NimBLE: duration=2000ms
+I (568707) NimBLE: 
+
+D (569972) BLECNTL: _IRQ_SCAN_DONE

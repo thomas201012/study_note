@@ -3,7 +3,7 @@
     EVENT = 2
     EVENT = 4
     EVENT = 0
-### wifi失去连接
+### wifi失去连接(路由器断电)
     EVENT = 21
     EVENT = 5,reason = 201
 

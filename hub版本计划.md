@@ -65,14 +65,60 @@ feat: 支持ST9/ST10
         处理办法：
             1. 
 
-### H1/H1B/H2B 1.9.7的版本计划：
+### H1/H1B/H2B 1.9.6的版本计划：
 - 修改ST9的温度上报范围为-40-105
+
 ### H1/H1B/H2B 1.9.7的版本计划：
 - 1.支持SS1 sensor
 - 2.支持D75-LEWI 独立ble工作模式
 - 3.修复在setup过程中,重试后上传错误状态的问题
 - 4.Portal修改信道处新增友好提示
-- 5.
+- 5.新增对st5 crc校验错误的限制，只打印日志，不上报状态。
+- 6.调整hub_portal中关于无zigbee模块提示的字体大小。
+
+
+### H1/H1B/H2B 1.9.8的版本计划(临时替换1.9.7)：
+- 修复ss1在setup之后不立即上报数据的问题
+
+
+### H1/H1B/H2B 2.0.0的版本计划：
+- 在ss_mp环境下编译
+    - 在连接以太网失败后，自动切换addr
+- 连接Wi-Fi AP 后 开始调用ping接口，接收relog指令 便于查看后续Setup流程 日志或自动实现relog
+- H1B
+    - 1.setup后亮红灯的问题（MQTT连接失败可能也会导致一直亮红灯）
+        - mqtt在重连成功后没有及时将app层的状态进行清除。
+    - 2.https添加根证书(Roger)
+    - 3.znp初始化失败重试成功后，将panid上传服务器
+    - 4.在上传panid时，对空的panid进行过滤，修改为默认值
+    - 5.在同步警报规则后，立即进行将警报规则判断结果通过events接口上报服务器
+    - 6.在用户setup之后，开机连不上网亮红灯。----之前客户在使用以太网时，连不上网是不会亮红灯的。
+    - 8.ss1 hub portal中解析错误的问题
+    - 9.支持ST7、ST8设备(延后)
+    - 10.在测量值超出测量范围后，应该上报上下限，而不是不报。
+    - 11.对于数据上报失败的情况，不应该触发维护性重启
+    - 12.数据打包存储的情况，数据长度会被修改
+    - 13.在汇报测量数据时，加上接口调用失败时自动切域名重试的机制。
+    - 14.Zigbee Sensor >>> Zigbee Nodes
+    - 15.MQTT端口新增备用URL:d00182382sdytmlnz4l3s-ats.iot.us-west-2.amazonaws.com
+    - 16.Setup 过程中，在某一步停留时间超过5min，将自动退出setup模式
+    - 17.HUB指示灯调整
+    - 18.HUB重启后连接不上WIFI 15min后强制重启
+    - 19.在SETUP过程中，完成WIFI连接后以及调用一次PING
+    - 20.在上传WIFI列表时也将加密方式一起上传
+- H1
+    - 1.关于logo发送（Hub v1.9.8支持）(需要重新进行编码，功能未实现)
+        - 在hub portal可以支持用户手工给display更新logo；
+        - 支持通过hub远程命令给指定的display发送；
+    - 2.关于wifi信息的发送（Hub v1.9.8支持）
+        - hub向display发送wifi信息(已完成)
+        - hub portal可以支持用户手工给display更新wifi信息；(已完成)
+        - 支持通过hub远程命令给指定的display发送wifi信息；
+    - 3.关于display的重置操作（Hub v1.9.8支持）
+        - 支持长按trigger 20s后将display进行重置；(7.5inch)
+        - hub portal可以支持用户手工给display发送重置命令；
+        - 支持通过hub远程命令给指定的display发送重置命令；
+    - 4.取消Hacking in Progress的模板显示
 
 
 ### SS1针对于原版开源固件修改的地方

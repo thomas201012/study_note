@@ -1,122 +1,73 @@
--------------- START --------------
-{
-  optionalServices: [
-    '00010203-0405-0607-0809-0a0b0c0d1912',
-    'ebe0ccb0-7a0a-4b0c-8a1a-6ff2997da3a6',
-    '22210000-554a-4546-5542-46534450464d',
-    6154,
-    65173,
-    7952,
-    7953,
-    6170,
-    65529,
-    64973,
-    65504
-  ],
-  acceptAllDevices: false,
-  filters: [ { namePrefix: 'ATC' } ]
-}
-Searching for devices
-8:54:38 AM: Searching for devices
-8:54:40 AM: Connecting to: ATC_055899
-Status: Connecting to: ATC_055899 ...
-<ref *1> C {
-  domain: null,
-  _events: s <[Object: null prototype] {}> {
-    gattserverdisconnected: [Function: onDisconnected]
-  },
-  _eventsCount: 1,
-  _maxListeners: undefined,
-  isEventListenerObject: [Function (anonymous)],
-  id: 'a4:c1:38:05:58:99',
-  name: 'ATC_055899',
-  gatt: V {
-    device: [Circular *1],
-    _connected: false,
-    handle: 'a4:c1:38:05:58:99',
-    services: null
-  },
-  watchingAdvertisements: false,
-  _bluetooth: k {
-    domain: null,
-    _events: s <[Object: null prototype] {}> {},
-    _eventsCount: 0,
-    _maxListeners: undefined,
-    isEventListenerObject: [Function (anonymous)],
-    deviceFound: undefined,
-    scanTime: 10240,
-    scanner: null,
-    referringDevice: undefined
-  },
-  _allowedServices: [
-    '00010203-0405-0607-0809-0a0b0c0d1912',
-    'ebe0ccb0-7a0a-4b0c-8a1a-6ff2997da3a6',
-    '22210000-554a-4546-5542-46534450464d',
-    '0000180a-0000-1000-8000-00805f9b34fb',
-    '0000fe95-0000-1000-8000-00805f9b34fb',
-    '00001f10-0000-1000-8000-00805f9b34fb',
-    '00001f11-0000-1000-8000-00805f9b34fb',
-    '0000181a-0000-1000-8000-00805f9b34fb',
-    '0000fff9-0000-1000-8000-00805f9b34fb',
-    '0000fdcd-0000-1000-8000-00805f9b34fb',
-    '0000ffe0-0000-1000-8000-00805f9b34fb'
-  ],
-  _serviceUUIDs: [],
-  watchAdvertisements: undefined,
-  adData: {
-    rssi: -50,
-    txPower: undefined,
-    serviceData: Map(1) { '0000181a-0000-1000-8000-00805f9b34fb' => [DataView] },
-    manufacturerData: Map(0) {}
-  }
-}
-bluetoothDevice is: + ATC_055899
-doConnect: ATC_055899
-Found GATT server
-found services: 5
-Services: 0000180a-0000-1000-8000-00805f9b34fb
-Services: 0000181a-0000-1000-8000-00805f9b34fb
-Services: 00010203-0405-0607-0809-0a0b0c0d1912
-Services: 00001f10-0000-1000-8000-00805f9b34fb
-Services: 0000fe95-0000-1000-8000-00805f9b34fb
-Found Telink OTA service
-Found Telink OTA write characteristic
-Found Device Information Service
-Get Hardware Revision String
-Status: Get Hardware Revision String...
-Hardware Revision String: B1.7
-8:54:43 AM: Hardware Revision String: B1.7
-8:54:43 AM: Detected custom Firmware
-Status: Detected custom Firmware
-8:54:43 AM: custcfg: 
-Found custom Main service (0x1f10)
-Found custom read-write characteristic (0x1f1f)
-{
-  broadcast: false,
-  read: true,
-  writeWithoutResponse: true,
-  write: false,
-  notify: true,
-  indicate: false,
-  authenticatedSignedWrites: false,
-  reliableWrite: false,
-  writableAuxiliaries: false
-}
-Start Notifications (0x1f1f)
-Add EventListener (0x1f1f)
-Read Characteristics (0x1f1f)
-85 12
-Status: Hardware Version: LYWSD03MMC B1.7, Software Version: 4.3
-Hardware Version: LYWSD03MMC B1.7, Software Version: 4.3, Sensor: SHT4x
-8:54:43 AM: Hardware Version: LYWSD03MMC B1.7, Software Version: 4.3, Sensor: SHT4x
-Custom config: [149, 16, 0, 0, 24, 4, 169, 49, 49, 0, 0]
-8:54:43 AM: Custom config: [149, 16, 0, 0, 24, 4, 169, 49, 49, 0, 0]
-Send cmd (3303): Query 3 measurements
-Send cmd ok
-51 13
-Vbat: 3188 mV , Temp: 28.37°C, Humi: 59.94%, Count: 782, flg: 0x04:r0/t0
-51 13
-Vbat: 3188 mV , Temp: 28.39°C, Humi: 59.75%, Count: 784, flg: 0x04:r0/t0
-51 13
-Vbat: 3188 mV , Temp: 28.40°C, Humi: 59.02%, Count: 786, flg: 0x04:r0/t0
-now 1697792108539 lastTime 1697792083639
+D (3983) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3fced4e4
+D (3984) esp_netif_lwip: call api in lwip: ret=0x0, give sem
+-------- [2, 5, bytearray(b'test_xiaomi1\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x0c\x00\x00\x00\x00\x00\x00\xc9\x80')]
+D (3987): test_xiaomi1 12 bytearray(b'\x00\x00\x00\x00\x00\x00') 201 128
+D (3998): event codes: [(2, None), (5, 201)]
+D (4101) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (4101) wifi:perform scan: ss_state=0x9, chan<2,0>, dur<0,120>
+D (4222) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (4223) wifi:perform scan: ss_state=0x9, chan<3,0>, dur<0,120>
+D (4344) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (4344) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (4465) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (4466) wifi:perform scan: ss_state=0x9, chan<5,0>, dur<0,120>
+D (4587) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (4588) wifi:perform scan: ss_state=0x9, chan<6,0>, dur<0,120>
+D (4709) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (4710) wifi:perform scan: ss_state=0x9, chan<7,0>, dur<0,120>
+D (4831) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (4831) wifi:perform scan: ss_state=0x9, chan<8,0>, dur<0,120>
+D (4911) NETW: #3 connecting WiFi
+D (4953) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (4953) wifi:perform scan: ss_state=0x9, chan<9,0>, dur<0,120>
+D (5074) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (5075) wifi:perform scan: ss_state=0x9, chan<10,0>, dur<0,120>
+D (5195) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (5196) wifi:perform scan: ss_state=0x9, chan<11,0>, dur<0,120>
+D (5317) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (5317) wifi:perform scan: ss_state=0x9, chan<12,0>, dur<360,360>
+D (5678) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (5678) wifi:perform scan: ss_state=0x9, chan<13,0>, dur<360,360>
+D (5923) NETW: #4 connecting WiFi
+D (6039) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (6039) wifi:perform scan: ss_state=0x9, chan<14,0>, dur<360,360>
+~D (6400) wifi:scan end: arg=0x0, status=0, ss_state=0x3
+D (6401) wifi:filter: set rx policy=4
+D (6401) wifi:first chan=1
+D (6401) wifi:handoff_cb: status=0
+D (6401) wifi:clear rc list
+D (6401) wifi:clear blacklist
+D (6402) wifi:Send disconnect event, reason=201
+D (6402) wifi:connect status 1 -> 3
+D (6402) wifi:disable connect timer
+D (6402) wifi:clear scan ap list
+D (6402) event: running post WIFI_EVENT:5 with handler 0x420ddfe8 and context 0x3fced490 on loop 0x3fce9b54
+0x420ddfe8: network_wlan_wifi_event_handler at /home/oz13/Work/project_code/idf5_ss_lcd_display/code/mp/ports/esp32/network_wlan.c:92
+
+I (6403) wifi: STA_DISCONNECTED, reason:201
+no AP found
+D (6403) wifi:Start wifi connect
+D (6403) wifi:connect status 3 -> 0
+D (6404) wifi:connect chan=0
+D (6404) wifi:first chan=1
+D (6404) wifi:connect status 0 -> 1
+D (6404) wifi:filter: set rx policy=3
+D (6404) wifi:clear scan ap list
+D (6404) wifi:start scan: type=0x50f, priority=2, cb=0x4218f318, arg=0x0, ss_state=0x1, time=6405287, index=0
+0x4218f318: cnx_start_handoff_cb at ??:?
+
+D (6405) wifi:perform scan: ss_state=0x9, chan<1,0>, dur<0,120>
+I (6405) MOD_DIAG: core 0 event: WIFI_EVENT id=5
+D (6406) event: running post WIFI_EVENT:5 with handler 0x4215b734 and context 0x3fced7c0 on loop 0x3fce9b54
+0x4215b734: wifi_default_action_sta_disconnected at /home/oz13/Work/esp/esp-idf-v5.1.2/components/esp_wifi/src/wifi_default.c:104
+
+D (6406) esp_netif_handlers: esp_netif action disconnected with netif0x3fced4e4 from event_id=5
+D (6406) esp_netif_lwip: check: remote, if=0x3fced4e4 fn=0x420ba2dc
+0x420ba2dc: esp_netif_down_api at /home/oz13/Work/esp/esp-idf-v5.1.2/components/esp_netif/lwip/esp_netif_lwip.c:1638
+
+
+D (6407) esp_netif_lwip: esp_netif_down_api esp_netif:0x3fced4e4
+D (6407) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3fced4e4
+D (6407) esp_netif_lwip: if0x3fced4e4 start ip lost tmr: no need start because netif=0x3fced670 interval=120 ip=0
+D (6408) esp_netif_lwip: check: local, if=0x3fced4e4 fn=0x420b928c
+0x420b928c: esp_netif_update_default_netif_lwip at /home/oz13/Work/esp/esp-idf-v5.1.2/components/esp_netif/lwip/esp_netif_lwip.c:327

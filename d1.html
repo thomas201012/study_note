@@ -1,0 +1,187 @@
+<html><head>
+    <title>VOBOT Configuration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      .c,
+      body {
+        text-align: center;
+        font-family: verdana;
+      }
+      div,
+      input {
+        padding: 5px;
+        font-size: 1em;
+        margin: 5px 0;
+        box-sizing: border-box;
+      }
+      div,
+      select {
+        padding: 5px;
+        font-size: 1em;
+        margin: 5px 0;
+        box-sizing: border-box;
+      }
+      .wrap {
+        text-align: left;
+        display: inline-block;
+        min-width: 260px;
+        max-width: 500px;
+      }
+      body.invert,
+      body.invert a,
+      body.invert h1 {
+        background-color: #606060;
+        color: #fff;
+      }
+      body.invert .msg {
+        color: #fff;
+        background-color: #282828;
+        border-top: 1px solid #555;
+        border-right: 1px solid #555;
+        border-bottom: 1px solid #555;
+      }
+      body.invert .q[role="img"] {
+        -webkit-filter: invert(1);
+        filter: invert(1);
+      }
+      span {
+        font-size: 0.8em;
+      }
+      input:disabled {
+        opacity: 0.5;
+      }
+      .hint {
+        font-size: 0.8em;
+        color: #aaa;
+      }
+      .in {
+        border-radius: 0.3rem;
+        width: 100%;
+        margin-bottom: 1px;
+      }
+    </style>
+    <script>
+    var config = { };
+    function updateSaveButton() {
+      document.getElementById("passIcon").style.display = "none";
+      document.getElementById("saveButton").style.display = "none";
+    }
+    function hideUserSsid(){
+        document.getElementById("essid").style.display = "none";
+    }
+      function showUserSsid(){
+        document.getElementById("essid").style.display = "block";
+    }
+    function validateInput() {
+        var country = document.getElementById("regioncode").value;
+        var city = document.getElementById("cityname").value;
+        var state = document.getElementById("statename").value;
+        var url = "https://apiproxy.myvobot.com/geo?q=" + city + "," + state + "," + country + "&limit=1&sn=MC3485186D4EC0";
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            if (response[0] && response[0].lat && response[0].lon) {
+              let { lat, lon, state, name, country } = response[0];
+              document.getElementById("saveButton").style.display =
+                "inline-block";
+              document.getElementById("passIcon").style.display =
+                "inline-block";
+              document.getElementById("regioncode")
+                .addEventListener("input", updateSaveButton);
+              document.getElementById("statename")
+                .addEventListener("input", updateSaveButton);
+              document.getElementById("cityname")
+                .addEventListener("input", updateSaveButton);
+              document.getElementById("regioncode").value = country;
+              document.getElementById("statename").value = state;
+              document.getElementById("cityname").value = name;
+              config[document.getElementById("cityname").name] = {
+                "latitude": lat, "longitude": lon, "city": name,
+                "state": state, "country": country
+              };
+            } else {
+              document.getElementById("saveButton").style.display = "none";
+              document.getElementById("passIcon").style.display = "none";
+              alert("Invalid location input.Please check your input and try again.");
+            }
+          }
+        };
+        xhr.send();
+      }
+      function saveConfig() {
+        items = document.getElementsByClassName("in")
+        for(let index = 0; index < items.length; index++) {
+          element = items[index];
+          element.id = element.getAttribute("id");
+          element.name = element.getAttribute("name");
+          if(element.name && config[element.name]){
+            config[element.name][element.id] = element.value;
+          }else{
+            config[element.name] = {[element.id]: element.value}
+          }
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://192.168.66.210/config", true);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                alert("Configuration saved successfully. The device will now reboot. Please note that the current page will close.");
+                window.open("about:blank","_self");
+                window.close();
+            } else {
+                alert("Failed to save config. Please try again.");
+            }
+          }
+        };
+        xhr.send(JSON.stringify(config));
+      }
+    </script></head>
+    <body class="invert"><div class="wrap"><h2>Dock One Configuration</h2><div><label for="cityname">City Name</label>
+                <input id="cityname" class="in" type="text" name="Weather" value="" placeholder="e.g., San Jose." max_length="50">
+                </div><div><label for="statename">State/Province Name (Optional)</label>
+                <input id="statename" class="in" type="text" name="Weather" value="" placeholder="e.g., California." max_length="50">
+                </div><div><label for="regioncode">Country/Region Code (Optional)</label>
+                <input id="regioncode" class="in" type="text" name="Weather" value="US" placeholder="e.g., US" max_length="50">
+                <span> Default to US when leave blank </span><a href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes" target="_blank" class="hint">Click here to look up all two-letter codes.</a></div><div><label for="symbols">Stocks Symbols</label>
+                <input id="symbols" class="in" type="text" name="Stock" value="MSFT:NASDAQ,TSLA:NASDAQ,NVDA:NASDAQ,AAPL:NASDAQ,GOOG:NASDAQ" placeholder="e.g., AAPL:NASDAQ" max_length="60">
+                <span> For multiple stocks, use commas, like 'AAPL:NASDAQ,GOOGL:NASDAQ'. </span><a href="https://google.com/finance/" target="_blank" class="hint">Click here to search for stock codes.</a></div><div><label for="symbols">Cryptocurrency Symbols</label>
+                <input id="symbols" class="in" type="text" name="Cryptocurrency" value="BTC,ETH,ADA,DOT" placeholder="e.g., BTC,ETH" max_length="25">
+                <span> For multiple currencies, use commas, like 'ETH,BTC'. </span><a href="https://coinmarketcap.com/" target="_blank" class="hint">Click here to search for cryptocurrencies.</a></div><div>
+        <label for="timeZone">Time Zone</label>
+        <select id="timeZone" class="in" name="Global">
+          <option value="-12:00">UTC -12:00</option>
+          <option value="-11:00">UTC -11:00</option>
+          <option value="-10:00">UTC -10:00</option>
+          <option value="-09:00">UTC -09:00</option>
+          <option value="-08:00">UTC -08:00</option>
+          <option value="-07:00">UTC -07:00</option>
+          <option value="-06:00">UTC -06:00</option>
+          <option value="-05:00">UTC -05:00</option>
+          <option value="-04:00">UTC -04:00</option>
+          <option value="-03:00">UTC -03:00</option>
+          <option value="-02:00">UTC -02:00</option>
+          <option value="-01:00">UTC -01:00</option>
+          <option value="+00:00">UTC +00:00</option>
+          <option value="+01:00">UTC +01:00</option>
+          <option value="+02:00">UTC +02:00</option>
+          <option value="+03:00">UTC +03:00</option>
+          <option value="+04:00">UTC +04:00</option>
+          <option value="+05:00">UTC +05:00</option>
+          <option value="+06:00">UTC +06:00</option>
+          <option value="+07:00">UTC +07:00</option>
+          <option value="+08:00">UTC +08:00</option>
+          <option value="+09:00">UTC +09:00</option>
+          <option value="+10:00">UTC +10:00</option>
+          <option value="+11:00">UTC +11:00</option>
+          <option value="+12:00">UTC +12:00</option>
+        </select>
+        </div><div>
+        <button type="button" onclick="validateInput()">
+        Validate <span id="passIcon" style="display: none">✔️</span></button>
+        <button id="saveButton" onclick="saveConfig()" style="display: none">Save Config
+        </button></div><br></div>
+        <script>document.getElementById("timeZone").value = '+08:00';</script></body></html>
